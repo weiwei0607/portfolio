@@ -64,6 +64,7 @@
             display: flex;
             gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
         .nav-links a {
@@ -464,6 +465,9 @@
             .projects-grid { grid-template-columns: 1fr; }
             section { padding: 4rem 1.5rem; }
         }
+
+        html[lang="zh-TW"] .en-only { display: none !important; }
+        html[lang="en"] .zh-only { display: none !important; }
     </style>
 </head>
 <body>
@@ -471,10 +475,11 @@
     <nav>
         <div class="nav-logo">WeiWei Ma</div>
         <ul class="nav-links">
-            <li><a href="#about">關於我</a></li>
-            <li><a href="#skills">技能</a></li>
-            <li><a href="#projects">作品</a></li>
-            <li><a href="#contact">聯繫</a></li>
+            <li><a href="#about"><span class="zh-only">關於我</span><span class="en-only">About</span></a></li>
+            <li><a href="#skills"><span class="zh-only">技能</span><span class="en-only">Skills</span></a></li>
+            <li><a href="#projects"><span class="zh-only">作品</span><span class="en-only">Projects</span></a></li>
+            <li><a href="#contact"><span class="zh-only">聯繫</span><span class="en-only">Contact</span></a></li>
+            <li><button id="lang-toggle" style="background:none; border:1px solid var(--border); color:var(--text); padding:0.2rem 0.6rem; border-radius:4px; cursor:pointer; font-family:inherit; font-size:0.85rem; margin-left:1rem; transition:color 0.3s;">EN</button></li>
         </ul>
     </nav>
 
@@ -483,15 +488,15 @@
         <div class="hero-content">
             <div class="hero-badge">
                 <span class="dot"></span>
-                正在尋找 AI 產品經理機會
+                <span class="zh-only">正在尋找 AI 產品經理機會</span><span class="en-only">Open to AI Product Manager opportunities</span>
             </div>
             <h1>
-                馬韡寧 <span class="gradient">WeiWei Ma</span><br>
-                AI 產品經理
+                <span class="zh-only">馬韡寧 <span class="gradient">WeiWei Ma</span><br>AI 產品經理</span>
+                <span class="en-only">WeiWei Ma<br><span class="gradient">AI Product Manager</span></span>
             </h1>
             <p class="hero-desc">
-                從發現用戶痛點到設計 AI 解決方案，從寫 PRD 到動手寫 Code。<br>
-                能橋接技術與商業，讓 AI 真正落地產生價值。
+                <span class="zh-only">從發現用戶痛點到設計 AI 解決方案，從寫 PRD 到動手寫 Code。<br>能橋接技術與商業，讓 AI 真正落地產生價值。</span>
+                <span class="en-only">From spotting user pain points to designing AI solutions — and from writing PRDs to shipping code.<br>I bridge product and engineering to turn AI into real business value.</span>
             </p>
             <div class="hero-stats">
                 <div class="hero-stat">
@@ -500,69 +505,69 @@
                 </div>
                 <div class="hero-stat">
                     <div class="hero-stat-value">5+</div>
-                    <div class="hero-stat-label">AI 整合專案</div>
+                    <div class="hero-stat-label"><span class="zh-only">AI 整合專案</span><span class="en-only">AI-integrated projects</span></div>
                 </div>
                 <div class="hero-stat">
                     <div class="hero-stat-value">3</div>
-                    <div class="hero-stat-label">跨平台經驗</div>
+                    <div class="hero-stat-label"><span class="zh-only">跨平台經驗</span><span class="en-only">Cross-platform experience</span></div>
                 </div>
             </div>
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">查看作品集 →</a>
-                <a href="Resume_WeiWei_Ma.pdf" download class="btn btn-secondary">📄 下載履歷</a>
-                <a href="mailto:vernessa0607@gmail.com" class="btn btn-secondary">📧 聯繫我</a>
+                <a href="#projects" class="btn btn-primary"><span class="zh-only">查看作品集 →</span><span class="en-only">View Projects →</span></a>
+                <a href="Resume_WeiWei_Ma.pdf" download class="btn btn-secondary"><span class="zh-only">📄 下載履歷</span><span class="en-only">📄 Download Resume</span></a>
+                <a href="mailto:vernessa0607@gmail.com" class="btn btn-secondary"><span class="zh-only">📧 聯繫我</span><span class="en-only">📧 Contact Me</span></a>
             </div>
         </div>
     </section>
 
     <section id="about">
         <div class="section-header">
-            <span class="section-tag">關於我</span>
-            <h2 class="section-title">不只會想，還能動手做</h2>
+            <span class="section-tag"><span class="zh-only">關於我</span><span class="en-only">About</span></span>
+            <h2 class="section-title"><span class="zh-only">不只會想，還能動手做</span><span class="en-only">I don't just strategize — I ship.</span></h2>
             <p class="section-desc">
-                台大生醫工程研究所，具備 AI 產品運營與數據驅動決策思維。<br>
-                從教育科技到心理健康，從 B2B SaaS 到 AI 原生應用，用產品解決真實問題。
+                <span class="zh-only">台大生醫工程研究所，具備 AI 產品運營與數據驅動決策思維。<br>從教育科技到心理健康，從 B2B SaaS 到 AI 原生應用，用產品解決真實問題。</span>
+                <span class="en-only">M.S. in Biomedical Engineering from National Taiwan University. Product thinker with a data-driven, AI-first mindset.<br>From EdTech to mental health, B2B SaaS to AI-native apps — I build products that solve real problems.</span>
             </p>
         </div>
         <div class="about-grid">
             <div class="about-text">
                 <p>
-                    我認為好的 AI PM 不只是「提需求的人」，而是要能深入理解技術邊界、設計可行的 AI 交互流程、並用數據驗證假設。
+                    <span class="zh-only">我認為好的 AI PM 不只是「提需求的人」，而是要能深入理解技術邊界、設計可行的 AI 交互流程、並用數據驗證假設。</span><span class="en-only">A great AI PM isn't just someone who files requirements. They understand technical constraints, design usable AI interactions, and validate assumptions with data.</span>
                 </p>
                 <p>
-                    在炫圖 AI 實習期間，我定義北美市場短視頻內容策略，分析 TikTok/Instagram/YouTube 用戶行為模式，建立可量化的每日內容決策框架。
+                    <span class="zh-only">在炫圖 AI 實習期間，我定義北美市場短視頻內容策略，分析 TikTok/Instagram/YouTube 用戶行為模式，建立可量化的每日內容決策框架。</span><span class="en-only">At Xuantu AI, I defined short-form content strategy for the North American market, analyzed user behavior across TikTok, Instagram, and YouTube, and built a measurable daily content decision framework.</span>
                 </p>
                 <p>
-                    私下開發了 11 個 Side Projects，從 Flutter 到 FastAPI 到 Next.js，技術棧橫跨 Mobile、Web、Backend。這讓我能和工程師用同一種語言溝通。
+                    <span class="zh-only">私下開發了 11 個 Side Projects，從 Flutter 到 FastAPI 到 Next.js，技術棧橫跨 Mobile、Web、Backend。這讓我能和工程師用同一種語言溝通。</span><span class="en-only">I've built 13 side projects spanning Flutter, FastAPI, and Next.js — across mobile, web, and backend. That hands-on fluency lets me speak the same language as engineers.</span>
                 </p>
             </div>
             <div class="about-highlights">
                 <div class="about-item">
                     <div class="about-item-icon">🎯</div>
                     <div>
-                        <div class="about-item-title">產品思維</div>
-                        <div class="about-item-desc">從用戶研究、競品分析到產品定位，完整產品生命周期經驗</div>
+                        <div class="about-item-title"><span class="zh-only">產品思維</span><span class="en-only">Product Thinking</span></div>
+                        <div class="about-item-desc"><span class="zh-only">從用戶研究、競品分析到產品定位，完整產品生命周期經驗</span><span class="en-only">End-to-end product lifecycle experience: user research, competitive analysis, and positioning</span></div>
                     </div>
                 </div>
                 <div class="about-item">
                     <div class="about-item-icon">🤖</div>
                     <div>
-                        <div class="about-item-title">AI 落地能力</div>
-                        <div class="about-item-desc">整合 OpenAI、Gemini、Moonshot 等多 LLM，設計 Prompt 與 AI 交互流程</div>
+                        <div class="about-item-title"><span class="zh-only">AI 落地能力</span><span class="en-only">AI Execution</span></div>
+                        <div class="about-item-desc"><span class="zh-only">整合 OpenAI、Gemini、Moonshot 等多 LLM，設計 Prompt 與 AI 交互流程</span><span class="en-only">Integrated OpenAI, Gemini, Moonshot, and other LLMs; designed prompts and AI interaction flows</span></div>
                     </div>
                 </div>
                 <div class="about-item">
                     <div class="about-item-icon">💻</div>
                     <div>
-                        <div class="about-item-title">全端開發</div>
-                        <div class="about-item-desc">Flutter、React、React Native、FastAPI、Next.js 都能動手做</div>
+                        <div class="about-item-title"><span class="zh-only">全端開發</span><span class="en-only">Full-Stack Building</span></div>
+                        <div class="about-item-desc"><span class="zh-only">Flutter、React、React Native、FastAPI、Next.js 都能動手做</span><span class="en-only">Hands-on with Flutter, React, React Native, FastAPI, and Next.js</span></div>
                     </div>
                 </div>
                 <div class="about-item">
                     <div class="about-item-icon">📊</div>
                     <div>
-                        <div class="about-item-title">數據驅動</div>
-                        <div class="about-item-desc">設計數據儀表板、A/B 測試、用戶行為分析</div>
+                        <div class="about-item-title"><span class="zh-only">數據驅動</span><span class="en-only">Data-Driven</span></div>
+                        <div class="about-item-desc"><span class="zh-only">設計數據儀表板、A/B 測試、用戶行為分析</span><span class="en-only">Built dashboards, ran A/B tests, and analyzed user behavior</span></div>
                     </div>
                 </div>
             </div>
@@ -571,20 +576,20 @@
 
     <section id="skills">
         <div class="section-header">
-            <span class="section-tag">技能</span>
-            <h2 class="section-title">技術與產品工具箱</h2>
+            <span class="section-tag"><span class="zh-only">技能</span><span class="en-only">Skills</span></span>
+            <h2 class="section-title"><span class="zh-only">技術與產品工具箱</span><span class="en-only">Product & Engineering Toolkit</span></h2>
         </div>
         <div class="skills-grid">
             <span class="skill-tag ai">OpenAI API</span>
             <span class="skill-tag ai">Gemini</span>
             <span class="skill-tag ai">Claude</span>
             <span class="skill-tag ai">Prompt Engineering</span>
-            <span class="skill-tag ai">LLM 產品化</span>
-            <span class="skill-tag product">用戶研究</span>
-            <span class="skill-tag product">競品分析</span>
-            <span class="skill-tag product">產品路線圖</span>
-            <span class="skill-tag product">數據分析</span>
-            <span class="skill-tag product">A/B Test</span>
+            <span class="skill-tag ai"><span class="zh-only">LLM 產品化</span><span class="en-only">LLM Productization</span></span>
+            <span class="skill-tag product"><span class="zh-only">用戶研究</span><span class="en-only">User Research</span></span>
+            <span class="skill-tag product"><span class="zh-only">競品分析</span><span class="en-only">Competitive Analysis</span></span>
+            <span class="skill-tag product"><span class="zh-only">產品路線圖</span><span class="en-only">Product Roadmapping</span></span>
+            <span class="skill-tag product"><span class="zh-only">數據分析</span><span class="en-only">Data Analytics</span></span>
+            <span class="skill-tag product"><span class="zh-only">A/B Test</span><span class="en-only">A/B Testing</span></span>
             <span class="skill-tag tech">Flutter</span>
             <span class="skill-tag tech">React</span>
             <span class="skill-tag tech">React Native</span>
@@ -600,24 +605,24 @@
 
     <section id="projects">
         <div class="section-header">
-            <span class="section-tag">作品集</span>
-            <h2 class="section-title">13 個從 0 到 1 的 Side Projects</h2>
+            <span class="section-tag"><span class="zh-only">作品集</span><span class="en-only">Projects</span></span>
+            <h2 class="section-title"><span class="zh-only">13 個從 0 到 1 的 Side Projects</span><span class="en-only">13 Side Projects, 0 → 1</span></h2>
             <p class="section-desc">
-                每個專案都是從真實痛點出發，設計產品方案，動手實作，迭代優化。
+                <span class="zh-only">每個專案都是從真實痛點出發，設計產品方案，動手實作，迭代優化。</span><span class="en-only">Every project starts from a real pain point: design the solution, build it, and iterate.</span>
             </p>
         </div>
 
-        <h3 class="category-title">🤖 AI 原生應用</h3>
+        <h3 class="category-title"><span class="zh-only">🤖 AI 原生應用</span><span class="en-only">🤖 AI-Native Apps</span></h3>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-icon">🧽</div>
-                <h3 class="project-title">負能量吸收器</h3>
-                <p class="project-desc">AI 情緒夥伴。三階段對話設計（情感驗證→認知重構→行動建議），支援 OpenAI/Moonshot/自訂 API，離線情緒檢測引擎。</p>
+                <h3 class="project-title"><span class="zh-only">負能量吸收器</span><span class="en-only">Negativity Absorber</span></h3>
+                <p class="project-desc"><span class="zh-only">AI 情緒夥伴。三階段對話設計（情感驗證→認知重構→行動建議），支援 OpenAI/Moonshot/自訂 API，離線情緒檢測引擎。</span><span class="en-only">An AI emotional companion. Three-stage chat design (validation → cognitive reframing → actionable advice). Supports OpenAI, Moonshot, and custom APIs, with an offline emotion-detection engine.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">Flutter</span>
                     <span class="project-tag">Riverpod</span>
-                    <span class="project-tag">多 LLM</span>
-                    <span class="project-tag">語音輸入</span>
+                    <span class="project-tag"><span class="zh-only">多 LLM</span><span class="en-only">Multi-LLM</span></span>
+                    <span class="project-tag"><span class="zh-only">語音輸入</span><span class="en-only">Voice Input</span></span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/weiwei0607/negativity-absorber-app" class="project-link" target="_blank">🔗 GitHub →</a>
@@ -627,8 +632,8 @@
 
             <div class="project-card">
                 <div class="project-icon">📖</div>
-                <h3 class="project-title">回憶小說家 Memoir Novelist</h3>
-                <p class="project-desc">把日記變成小說。用戶寫日記 → Gemini AI 生成連貫小說，可選風格（愛情/懸疑/療癒）和角色。Flutter + FastAPI + React 三端架構。</p>
+                <h3 class="project-title"><span class="zh-only">回憶小說家 Memoir Novelist</span><span class="en-only">Memoir Novelist</span></h3>
+                <p class="project-desc"><span class="zh-only">把日記變成小說。用戶寫日記 → Gemini AI 生成連貫小說，可選風格（愛情/懸疑/療癒）和角色。Flutter + FastAPI + React 三端架構。</span><span class="en-only">Turns journal entries into novels. Users write diary posts → Gemini AI generates a coherent story with selectable genres (romance / mystery / healing) and characters. Flutter + FastAPI + React architecture.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">Flutter</span>
                     <span class="project-tag">FastAPI</span>
@@ -642,12 +647,12 @@
 
             <div class="project-card">
                 <div class="project-icon">✂️</div>
-                <h3 class="project-title">Task Shredder</h3>
-                <p class="project-desc">AI 任務斷捨離。Brain Dump 模糊目標 → AI 生成澄清問題 → 結構化任務輸出。React Native + Next.js API。</p>
+                <h3 class="project-title"><span class="zh-only">Task Shredder</span><span class="en-only">Task Shredder</span></h3>
+                <p class="project-desc"><span class="zh-only">AI 任務斷捨離。Brain Dump 模糊目標 → AI 生成澄清問題 → 結構化任務輸出。React Native + Next.js API。</span><span class="en-only">AI-powered task decluttering. Brain-dump vague goals → AI asks clarifying questions → outputs structured tasks. React Native + Next.js API.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React Native</span>
                     <span class="project-tag">Expo</span>
-                    <span class="project-tag">AI 任務分解</span>
+                    <span class="project-tag"><span class="zh-only">AI 任務分解</span><span class="en-only">AI Task Decomposition</span></span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/weiwei0607/task-shredder" class="project-link" target="_blank">🔗 GitHub →</a>
@@ -656,10 +661,10 @@
             </div>
 
             <div class="project-card">
-                <div class="project-highlight">新</div>
+                <div class="project-highlight"><span class="zh-only">新</span><span class="en-only">New</span></div>
                 <div class="project-icon">💬</div>
-                <h3 class="project-title">戀愛對話分析師</h3>
-                <p class="project-desc">貼上對話截圖 → AI 計算「敷衍指數」、識別紅旗行為、找出逃避模式、給出可操作建議。Gemini JSON mode 確保輸出結構。</p>
+                <h3 class="project-title"><span class="zh-only">戀愛對話分析師</span><span class="en-only">Relationship Chat Analyst</span></h3>
+                <p class="project-desc"><span class="zh-only">貼上對話截圖 → AI 計算「敷衍指數」、識別紅旗行為、找出逃避模式、給出可操作建議。Gemini JSON mode 確保輸出結構。</span><span class="en-only">Paste a chat screenshot → AI calculates a "blow-off score," flags red flags, spots avoidance patterns, and gives actionable advice. Gemini JSON mode guarantees structured output.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
                     <span class="project-tag">TypeScript</span>
@@ -673,10 +678,10 @@
             </div>
 
             <div class="project-card">
-                <div class="project-highlight">🟢 已上線</div>
+                <div class="project-highlight"><span class="zh-only">🟢 已上線</span><span class="en-only">🟢 Live</span></div>
                 <div class="project-icon">🎭</div>
-                <h3 class="project-title">互動推理小說《霧中真相》</h3>
-                <p class="project-desc">設定角色與場景，Gemini 實時生成互動式推理劇情。每段提供多選支線讓玩家主導敘事，水墨風開場動畫，PWA 可加入主畫面。玩家自帶 API key（前端零金鑰外洩）。</p>
+                <h3 class="project-title"><span class="zh-only">互動推理小說《霧中真相》</span><span class="en-only">Interactive Mystery Novel: Truth in the Mist</span></h3>
+                <p class="project-desc"><span class="zh-only">設定角色與場景，Gemini 實時生成互動式推理劇情。每段提供多選支線讓玩家主導敘事，水墨風開場動畫，PWA 可加入主畫面。玩家自帶 API key（前端零金鑰外洩）。</span><span class="en-only">Set characters and scenes; Gemini generates interactive mystery plots in real time. Each segment offers branching choices so players drive the story. Ink-wash intro animation, PWA installable, and BYO API key for zero frontend key exposure.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
                     <span class="project-tag">TypeScript</span>
@@ -690,18 +695,18 @@
             </div>
         </div>
 
-        <h3 class="category-title">🛠️ 生活工具 / Utility</h3>
+        <h3 class="category-title"><span class="zh-only">🛠️ 生活工具 / Utility</span><span class="en-only">🛠️ Life Utilities</span></h3>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-highlight">🟢 已上線</div>
+                <div class="project-highlight"><span class="zh-only">🟢 已上線</span><span class="en-only">🟢 Live</span></div>
                 <div class="project-icon">🗺️</div>
-                <h3 class="project-title">FairMeet 最公平的相聚地</h3>
-                <p class="project-desc">幫一群人找出最公平的「目的地」。等時圈 × 相聚的設計理念，結果只到行政區層級、不洩漏個人出發位置（隱私優先）。後端 proxy 加 CORS 白名單與配額保護，前端零金鑰。</p>
+                <h3 class="project-title"><span class="zh-only">FairMeet 最公平的相聚地</span><span class="en-only">FairMeet — The Fairest Meetup Spot</span></h3>
+                <p class="project-desc"><span class="zh-only">幫一群人找出最公平的「目的地」。等時圈 × 相聚的設計理念，結果只到行政區層級、不洩漏個人出發位置（隱私優先）。後端 proxy 加 CORS 白名單與配額保護，前端零金鑰。</span><span class="en-only">Finds the fairest destination for a group. Built on isochrones × meetup design philosophy; results stop at district level to protect starting locations (privacy-first). Backend proxy with CORS allowlist and quota protection; no keys exposed on the frontend.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
                     <span class="project-tag">Serverless</span>
                     <span class="project-tag">Google Maps</span>
-                    <span class="project-tag">隱私設計</span>
+                    <span class="project-tag"><span class="zh-only">隱私設計</span><span class="en-only">Privacy by Design</span></span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/weiwei0607/fairmeet" class="project-link" target="_blank">🔗 GitHub →</a>
@@ -710,10 +715,10 @@
             </div>
 
             <div class="project-card">
-                <div class="project-highlight">🟢 已上線</div>
+                <div class="project-highlight"><span class="zh-only">🟢 已上線</span><span class="en-only">🟢 Live</span></div>
                 <div class="project-icon">🍽️</div>
-                <h3 class="project-title">我的美食地圖</h3>
-                <p class="project-desc">記錄每道菜在每間店的愛與恨，下次不再踩雷。Google Maps 探索附近餐廳、隨機選餐、Firebase 帳號登入後各自雲端同步（每人資料隔離）。</p>
+                <h3 class="project-title"><span class="zh-only">我的美食地圖</span><span class="en-only">My Food Map</span></h3>
+                <p class="project-desc"><span class="zh-only">記錄每道菜在每間店的愛與恨，下次不再踩雷。Google Maps 探索附近餐廳、隨機選餐、Firebase 帳號登入後各自雲端同步（每人資料隔離）。</span><span class="en-only">Track what you loved or hated at every restaurant so you never order wrong again. Explore nearby spots on Google Maps, get a random pick, and sync per-user data to the cloud after Firebase login (data isolation enforced).</span></p>
                 <div class="project-tags">
                     <span class="project-tag">Vanilla JS</span>
                     <span class="project-tag">Firebase Auth</span>
@@ -727,12 +732,12 @@
             </div>
         </div>
 
-        <h3 class="category-title">📚 教育科技</h3>
+        <h3 class="category-title"><span class="zh-only">📚 教育科技</span><span class="en-only">📚 EdTech</span></h3>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-icon">📚</div>
-                <h3 class="project-title">Tutoring Bot</h3>
-                <p class="project-desc">B2B 教育 SaaS。學生用 LINE 回報成績 → 老師在 Web Dashboard 看成績折線圖 → 機構管理者看全盤數據。FastAPI + Chart.js + LINE Bot。</p>
+                <h3 class="project-title"><span class="zh-only">Tutoring Bot</span><span class="en-only">Tutoring Bot</span></h3>
+                <p class="project-desc"><span class="zh-only">B2B 教育 SaaS。學生用 LINE 回報成績 → 老師在 Web Dashboard 看成績折線圖 → 機構管理者看全盤數據。FastAPI + Chart.js + LINE Bot。</span><span class="en-only">B2B EdTech SaaS. Students report scores via LINE → teachers view trend charts on a web dashboard → admins see the full picture. FastAPI + Chart.js + LINE Bot.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">FastAPI</span>
                     <span class="project-tag">LINE Bot</span>
@@ -746,12 +751,12 @@
 
             <div class="project-card">
                 <div class="project-icon">🌉</div>
-                <h3 class="project-title">History Bridge</h3>
-                <p class="project-desc">歷史人物六度分隔。輸入兩位歷史人物，用 BFS 演算法找出最短路徑。附帶限時答題和猜猜我是誰遊戲模式。</p>
+                <h3 class="project-title"><span class="zh-only">History Bridge</span><span class="en-only">History Bridge</span></h3>
+                <p class="project-desc"><span class="zh-only">歷史人物六度分隔。輸入兩位歷史人物，用 BFS 演算法找出最短路徑。附帶限時答題和猜猜我是誰遊戲模式。</span><span class="en-only">Six degrees of separation for historical figures. Enter two people and a BFS algorithm finds the shortest link. Includes timed quizzes and a "guess who" game mode.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
-                    <span class="project-tag">BFS 演算法</span>
-                    <span class="project-tag">教育遊戲</span>
+                    <span class="project-tag"><span class="zh-only">BFS 演算法</span><span class="en-only">BFS Algorithm</span></span>
+                    <span class="project-tag"><span class="zh-only">教育遊戲</span><span class="en-only">Educational Games</span></span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/weiwei0607/history-bridge" class="project-link" target="_blank">🔗 GitHub →</a>
@@ -760,13 +765,13 @@
             </div>
         </div>
 
-        <h3 class="category-title">🎮 遊戲化 / Gamification</h3>
+        <h3 class="category-title"><span class="zh-only">🎮 遊戲化 / Gamification</span><span class="en-only">🎮 Gamification</span></h3>
         <div class="projects-grid">
             <div class="project-card">
-                <div class="project-highlight">🟢 已上線</div>
+                <div class="project-highlight"><span class="zh-only">🟢 已上線</span><span class="en-only">🟢 Live</span></div>
                 <div class="project-icon">⚔️</div>
-                <h3 class="project-title">B-Battle 意志力記帳遊戲</h3>
-                <p class="project-desc">把記帳變成 RPG。三層預算池 HP 視覺化、人格系統（好友/導師/宿敵）、Gemini AI 即時戰場評論、成就與裝備系統。羅馬大理石風格＋多人雲端同步。</p>
+                <h3 class="project-title"><span class="zh-only">B-Battle 意志力記帳遊戲</span><span class="en-only">B-Battle — Willpower Budget RPG</span></h3>
+                <p class="project-desc"><span class="zh-only">把記帳變成 RPG。三層預算池 HP 視覺化、人格系統（好友/導師/宿敵）、Gemini AI 即時戰場評論、成就與裝備系統。羅馬大理石風格＋多人雲端同步。</span><span class="en-only">Turns budgeting into an RPG. Three-tier budget HP visualization, personality system (friend / mentor / rival), live Gemini AI battle commentary, plus achievements and gear. Roman marble aesthetic with multiplayer cloud sync.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
                     <span class="project-tag">Firebase</span>
@@ -781,12 +786,12 @@
 
             <div class="project-card">
                 <div class="project-icon">💰</div>
-                <h3 class="project-title">Budget Battle</h3>
-                <p class="project-desc">B-Battle 的 Flutter 跨平台版本。意志力系統、冷靜模式、願望清單、AI 隊友對話。和 React 版資料互通。</p>
+                <h3 class="project-title"><span class="zh-only">Budget Battle</span><span class="en-only">Budget Battle</span></h3>
+                <p class="project-desc"><span class="zh-only">B-Battle 的 Flutter 跨平台版本。意志力系統、冷靜模式、願望清單、AI 隊友對話。和 React 版資料互通。</span><span class="en-only">The cross-platform Flutter version of B-Battle. Willpower system, cooldown mode, wishlist, and AI teammate chat. Data syncs with the React version.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">Flutter</span>
                     <span class="project-tag">Gemini</span>
-                    <span class="project-tag">跨平台</span>
+                    <span class="project-tag"><span class="zh-only">跨平台</span><span class="en-only">Cross-Platform</span></span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/weiwei0607" class="project-link" target="_blank">🔗 GitHub →</a>
@@ -794,15 +799,15 @@
             </div>
 
             <div class="project-card">
-                <div class="project-highlight">🟢 已上線</div>
+                <div class="project-highlight"><span class="zh-only">🟢 已上線</span><span class="en-only">🟢 Live</span></div>
                 <div class="project-icon">🔄</div>
-                <h3 class="project-title">Break the Loop 生活破圈器</h3>
-                <p class="project-desc">微習慣挑戰。每天抽一個「身體覺察」小任務，用 2 分鐘打破無意識的行為循環。「呼吸」設計理念：暖奶油＋鼠尾草的平靜介面，去除催促感的 gamification。</p>
+                <h3 class="project-title"><span class="zh-only">Break the Loop 生活破圈器</span><span class="en-only">Break the Loop</span></h3>
+                <p class="project-desc"><span class="zh-only">微習慣挑戰。每天抽一個「身體覺察」小任務，用 2 分鐘打破無意識的行為循環。「呼吸」設計理念：暖奶油＋鼠尾草的平靜介面，去除催促感的 gamification。</span><span class="en-only">Micro-habit challenges. Draw one daily "body-awareness" mini-task and spend two minutes breaking unconscious behavior loops. "Breathe" design philosophy: warm cream + sage palette for a calm, non-urgent gamification experience.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
                     <span class="project-tag">Vite</span>
                     <span class="project-tag">PWA</span>
-                    <span class="project-tag">正念設計</span>
+                    <span class="project-tag"><span class="zh-only">正念設計</span><span class="en-only">Mindful Design</span></span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/weiwei0607/break-the-loop-web" class="project-link" target="_blank">🔗 GitHub →</a>
@@ -811,17 +816,17 @@
             </div>
         </div>
 
-        <h3 class="category-title">🛠️ 生產力工具</h3>
+        <h3 class="category-title"><span class="zh-only">🛠️ 生產力工具</span><span class="en-only">🛠️ Productivity Tools</span></h3>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-icon">🛡️</div>
-                <h3 class="project-title">職場生存工具</h3>
-                <p class="project-desc">上班摸魚不被發現的 PWA 工具箱。AI 加密聊天（6 主題）、變臉 UI（Excel/Outlook/Terminal 偽裝）、下班結界、假通知。</p>
+                <h3 class="project-title"><span class="zh-only">職場生存工具</span><span class="en-only">Office Survival Toolkit</span></h3>
+                <p class="project-desc"><span class="zh-only">上班摸魚不被發現的 PWA 工具箱。AI 加密聊天（6 主題）、變臉 UI（Excel/Outlook/Terminal 偽裝）、下班結界、假通知。</span><span class="en-only">A PWA toolkit for discreet office downtime. AI encrypted chat with 6 themes, disguise UI (Excel / Outlook / Terminal), end-of-day boundary, and fake notifications.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">PWA</span>
                     <span class="project-tag">Firebase</span>
                     <span class="project-tag">LLM</span>
-                    <span class="project-tag">掃碼加好友</span>
+                    <span class="project-tag"><span class="zh-only">掃碼加好友</span><span class="en-only">QR Friend Connect</span></span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/weiwei0607/office-survival" class="project-link" target="_blank">🔗 GitHub →</a>
@@ -831,11 +836,11 @@
 
             <div class="project-card">
                 <div class="project-icon">🗑️</div>
-                <h3 class="project-title">Declutter Challenge</h3>
-                <p class="project-desc">30 天斷捨離挑戰。每天丟一件，結構化引導 + 進度追蹤 + 分類系統（保留/丟棄/捐贈/猶豫）。</p>
+                <h3 class="project-title"><span class="zh-only">Declutter Challenge</span><span class="en-only">Declutter Challenge</span></h3>
+                <p class="project-desc"><span class="zh-only">30 天斷捨離挑戰。每天丟一件，結構化引導 + 進度追蹤 + 分類系統（保留/丟棄/捐贈/猶豫）。</span><span class="en-only">A 30-day decluttering challenge. One item per day with structured guidance, progress tracking, and sorting buckets (keep / discard / donate / maybe).</span></p>
                 <div class="project-tags">
                     <span class="project-tag">Flutter</span>
-                    <span class="project-tag">API 設計</span>
+                    <span class="project-tag"><span class="zh-only">API 設計</span><span class="en-only">API Design</span></span>
                     <span class="project-tag">Zod</span>
                 </div>
                 <div class="project-links">
@@ -844,12 +849,12 @@
             </div>
         </div>
 
-        <h3 class="category-title">⚙️ 自動化</h3>
+        <h3 class="category-title"><span class="zh-only">⚙️ 自動化</span><span class="en-only">⚙️ Automation</span></h3>
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-icon">⏰</div>
-                <h3 class="project-title">WeiWei Reminders</h3>
-                <p class="project-desc">自動化生活助手。Gmail 消費通知自動解析記帳、Google Sheets 預算自動更新、Telegram 週報推送。</p>
+                <h3 class="project-title"><span class="zh-only">WeiWei Reminders</span><span class="en-only">WeiWei Reminders</span></h3>
+                <p class="project-desc"><span class="zh-only">自動化生活助手。Gmail 消費通知自動解析記帳、Google Sheets 預算自動更新、Telegram 週報推送。</span><span class="en-only">A personal automation assistant. Parses Gmail purchase receipts for bookkeeping, auto-updates a Google Sheets budget, and pushes weekly Telegram reports.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">Python</span>
                     <span class="project-tag">Gmail API</span>
@@ -864,10 +869,10 @@
 
     <section id="contact">
         <div class="section-header">
-            <span class="section-tag">聯繫</span>
-            <h2 class="section-title">讓我們聊聊 AI 產品</h2>
+            <span class="section-tag"><span class="zh-only">聯繫</span><span class="en-only">Contact</span></span>
+            <h2 class="section-title"><span class="zh-only">讓我們聊聊 AI 產品</span><span class="en-only">Let's talk AI products</span></h2>
             <p class="section-desc">
-                正在尋找 AI 產品經理的機會，歡迎聯繫！
+                <span class="zh-only">正在尋找 AI 產品經理的機會，歡迎聯繫！</span><span class="en-only">I'm open to AI Product Manager roles — let's connect!</span>
             </p>
         </div>
         <div style="text-align: center;">
@@ -883,13 +888,27 @@
 
     <footer>
         <div class="footer-links">
-            <a href="#about">關於我</a>
-            <a href="#skills">技能</a>
-            <a href="#projects">作品</a>
-            <a href="#contact">聯繫</a>
+            <a href="#about"><span class="zh-only">關於我</span><span class="en-only">About</span></a>
+            <a href="#skills"><span class="zh-only">技能</span><span class="en-only">Skills</span></a>
+            <a href="#projects"><span class="zh-only">作品</span><span class="en-only">Projects</span></a>
+            <a href="#contact"><span class="zh-only">聯繫</span><span class="en-only">Contact</span></a>
         </div>
-        <p class="footer-copy">© 2026 馬韡寧 WeiWei Ma. Built with curiosity and code.</p>
+        <p class="footer-copy"><span class="zh-only">© 2026 馬韡寧 WeiWei Ma. Built with curiosity and code.</span><span class="en-only">© 2026 WeiWei Ma. Built with curiosity and code.</span></p>
     </footer>
 
+    <script>
+        document.getElementById('lang-toggle').addEventListener('click', function() {
+            const html = document.documentElement;
+            if (html.getAttribute('lang') === 'zh-TW') {
+                html.setAttribute('lang', 'en');
+                this.textContent = '中';
+                document.title = 'WeiWei Ma — AI Product Manager Portfolio';
+            } else {
+                html.setAttribute('lang', 'zh-TW');
+                this.textContent = 'EN';
+                document.title = '馬韡寧 WeiWei Ma — AI 產品經理作品集';
+            }
+        });
+    </script>
 </body>
 </html>
