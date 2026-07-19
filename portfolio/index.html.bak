@@ -3,59 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WeiWei Ma — AI Product Manager with biomedical engineering background. Building 16+ AI products across healthcare, productivity, and education.">
-    <meta property="og:title" content="WeiWei Ma — AI Product Manager Portfolio">
-    <meta property="og:description" content="AI Product Manager with biomedical engineering background. 16+ shipped products. Healthcare AI specialist.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://weiwei0607.github.io/portfolio/">
-    <meta property="og:image" content="https://weiwei0607.github.io/portfolio/hero-illustration.svg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="WeiWei Ma — AI Product Manager Portfolio">
-    <meta name="twitter:description" content="AI Product Manager with biomedical engineering background. 16+ shipped products.">
-    <link rel="canonical" href="https://weiwei0607.github.io/portfolio/">
-    <title>WeiWei Ma — Healthcare AI Product Manager Portfolio</title>
+    <title>馬韡寧 WeiWei Ma — AI 產品經理作品集</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0d9488;
-            --primary-dark: #0f766e;
-            --primary-light: #ccfbf1;
-            --secondary: #1e293b;
-            --accent: #0ea5e9;
-            --bg: #ffffff;
-            --bg-subtle: #f8fafc;
-            --bg-card: #ffffff;
-            --bg-hover: #f1f5f9;
-            --text: #0f172a;
-            --text-secondary: #475569;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --border-strong: #cbd5e1;
-            --success: #10b981;
-            --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
-            --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
-            --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
-            --radius: 12px;
-            --radius-sm: 8px;
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #8b5cf6;
+            --accent: #ec4899;
+            --bg: #0a0a0f;
+            --bg-card: #13131f;
+            --bg-hover: #1a1a2e;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+            --success: #22c55e;
+            --warning: #f59e0b;
+            --gradient-1: linear-gradient(135deg, #6366f1, #8b5cf6);
+            --gradient-2: linear-gradient(135deg, #ec4899, #f59e0b);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        html { scroll-behavior: smooth; }
-
         body {
-            font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Noto Sans TC', -apple-system, sans-serif;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.65;
+            line-height: 1.7;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
 
-        ::selection { background: var(--primary-light); color: var(--primary-dark); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary); }
 
         nav {
             position: fixed;
@@ -65,16 +47,17 @@
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(16px);
+            background: rgba(10,10,15,0.8);
+            backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
         }
 
         .nav-logo {
-            font-weight: 800;
-            font-size: 1.15rem;
-            color: var(--secondary);
-            letter-spacing: -0.02em;
+            font-weight: 900;
+            font-size: 1.2rem;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .nav-links {
@@ -85,251 +68,220 @@
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: color 0.3s;
         }
 
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover { color: var(--text); }
 
-        .lang-toggle {
-            display: inline-flex;
-            border: 1px solid var(--border-strong);
-            border-radius: var(--radius-sm);
-            background: var(--bg-subtle);
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
             overflow: hidden;
         }
 
-        .lang-toggle button {
-            border: none;
-            background: transparent;
-            color: var(--text-muted);
-            padding: 0.35rem 0.75rem;
-            font-size: 0.8rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-            font-family: inherit;
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(99,102,241,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 20%, rgba(236,72,153,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(139,92,246,0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
         }
 
-        .lang-toggle button.active {
-            background: var(--bg-card);
-            color: var(--primary);
-            box-shadow: var(--shadow-sm);
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
         }
 
-        .lang-toggle button:hover:not(.active) { color: var(--text); }
-
-        .hero {
-            padding: 8rem 2rem 4rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 3rem;
-            align-items: start;
-        }
-
-        .hero-main {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
         }
 
         .hero-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.45rem 1rem;
-            background: var(--primary-light);
-            border: 1px solid rgba(13, 148, 136, 0.15);
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 50px;
             font-size: 0.85rem;
-            color: var(--primary-dark);
-            font-weight: 600;
-            width: fit-content;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
         }
 
         .hero-badge .dot {
-            width: 7px; height: 7px;
+            width: 8px; height: 8px;
             background: var(--success);
             border-radius: 50%;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.15;
-            letter-spacing: -0.03em;
-            color: var(--secondary);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
         }
 
-        .hero h1 .accent {
-            color: var(--primary);
+        .hero h1 .gradient {
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-desc {
             font-size: 1.1rem;
-            color: var(--text-secondary);
-            max-width: 560px;
-            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-stat { text-align: center; }
+
+        .hero-stat-value {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
         }
 
         .hero-cta {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
-            margin-top: 0.5rem;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.8rem 1.6rem;
-            border-radius: var(--radius-sm);
+            padding: 0.9rem 2rem;
+            border-radius: 12px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             text-decoration: none;
-            transition: all 0.2s;
+            transition: all 0.3s;
             cursor: pointer;
-            border: 1px solid transparent;
+            border: none;
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: var(--gradient-1);
             color: white;
-            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+            box-shadow: 0 4px 20px rgba(99,102,241,0.3);
         }
 
         .btn-primary:hover {
-            background: var(--primary-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 16px rgba(13, 148, 136, 0.25);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99,102,241,0.4);
         }
 
         .btn-secondary {
             background: var(--bg-card);
-            color: var(--text-secondary);
-            border-color: var(--border-strong);
+            color: var(--text);
+            border: 1px solid var(--border);
         }
 
         .btn-secondary:hover {
+            background: var(--bg-hover);
             border-color: var(--primary);
-            color: var(--primary);
-            background: var(--bg-subtle);
-        }
-
-        .hero-cards {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        .hero-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            box-shadow: var(--shadow);
-            transition: all 0.2s;
-        }
-
-        .hero-card:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--border-strong);
-        }
-
-        .hero-card-value {
-            font-size: 2rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-            margin-bottom: 0.4rem;
-        }
-
-        .hero-card-label {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--secondary);
-            margin-bottom: 0.3rem;
-        }
-
-        .hero-card-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            line-height: 1.5;
         }
 
         section {
-            padding: 5rem 2rem;
+            padding: 6rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-header {
-            margin-bottom: 3rem;
+            text-align: center;
+            margin-bottom: 4rem;
         }
 
         .section-tag {
             display: inline-block;
-            padding: 0.3rem 0.9rem;
-            background: var(--primary-light);
+            padding: 0.3rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
             border-radius: 50px;
-            font-size: 0.75rem;
-            color: var(--primary-dark);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
         }
 
         .section-title {
-            font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
             font-weight: 800;
-            margin-bottom: 0.75rem;
-            color: var(--secondary);
-            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
         }
 
         .section-desc {
-            color: var(--text-secondary);
-            max-width: 620px;
-            line-height: 1.7;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.7rem;
+            justify-content: center;
+            gap: 0.8rem;
+            margin-top: 2rem;
         }
 
         .skill-tag {
             padding: 0.5rem 1rem;
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: 50px;
+            border-radius: 8px;
             font-size: 0.85rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-            transition: all 0.2s;
+            color: var(--text-muted);
+            transition: all 0.3s;
         }
 
         .skill-tag:hover {
             border-color: var(--primary);
-            color: var(--primary);
-            background: var(--bg-subtle);
+            color: var(--text);
+            transform: translateY(-2px);
         }
 
-        .skill-tag.ai { background: var(--primary-light); color: var(--primary-dark); border-color: rgba(13, 148, 136, 0.15); }
-        .skill-tag.product { background: #eff6ff; color: #1e40af; border-color: rgba(59, 130, 246, 0.15); }
-        .skill-tag.tech { background: #f0fdf4; color: #166534; border-color: rgba(34, 197, 94, 0.15); }
+        .skill-tag.ai { border-color: rgba(99,102,241,0.3); color: #818cf8; }
+        .skill-tag.product { border-color: rgba(34,197,94,0.3); color: #4ade80; }
+        .skill-tag.tech { border-color: rgba(245,158,11,0.3); color: #fbbf24; }
 
         .projects-grid {
             display: grid;
@@ -340,45 +292,47 @@
         .project-card {
             background: var(--bg-card);
             border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.6rem;
-            transition: all 0.2s;
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: all 0.3s;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: var(--shadow);
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: var(--gradient-1);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
         .project-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--border-strong);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 40px rgba(99,102,241,0.1);
         }
 
+        .project-card:hover::before { opacity: 1; }
+
         .project-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: var(--radius-sm);
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            object-fit: cover;
-            display: block;
-            flex-shrink: 0;
         }
 
         .project-title {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            color: var(--secondary);
         }
 
         .project-desc {
             font-size: 0.9rem;
-            color: var(--text-secondary);
+            color: var(--text-muted);
             margin-bottom: 1rem;
             line-height: 1.6;
-            flex-grow: 1;
         }
 
         .project-tags {
@@ -390,37 +344,35 @@
 
         .project-tag {
             padding: 0.2rem 0.6rem;
-            background: var(--bg-subtle);
+            background: rgba(99,102,241,0.1);
             border-radius: 4px;
             font-size: 0.75rem;
-            color: var(--text-muted);
-            font-weight: 500;
+            color: #818cf8;
         }
 
         .project-links {
             display: flex;
-            gap: 1rem;
+            gap: 0.8rem;
         }
 
         .project-link {
             font-size: 0.85rem;
-            color: var(--primary);
+            color: var(--text-muted);
             text-decoration: none;
-            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 0.25rem;
-            transition: color 0.2s;
+            gap: 0.3rem;
+            transition: color 0.3s;
         }
 
-        .project-link:hover { color: var(--primary-dark); }
+        .project-link:hover { color: var(--primary); }
 
         .project-highlight {
             position: absolute;
             top: 1rem;
             right: 1rem;
             padding: 0.2rem 0.6rem;
-            background: var(--primary);
+            background: var(--gradient-2);
             border-radius: 4px;
             font-size: 0.7rem;
             font-weight: 700;
@@ -428,25 +380,22 @@
         }
 
         .category-title {
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin: 2.5rem 0 1.25rem;
-            padding-left: 0.75rem;
+            margin: 3rem 0 1.5rem;
+            padding-left: 1rem;
             border-left: 3px solid var(--primary);
-            color: var(--secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.03em;
         }
 
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
-            align-items: start;
+            align-items: center;
         }
 
         .about-text p {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             margin-bottom: 1rem;
         }
 
@@ -460,104 +409,61 @@
             display: flex;
             align-items: flex-start;
             gap: 1rem;
-            padding: 1.1rem;
+            padding: 1rem;
             background: var(--bg-card);
-            border-radius: var(--radius);
+            border-radius: 12px;
             border: 1px solid var(--border);
-            box-shadow: var(--shadow);
         }
 
         .about-item-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: var(--radius-sm);
-            background: var(--primary-light);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
+            font-size: 1.5rem;
             flex-shrink: 0;
-            font-size: 0.85rem;
         }
 
         .about-item-title {
             font-weight: 700;
             margin-bottom: 0.2rem;
-            color: var(--secondary);
         }
 
         .about-item-desc {
             font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
+            color: var(--text-muted);
         }
-
-        #contact {
-            background: var(--bg-subtle);
-            border-radius: var(--radius);
-            margin: 3rem auto;
-            padding: 4rem 2rem;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-            flex-wrap: wrap;
-        }
-
-        .contact-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        .contact-links a:hover { color: var(--primary); }
 
         footer {
             text-align: center;
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             border-top: 1px solid var(--border);
-            background: var(--bg);
         }
 
         .footer-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
         .footer-links a {
             color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            transition: color 0.2s;
+            font-size: 0.9rem;
+            transition: color 0.3s;
         }
 
         .footer-links a:hover { color: var(--primary); }
 
         .footer-copy {
             color: var(--text-muted);
-            font-size: 0.8rem;
-        }
-
-        @media (max-width: 900px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .hero-cards { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-            .about-grid { grid-template-columns: 1fr; }
+            font-size: 0.85rem;
         }
 
         @media (max-width: 768px) {
-            .nav-links li:not(:last-child) { display: none; }
-            .hero { padding-top: 6rem; }
+            .nav-links { display: none; }
+            .hero-stats { gap: 1.5rem; }
+            .hero-stat-value { font-size: 1.8rem; }
+            .about-grid { grid-template-columns: 1fr; }
             .projects-grid { grid-template-columns: 1fr; }
-            section { padding: 3.5rem 1.5rem; }
+            section { padding: 4rem 1.5rem; }
         }
 
         html[lang="zh-TW"] .en-only { display: none !important; }
@@ -573,52 +479,43 @@
             <li><a href="#skills"><span class="zh-only">技能</span><span class="en-only">Skills</span></a></li>
             <li><a href="#projects"><span class="zh-only">作品</span><span class="en-only">Projects</span></a></li>
             <li><a href="#contact"><span class="zh-only">聯繫</span><span class="en-only">Contact</span></a></li>
-            <li>
-                <div class="lang-toggle">
-                    <button id="lang-en" class="active">EN</button>
-                    <button id="lang-zh">中</button>
-                </div>
-            </li>
+            <li><button id="lang-toggle" style="background:none; border:1px solid var(--border); color:var(--text); padding:0.2rem 0.6rem; border-radius:4px; cursor:pointer; font-family:inherit; font-size:0.85rem; margin-left:1rem; transition:color 0.3s;">中</button></li>
         </ul>
     </nav>
 
     <section class="hero">
-        <div class="hero-grid">
-            <div class="hero-main">
-                <div class="hero-badge">
-                    <span class="dot"></span>
-                    <span class="zh-only">正在尋找 AI 產品經理機會</span><span class="en-only">Open to remote Healthcare AI PM roles</span>
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="dot"></span>
+                <span class="zh-only">正在尋找 AI 產品經理機會</span><span class="en-only">Open to remote Healthcare AI PM roles</span>
+            </div>
+            <h1>
+                <span class="zh-only">馬韡寧 <span class="gradient">WeiWei Ma</span><br>AI 產品經理</span>
+                <span class="en-only">WeiWei Ma<br><span class="gradient">Healthcare AI Product Manager</span></span>
+            </h1>
+            <p class="hero-desc">
+                <span class="zh-only">從發現用戶痛點到設計 AI 解決方案，從寫 PRD 到動手寫 Code。<br>能橋接技術與商業，讓 AI 真正落地產生價值。</span>
+                <span class="en-only">Biomedical engineering foundation + GCP certification. I turn clinical problems into AI products — from user discovery to deployed MVP, often solo, often in days.<br>Bridging clinical research, product, and engineering to build health tech that works.</span>
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-value">16+</div>
+                    <div class="hero-stat-label">AI MVPs Shipped</div>
                 </div>
-                <h1>
-                    <span class="zh-only">馬韡寧 <span class="accent">WeiWei Ma</span><br>AI 產品經理</span>
-                    <span class="en-only">WeiWei Ma<br><span class="accent">Healthcare AI Product Manager</span></span>
-                </h1>
-                <p class="hero-desc">
-                    <span class="zh-only">從發現用戶痛點到設計 AI 解決方案，從寫 PRD 到動手寫 Code。能橋接技術與商業，讓 AI 真正落地產生價值。</span>
-                    <span class="en-only">Biomedical engineering foundation + GCP certification. I turn clinical problems into AI products — from user discovery to deployed MVP, often solo, often in days.</span>
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary"><span class="zh-only">查看作品集</span><span class="en-only">View Projects</span></a>
-                    <a href="Resume_WeiWei_Ma.pdf" download class="btn btn-secondary"><span class="zh-only">下載履歷</span><span class="en-only">Download Resume</span></a>
-                    <a href="mailto:vernessa0607@gmail.com" class="btn btn-secondary"><span class="zh-only">聯繫我</span><span class="en-only">Contact Me</span></a>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">5+</div>
+                    <div class="hero-stat-label"><span class="zh-only">AI 整合專案</span><span class="en-only">AI-integrated projects</span></div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-value">3</div>
+                    <div class="hero-stat-label"><span class="zh-only">跨平台經驗</span><span class="en-only">Cross-platform experience</span></div>
                 </div>
             </div>
-            <div class="hero-cards">
-                <div class="hero-card">
-                    <div class="hero-card-value">16+</div>
-                    <div class="hero-card-label"><span class="zh-only">AI MVPs 已上線</span><span class="en-only">AI MVPs Shipped</span></div>
-                    <div class="hero-card-desc"><span class="zh-only">從構想到部署，獨立或主導完成</span><span class="en-only">From idea to deployed, independently or leading</span></div>
-                </div>
-                <div class="hero-card">
-                    <div class="hero-card-value">5+</div>
-                    <div class="hero-card-label"><span class="zh-only">AI 整合專案</span><span class="en-only">AI-Integrated Projects</span></div>
-                    <div class="hero-card-desc"><span class="zh-only">OpenAI、Gemini、Claude 等多模型產品化</span><span class="en-only">Productized OpenAI, Gemini, Claude and more</span></div>
-                </div>
-                <div class="hero-card">
-                    <div class="hero-card-value">3</div>
-                    <div class="hero-card-label"><span class="zh-only">跨平台經驗</span><span class="en-only">Cross-Platform Experience</span></div>
-                    <div class="hero-card-desc"><span class="zh-only">Mobile、Web、Backend 全端實作背景</span><span class="en-only">Mobile, web, and backend hands-on background</span></div>
-                </div>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary"><span class="zh-only">查看作品集 →</span><span class="en-only">View Projects →</span></a>
+                <a href="Resume_WeiWei_Ma.pdf" download class="btn btn-secondary"><span class="zh-only">📄 下載履歷</span><span class="en-only">Download Resume</span></a>
+                <a href="mailto:vernessa0607@gmail.com" class="btn btn-secondary"><span class="zh-only">📧 聯繫我</span><span class="en-only">Contact Me</span></a>
             </div>
         </div>
     </section>
@@ -626,9 +523,9 @@
     <section id="about">
         <div class="section-header">
             <span class="section-tag"><span class="zh-only">關於我</span><span class="en-only">About</span></span>
-            <h2 class="section-title"><span class="zh-only">從臨床洞察到可落地產品</span><span class="en-only">From clinical insight to shipped product</span></h2>
+            <h2 class="section-title"><span class="zh-only">不只會想，還能動手做</span><span class="en-only">From clinical insight to shipped product</span></h2>
             <p class="section-desc">
-                <span class="zh-only">生醫工程背景，具備 AI 產品運營與數據驅動決策思維。從教育科技到心理健康，從 B2B SaaS 到 AI 原生應用，用產品解決真實問題。</span>
+                <span class="zh-only">生醫工程背景，具備 AI 產品運營與數據驅動決策思維。<br>從教育科技到心理健康，從 B2B SaaS 到 AI 原生應用，用產品解決真實問題。</span>
                 <span class="en-only">Biomedical engineering foundation, with GCP certification (ICH E6(R2)). I combine clinical research methodology with product discovery to identify real problems, define requirements, and deliver working AI solutions.</span>
             </p>
         </div>
@@ -641,33 +538,33 @@
                     <span class="zh-only">在炫圖 AI 實習期間，我定義北美市場短視頻內容策略，分析 TikTok/Instagram/YouTube 用戶行為模式，建立可量化的每日內容決策框架。</span><span class="en-only">At my current role, I drive international user acquisition through short-form video, producing ~20 TikToks and Instagram Reels monthly and maintaining tracking systems that consistently deliver 5,000+ weekly overseas downloads.</span>
                 </p>
                 <p>
-                    <span class="zh-only">私下開發了 16+ 個 Side Projects，從 Flutter 到 FastAPI 到 Next.js，技術棧橫跨 Mobile、Web、Backend。這讓我能和工程師用同一種語言溝通。</span><span class="en-only">I've independently shipped 16+ AI-integrated side projects across Flutter, FastAPI, Next.js, and React — often from zero to deployed MVP within days. That hands-on fluency lets me speak the same language as engineers.</span>
+                    <span class="zh-only">私下開發了 11 個 Side Projects，從 Flutter 到 FastAPI 到 Next.js，技術棧橫跨 Mobile、Web、Backend。這讓我能和工程師用同一種語言溝通。</span><span class="en-only">I've independently shipped 16+ AI-integrated side projects across Flutter, FastAPI, Next.js, and React — often from zero to deployed MVP within days. That hands-on fluency lets me speak the same language as engineers.</span>
                 </p>
             </div>
             <div class="about-highlights">
                 <div class="about-item">
-                    <div class="about-item-icon">PM</div>
+                    <div class="about-item-icon" style="color: var(--primary);">●</div>
                     <div>
                         <div class="about-item-title"><span class="zh-only">產品思維</span><span class="en-only">Product Thinking</span></div>
                         <div class="about-item-desc"><span class="zh-only">從用戶研究、競品分析到產品定位，完整產品生命周期經驗</span><span class="en-only">End-to-end product lifecycle experience: user research, competitive analysis, and positioning</span></div>
                     </div>
                 </div>
                 <div class="about-item">
-                    <div class="about-item-icon">AI</div>
+                    <div class="about-item-icon" style="color: var(--secondary);">●</div>
                     <div>
                         <div class="about-item-title"><span class="zh-only">AI 落地能力</span><span class="en-only">AI Execution</span></div>
                         <div class="about-item-desc"><span class="zh-only">整合 OpenAI、Gemini、Moonshot 等多 LLM，設計 Prompt 與 AI 交互流程</span><span class="en-only">Integrated OpenAI, Gemini, Moonshot, and other LLMs; designed prompts and AI interaction flows</span></div>
                     </div>
                 </div>
                 <div class="about-item">
-                    <div class="about-item-icon">FS</div>
+                    <div class="about-item-icon" style="color: var(--accent);">●</div>
                     <div>
                         <div class="about-item-title"><span class="zh-only">全端開發</span><span class="en-only">Full-Stack Building</span></div>
                         <div class="about-item-desc"><span class="zh-only">Flutter、React、React Native、FastAPI、Next.js 都能動手做</span><span class="en-only">Hands-on with Flutter, React, React Native, FastAPI, and Next.js</span></div>
                     </div>
                 </div>
                 <div class="about-item">
-                    <div class="about-item-icon">DT</div>
+                    <div class="about-item-icon" style="color: var(--success);">●</div>
                     <div>
                         <div class="about-item-title"><span class="zh-only">數據驅動</span><span class="en-only">Data-Driven</span></div>
                         <div class="about-item-desc"><span class="zh-only">設計數據儀表板、A/B 測試、用戶行為分析</span><span class="en-only">Built dashboards, ran A/B tests, and analyzed user behavior</span></div>
@@ -687,13 +584,15 @@
             <span class="skill-tag ai">Gemini</span>
             <span class="skill-tag ai">Claude</span>
             <span class="skill-tag ai">Prompt Engineering</span>
-            <span class="skill-tag ai"><span class="zh-only">LLM 整合</span><span class="en-only">LLM Integration</span></span>
+            <span class="skill-tag ai"><span class="zh-only">LLM 產品化</span><span class="en-only">LLM Productization</span></span>
             <span class="skill-tag product"><span class="zh-only">用戶研究</span><span class="en-only">User Research</span></span>
             <span class="skill-tag product"><span class="zh-only">競品分析</span><span class="en-only">Competitive Analysis</span></span>
             <span class="skill-tag product"><span class="zh-only">產品路線圖</span><span class="en-only">Product Roadmapping</span></span>
             <span class="skill-tag product"><span class="zh-only">數據分析</span><span class="en-only">Data Analytics</span></span>
             <span class="skill-tag product"><span class="zh-only">A/B Test</span><span class="en-only">A/B Testing</span></span>
+            <span class="skill-tag product">Clinical Research</span>
             <span class="skill-tag product">GCP ICH E6(R2)</span>
+            <span class="skill-tag product">Medical Terminology</span>
             <span class="skill-tag tech">Flutter</span>
             <span class="skill-tag tech">React</span>
             <span class="skill-tag tech">React Native</span>
@@ -701,24 +600,25 @@
             <span class="skill-tag tech">FastAPI</span>
             <span class="skill-tag tech">Firebase</span>
             <span class="skill-tag tech">Tailwind CSS</span>
+            <span class="skill-tag tech">Figma</span>
             <span class="skill-tag tech">Notion</span>
+            <span class="skill-tag tech">GitHub Actions</span>
         </div>
     </section>
 
     <section id="projects">
         <div class="section-header">
             <span class="section-tag"><span class="zh-only">作品集</span><span class="en-only">Projects</span></span>
-            <h2 class="section-title"><span class="zh-only">23 個從 0 到 1 的 Side Projects</span><span class="en-only">23 Side Projects, 0 to 1</span></h2>
+            <h2 class="section-title"><span class="zh-only">21 個從 0 到 1 的 Side Projects</span><span class="en-only">21 Side Projects, 0 → 1</span></h2>
             <p class="section-desc">
-                <span class="zh-only">每個專案都是從真實痛點出發，設計產品方案，動手實作，迭代優化。</span>
-                <span class="en-only">Every project starts from a real pain point: design the solution, build it, and iterate.</span>
+                <span class="zh-only">每個專案都是從真實痛點出發，設計產品方案，動手實作，迭代優化。</span><span class="en-only">Every project starts from a real pain point: design the solution, build it, and iterate.</span>
             </p>
         </div>
 
         <h3 class="category-title"><span class="zh-only">AI-Native Apps</span><span class="en-only">AI-Native Apps</span></h3>
         <div class="projects-grid">
             <div class="project-card">
-                <img class="project-icon" src="icons/negativity-absorber.svg" alt="Negativity Absorber">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">負能量吸收器</span><span class="en-only">Negativity Absorber</span></h3>
                 <p class="project-desc"><span class="zh-only">AI 情緒夥伴。三階段對話設計（情感驗證→認知重構→行動建議），支援 OpenAI/Moonshot/自訂 API，離線情緒檢測引擎。</span><span class="en-only">An AI emotional companion. Three-stage chat design (validation → cognitive reframing → actionable advice). Supports OpenAI, Moonshot, and custom APIs, with an offline emotion-detection engine.</span></p>
                 <div class="project-tags">
@@ -728,13 +628,13 @@
                     <span class="project-tag"><span class="zh-only">語音輸入</span><span class="en-only">Voice Input</span></span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/negativity-absorber-app" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://weiwei0607.github.io/negativity-absorber-app/" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/negativity-absorber-app" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://weiwei0607.github.io/negativity-absorber-app/" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <img class="project-icon" src="icons/memoir-novelist.svg" alt="Memoir Novelist">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">回憶小說家 Memoir Novelist</span><span class="en-only">Memoir Novelist</span></h3>
                 <p class="project-desc"><span class="zh-only">把日記變成小說。用戶寫日記 → Gemini AI 生成連貫小說，可選風格（愛情/懸疑/療癒）和角色。Flutter + FastAPI + React 三端架構。</span><span class="en-only">Turns journal entries into novels. Users write diary posts → Gemini AI generates a coherent story with selectable genres (romance / mystery / healing) and characters. Flutter + FastAPI + React architecture.</span></p>
                 <div class="project-tags">
@@ -744,13 +644,12 @@
                     <span class="project-tag">Gemini</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/memoir-novelist" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://memoir-novelist.web.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/memoir-novelist" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <img class="project-icon" src="icons/task-shredder.svg" alt="Task Shredder">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">Task Shredder</span><span class="en-only">Task Shredder</span></h3>
                 <p class="project-desc"><span class="zh-only">AI 任務斷捨離。Brain Dump 模糊目標 → AI 生成澄清問題 → 結構化任務輸出。React Native + Next.js API。</span><span class="en-only">AI-powered task decluttering. Brain-dump vague goals → AI asks clarifying questions → outputs structured tasks. React Native + Next.js API.</span></p>
                 <div class="project-tags">
@@ -759,14 +658,14 @@
                     <span class="project-tag"><span class="zh-only">AI 任務分解</span><span class="en-only">AI Task Decomposition</span></span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/task-shredder" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://task-shredder-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/task-shredder" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://task-shredder-weiwei.vercel.app" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">新</span><span class="en-only">New</span></div>
-                <img class="project-icon" src="icons/relationship-chat.svg" alt="Relationship Chat Analyst">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">戀愛對話分析師</span><span class="en-only">Relationship Chat Analyst</span></h3>
                 <p class="project-desc"><span class="zh-only">貼上對話截圖 → AI 計算「敷衍指數」、識別紅旗行為、找出逃避模式、給出可操作建議。Gemini JSON mode 確保輸出結構。</span><span class="en-only">Paste a chat screenshot → AI calculates a "blow-off score," flags red flags, spots avoidance patterns, and gives actionable advice. Gemini JSON mode guarantees structured output.</span></p>
                 <div class="project-tags">
@@ -776,15 +675,15 @@
                     <span class="project-tag">PWA</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/couple-chat-guard" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://weiwei0607.github.io/couple-chat-guard/" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/couple-chat-guard" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://weiwei0607.github.io/couple-chat-guard/" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
-                <img class="project-icon" src="icons/interactive-novel.svg" alt="Interactive Mystery Novel">
-                <h3 class="project-title"><span class="zh-only">互動推理小說《霧中真相》</span><span class="en-only">Interactive Mystery Novel</span></h3>
+                <div class="project-icon">●</div>
+                <h3 class="project-title"><span class="zh-only">互動推理小說《霧中真相》</span><span class="en-only">Interactive Mystery Novel: Truth in the Mist</span></h3>
                 <p class="project-desc"><span class="zh-only">設定角色與場景，Gemini 實時生成互動式推理劇情。每段提供多選支線讓玩家主導敘事，水墨風開場動畫，PWA 可加入主畫面。玩家自帶 API key（前端零金鑰外洩）。</span><span class="en-only">Set characters and scenes; Gemini generates interactive mystery plots in real time. Each segment offers branching choices so players drive the story. Ink-wash intro animation, PWA installable, and BYO API key for zero frontend key exposure.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
@@ -793,8 +692,8 @@
                     <span class="project-tag">PWA</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/interactive-novel-game" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://interactive-novel.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/interactive-novel-game" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://interactive-novel.vercel.app" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
         </div>
@@ -803,8 +702,8 @@
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
-                <img class="project-icon" src="icons/fairmeet.svg" alt="FairMeet">
-                <h3 class="project-title"><span class="zh-only">FairMeet 最公平的相聚地</span><span class="en-only">FairMeet</span></h3>
+                <div class="project-icon">●</div>
+                <h3 class="project-title"><span class="zh-only">FairMeet 最公平的相聚地</span><span class="en-only">FairMeet — The Fairest Meetup Spot</span></h3>
                 <p class="project-desc"><span class="zh-only">幫一群人找出最公平的「目的地」。等時圈 × 相聚的設計理念，結果只到行政區層級、不洩漏個人出發位置（隱私優先）。後端 proxy 加 CORS 白名單與配額保護，前端零金鑰。</span><span class="en-only">Finds the fairest destination for a group. Built on isochrones × meetup design philosophy; results stop at district level to protect starting locations (privacy-first). Backend proxy with CORS allowlist and quota protection; no keys exposed on the frontend.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
@@ -813,14 +712,14 @@
                     <span class="project-tag"><span class="zh-only">隱私設計</span><span class="en-only">Privacy by Design</span></span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/fairmeet" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://fairmeet-plum.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/fairmeet" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://fairmeet-plum.vercel.app" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
-                <img class="project-icon" src="icons/food-map.svg" alt="My Food Map">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">我的美食地圖</span><span class="en-only">My Food Map</span></h3>
                 <p class="project-desc"><span class="zh-only">記錄每道菜在每間店的愛與恨，下次不再踩雷。Google Maps 探索附近餐廳、隨機選餐、Firebase 帳號登入後各自雲端同步（每人資料隔離）。</span><span class="en-only">Track what you loved or hated at every restaurant so you never order wrong again. Explore nearby spots on Google Maps, get a random pick, and sync per-user data to the cloud after Firebase login (data isolation enforced).</span></p>
                 <div class="project-tags">
@@ -830,20 +729,8 @@
                     <span class="project-tag">Google Maps</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/food-map-app" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://food-map-app-nine.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img class="project-icon" src="icons/daily-dose.svg" alt="Daily Dose">
-                <h3 class="project-title"><span class="zh-only">Daily Dose 每日一劑</span><span class="en-only">Daily Dose</span></h3>
-                <p class="project-desc"><span class="zh-only">每天一劑好內容：名言、冷知識、笑話與靈感隨機發放，一鍵刷新。輕量單頁應用，開站即用。</span><span class="en-only">A daily dose of good content: quotes, trivia, jokes, and inspiration served at random with one-tap refresh. A lightweight single-page app, ready the moment it loads.</span></p>
-                <div class="project-tags">
-                    <span class="project-tag">React</span>
-                    <span class="project-tag"><span class="zh-only">API 整合</span><span class="en-only">API Integration</span></span>
-                </div>
-                <div class="project-links">
-                    <a href="https://daily-dose-virid.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/food-map-app" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://food-map-app-nine.vercel.app" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
         </div>
@@ -851,7 +738,7 @@
         <h3 class="category-title"><span class="zh-only">EdTech</span><span class="en-only">EdTech</span></h3>
         <div class="projects-grid">
             <div class="project-card">
-                <img class="project-icon" src="icons/tutoring-bot.svg" alt="Tutoring Bot">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">Tutoring Bot</span><span class="en-only">Tutoring Bot</span></h3>
                 <p class="project-desc"><span class="zh-only">B2B 教育 SaaS。學生用 LINE 回報成績 → 老師在 Web Dashboard 看成績折線圖 → 機構管理者看全盤數據。FastAPI + Chart.js + LINE Bot。</span><span class="en-only">B2B EdTech SaaS. Students report scores via LINE → teachers view trend charts on a web dashboard → admins see the full picture. FastAPI + Chart.js + LINE Bot.</span></p>
                 <div class="project-tags">
@@ -861,12 +748,12 @@
                     <span class="project-tag">SaaS</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/weiwei0607" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <img class="project-icon" src="icons/history-bridge.svg" alt="History Bridge">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">History Bridge</span><span class="en-only">History Bridge</span></h3>
                 <p class="project-desc"><span class="zh-only">歷史人物六度分隔。輸入兩位歷史人物，用 BFS 演算法找出最短路徑。附帶限時答題和猜猜我是誰遊戲模式。</span><span class="en-only">Six degrees of separation for historical figures. Enter two people and a BFS algorithm finds the shortest link. Includes timed quizzes and a "guess who" game mode.</span></p>
                 <div class="project-tags">
@@ -875,8 +762,8 @@
                     <span class="project-tag"><span class="zh-only">教育遊戲</span><span class="en-only">Educational Games</span></span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/history-bridge" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://history-bridge-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/history-bridge" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://history-bridge-weiwei.vercel.app" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
         </div>
@@ -885,8 +772,8 @@
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
-                <img class="project-icon" src="icons/b-battle.svg" alt="B-Battle">
-                <h3 class="project-title"><span class="zh-only">B-Battle 意志力記帳遊戲</span><span class="en-only">B-Battle</span></h3>
+                <div class="project-icon">●</div>
+                <h3 class="project-title"><span class="zh-only">B-Battle 意志力記帳遊戲</span><span class="en-only">B-Battle — Willpower Budget RPG</span></h3>
                 <p class="project-desc"><span class="zh-only">把記帳變成 RPG。三層預算池 HP 視覺化、人格系統（好友/導師/宿敵）、Gemini AI 即時戰場評論、成就與裝備系統。羅馬大理石風格＋多人雲端同步。</span><span class="en-only">Turns budgeting into an RPG. Three-tier budget HP visualization, personality system (friend / mentor / rival), live Gemini AI battle commentary, plus achievements and gear. Roman marble aesthetic with multiplayer cloud sync.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
@@ -895,13 +782,13 @@
                     <span class="project-tag">Gemini</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/b-battle" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://b-battle.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/b-battle" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://b-battle.vercel.app" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <img class="project-icon" src="icons/budget-battle.svg" alt="Budget Battle">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">Budget Battle</span><span class="en-only">Budget Battle</span></h3>
                 <p class="project-desc"><span class="zh-only">B-Battle 的 Flutter 跨平台版本。意志力系統、冷靜模式、願望清單、AI 隊友對話。和 React 版資料互通。</span><span class="en-only">The cross-platform Flutter version of B-Battle. Willpower system, cooldown mode, wishlist, and AI teammate chat. Data syncs with the React version.</span></p>
                 <div class="project-tags">
@@ -910,13 +797,13 @@
                     <span class="project-tag"><span class="zh-only">跨平台</span><span class="en-only">Cross-Platform</span></span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/weiwei0607" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
-                <img class="project-icon" src="icons/break-the-loop.svg" alt="Break the Loop">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">Break the Loop 生活破圈器</span><span class="en-only">Break the Loop</span></h3>
                 <p class="project-desc"><span class="zh-only">微習慣挑戰。每天抽一個「身體覺察」小任務，用 2 分鐘打破無意識的行為循環。「呼吸」設計理念：暖奶油＋鼠尾草的平靜介面，去除催促感的 gamification。</span><span class="en-only">Micro-habit challenges. Draw one daily "body-awareness" mini-task and spend two minutes breaking unconscious behavior loops. "Breathe" design philosophy: warm cream + sage palette for a calm, non-urgent gamification experience.</span></p>
                 <div class="project-tags">
@@ -926,22 +813,8 @@
                     <span class="project-tag"><span class="zh-only">正念設計</span><span class="en-only">Mindful Design</span></span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/break-the-loop-web" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://break-the-loop-web.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <img class="project-icon" src="icons/era-survival.svg" alt="Era Survival">
-                <h3 class="project-title"><span class="zh-only">時代大逃殺</span><span class="en-only">Era Survival</span></h3>
-                <p class="project-desc"><span class="zh-only">歷史生存文字 RPG。選一個時代、選一個陣營，在歷史洪流中活下去——第一彈：1900 年義和團之亂。離線可玩的靜態版本。</span><span class="en-only">A historical survival text RPG. Pick an era and a faction, then try to survive the tides of history — first episode: the Boxer Rebellion, 1900. Playable offline as a static build.</span></p>
-                <div class="project-tags">
-                    <span class="project-tag"><span class="zh-only">互動敘事</span><span class="en-only">Interactive Fiction</span></span>
-                    <span class="project-tag"><span class="zh-only">歷史考據</span><span class="en-only">Historical Research</span></span>
-                    <span class="project-tag">PWA</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/weiwei0607/era-survival" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://era-survival.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/break-the-loop-web" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://break-the-loop-web.vercel.app" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
         </div>
@@ -949,7 +822,7 @@
         <h3 class="category-title"><span class="zh-only">Productivity Tools</span><span class="en-only">Productivity Tools</span></h3>
         <div class="projects-grid">
             <div class="project-card">
-                <img class="project-icon" src="icons/office-survival.svg" alt="Office Survival Toolkit">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">職場生存工具</span><span class="en-only">Office Survival Toolkit</span></h3>
                 <p class="project-desc"><span class="zh-only">上班摸魚不被發現的 PWA 工具箱。AI 加密聊天（6 主題）、變臉 UI（Excel/Outlook/Terminal 偽裝）、下班結界、假通知。</span><span class="en-only">A PWA toolkit for discreet office downtime. AI encrypted chat with 6 themes, disguise UI (Excel / Outlook / Terminal), end-of-day boundary, and fake notifications.</span></p>
                 <div class="project-tags">
@@ -959,13 +832,13 @@
                     <span class="project-tag"><span class="zh-only">掃碼加好友</span><span class="en-only">QR Friend Connect</span></span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/office-survival" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://office-survival-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/office-survival" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://office-survival-weiwei.vercel.app" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <img class="project-icon" src="icons/declutter.svg" alt="Declutter Challenge">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">Declutter Challenge</span><span class="en-only">Declutter Challenge</span></h3>
                 <p class="project-desc"><span class="zh-only">30 天斷捨離挑戰。每天丟一件，結構化引導 + 進度追蹤 + 分類系統（保留/丟棄/捐贈/猶豫）。</span><span class="en-only">A 30-day decluttering challenge. One item per day with structured guidance, progress tracking, and sorting buckets (keep / discard / donate / maybe).</span></p>
                 <div class="project-tags">
@@ -974,8 +847,7 @@
                     <span class="project-tag">Zod</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/space-clear" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://space-clear.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/space-clear" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
         </div>
@@ -983,7 +855,7 @@
         <h3 class="category-title"><span class="zh-only">Automation</span><span class="en-only">Automation</span></h3>
         <div class="projects-grid">
             <div class="project-card">
-                <img class="project-icon" src="icons/weiwei-reminders.svg" alt="WeiWei Reminders">
+                <div class="project-icon">●</div>
                 <h3 class="project-title"><span class="zh-only">WeiWei Reminders</span><span class="en-only">WeiWei Reminders</span></h3>
                 <p class="project-desc"><span class="zh-only">自動化生活助手。Gmail 消費通知自動解析記帳、Google Sheets 預算自動更新、Telegram 週報推送。</span><span class="en-only">A personal automation assistant. Parses Gmail purchase receipts for bookkeeping, auto-updates a Google Sheets budget, and pushes weekly Telegram reports.</span></p>
                 <div class="project-tags">
@@ -992,7 +864,7 @@
                     <span class="project-tag">Sheets API</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/weiwei-reminders" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://github.com/weiwei0607/weiwei-reminders" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
         </div>
@@ -1000,7 +872,7 @@
         <h3 class="category-title"><span class="zh-only">更多作品</span><span class="en-only">Additional Work</span></h3>
         <div class="projects-grid">
             <div class="project-card">
-                <img class="project-icon" src="icons/album-organizer.svg" alt="Album Organizer">
+                <div class="project-icon" style="color: var(--primary);">●</div>
                 <h3 class="project-title">Album Organizer</h3>
                 <p class="project-desc"><span class="zh-only">截圖轉筆記、回憶狀態管理、旅程自動歸檔。整合 Tesseract OCR 與 Gemini AI，把散落的截圖變成可搜尋的結構化筆記。</span><span class="en-only">Screenshot-to-notes, memory-status tracking, and journey auto-archiving. Integrates Tesseract OCR and Gemini AI to turn scattered screenshots into searchable, structured notes.</span></p>
                 <div class="project-tags">
@@ -1010,13 +882,12 @@
                     <span class="project-tag">Gemini</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/album-organizer" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://album-organizer-mu.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/album-organizer" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <img class="project-icon" src="icons/partner-brain.svg" alt="Partner Brain">
+                <div class="project-icon" style="color: var(--secondary);">●</div>
                 <h3 class="project-title">Partner Brain</h3>
                 <p class="project-desc"><span class="zh-only">多人物 AI 人際助手 CRM。記錄重要關係的細節、截圖興趣、送禮建議，讓 AI 幫你記住每個人在乎的事。</span><span class="en-only">A multi-person AI relationship CRM. Tracks details, screenshot interests, and gift suggestions for important relationships — letting AI help you remember what matters to each person.</span></p>
                 <div class="project-tags">
@@ -1026,14 +897,13 @@
                     <span class="project-tag">Gemini</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/partner-brain" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://weiwei0607.github.io/partner-brain/" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/partner-brain" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-highlight">Live</div>
-                <img class="project-icon" src="icons/family-destiny.svg" alt="Family Destiny">
+                <div class="project-icon" style="color: var(--accent);">●</div>
                 <h3 class="project-title">Family Destiny</h3>
                 <p class="project-desc"><span class="zh-only">五系統命理平台（八字、西洋、紫微、人類設計、星宿）。已上線並有真實用戶使用，後端使用 Python + Flask + 天文星曆計算。</span><span class="en-only">A five-system astrology platform (Bazi, Western, Ziwei, Human Design, Star Signs). Live with real users; backend built with Python + Flask + astronomical ephemeris calculations.</span></p>
                 <div class="project-tags">
@@ -1043,13 +913,13 @@
                     <span class="project-tag">Render</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/family-destiny-app" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://family-destiny-app.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/family-destiny-app" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://family-destiny-app.onrender.com" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <img class="project-icon" src="icons/travel-journal.svg" alt="Travel Journal">
+                <div class="project-icon" style="color: var(--success);">●</div>
                 <h3 class="project-title">Travel Journal</h3>
                 <p class="project-desc"><span class="zh-only">把旅途回憶變成可匯出的精美日誌。記錄行程、照片、地圖軌跡，一鍵輸出 PDF 分享或列印成實體回憶。</span><span class="en-only">Turns travel memories into exportable, beautifully formatted journals. Log itineraries, photos, and map tracks, then export to PDF for sharing or printing.</span></p>
                 <div class="project-tags">
@@ -1059,13 +929,12 @@
                     <span class="project-tag">jsPDF</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/travel-journal" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://travel-journal-mocha-delta.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/travel-journal" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
 
             <div class="project-card">
-                <img class="project-icon" src="icons/special-forces-planner.svg" alt="Special Forces Planner">
+                <div class="project-icon" style="color: var(--warning);">●</div>
                 <h3 class="project-title">Special Forces Planner</h3>
                 <p class="project-desc"><span class="zh-only">極限旅遊最佳化工具。輸入想去的景點，用 TSP 演算法找出最短路線，在 Leaflet 地圖上視覺化呈現。</span><span class="en-only">Extreme travel optimizer. Enter attractions and a TSP algorithm finds the shortest route, visualized on a Leaflet map with numbered markers and dashed paths.</span></p>
                 <div class="project-tags">
@@ -1075,14 +944,13 @@
                     <span class="project-tag">Leaflet</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/special-forces-planner" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://special-forces-planner.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/special-forces-planner" class="project-link" target="_blank">GitHub →</a>
                 </div>
             </div>
 
             <div class="project-card">
                 <div class="project-highlight">Live</div>
-                <img class="project-icon" src="icons/line-family-bot.svg" alt="Line Family Bot">
+                <div class="project-icon" style="color: var(--primary);">●</div>
                 <h3 class="project-title">Line Family Bot</h3>
                 <p class="project-desc"><span class="zh-only">家庭群組 LINE 機器人。家事點數、購物清單、AI 助手、待辦提醒、天氣查詢。已部署在 Render 並由真實家庭使用。</span><span class="en-only">A family-group LINE bot for chore points, shopping lists, AI assistant, reminders, and weather. Deployed on Render and used by a real family.</span></p>
                 <div class="project-tags">
@@ -1092,8 +960,8 @@
                     <span class="project-tag">Render</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/line-family-bot" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://line-family-bot-ump0.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/line-family-bot" class="project-link" target="_blank">GitHub →</a>
+                    <a href="https://line-family-bot-ump0.onrender.com" class="project-link" target="_blank">Demo →</a>
                 </div>
             </div>
         </div>
@@ -1102,20 +970,19 @@
     <section id="contact">
         <div class="section-header">
             <span class="section-tag"><span class="zh-only">聯繫</span><span class="en-only">Contact</span></span>
-            <h2 class="section-title"><span class="zh-only">討論 AI 產品機會</span><span class="en-only">Let's talk about AI products</span></h2>
+            <h2 class="section-title"><span class="zh-only">讓我們聊聊 AI 產品</span><span class="en-only">Let's talk AI products</span></h2>
             <p class="section-desc">
-                <span class="zh-only">正在尋找 AI 產品經理相關機會，歡迎聯繫。</span>
-                <span class="en-only">I'm open to AI Product Manager roles — let's connect.</span>
+                <span class="zh-only">正在尋找 AI 產品經理的機會，歡迎聯繫！</span><span class="en-only">I'm open to AI Product Manager roles — let's connect!</span>
             </p>
         </div>
         <div style="text-align: center;">
             <a href="mailto:vernessa0607@gmail.com" class="btn btn-primary" style="margin-bottom: 1rem;">
                 vernessa0607@gmail.com
             </a>
-            <div class="contact-links">
-                <a href="https://github.com/weiwei0607" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://www.linkedin.com/in/vernessa0607" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://wellfound.com/u/vernessa0607" target="_blank" rel="noopener noreferrer">Wellfound</a>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; flex-wrap: wrap;">
+                <a href="https://github.com/weiwei0607" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">GitHub</a>
+                <a href="https://www.linkedin.com/in/vernessa0607" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">LinkedIn</a>
+                <a href="https://wellfound.com/u/vernessa0607" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 0.9rem;">Wellfound</a>
             </div>
         </div>
     </section>
@@ -1131,45 +998,18 @@
     </footer>
 
     <script>
-        const html = document.documentElement;
-        const btnEn = document.getElementById('lang-en');
-        const btnZh = document.getElementById('lang-zh');
-
-        function setLang(lang) {
-            if (lang === 'zh-TW') {
-                html.setAttribute('lang', 'zh-TW');
-                btnZh.classList.add('active');
-                btnEn.classList.remove('active');
-                document.title = '馬韡寧 WeiWei Ma — AI 產品經理作品集';
-            } else {
+        document.getElementById('lang-toggle').addEventListener('click', function() {
+            const html = document.documentElement;
+            if (html.getAttribute('lang') === 'zh-TW') {
                 html.setAttribute('lang', 'en');
-                btnEn.classList.add('active');
-                btnZh.classList.remove('active');
-                document.title = 'WeiWei Ma — Healthcare AI Product Manager Portfolio';
+                this.textContent = '中';
+                document.title = 'WeiWei Ma — AI Product Manager Portfolio';
+            } else {
+                html.setAttribute('lang', 'zh-TW');
+                this.textContent = 'EN';
+                document.title = '馬韡寧 WeiWei Ma — AI 產品經理作品集';
             }
-        }
-
-        btnEn.addEventListener('click', () => setLang('en'));
-        btnZh.addEventListener('click', () => setLang('zh-TW'));
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "WeiWei Ma",
-      "url": "https://weiwei0607.github.io/portfolio/",
-      "jobTitle": "AI Product Manager",
-      "description": "AI Product Manager with biomedical engineering background, building healthcare AI products and productivity tools.",
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "National Taiwan University"
-      },
-      "knowsAbout": ["Artificial Intelligence", "Product Management", "Biomedical Engineering", "Healthcare Technology", "React", "Python", "Next.js"],
-      "sameAs": [
-        "https://github.com/weiwei0607",
-        "https://www.linkedin.com/in/vernessa0607"
-      ]
-    }
+        });
     </script>
 </body>
 </html>

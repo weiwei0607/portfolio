@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+    <radialGradient id="sheen" cx="0.5" cy="-0.1" r="1.1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.28"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="120" height="120" rx="27" fill="url(#bg)"/>
+  <rect width="120" height="120" rx="27" fill="url(#sheen)"/>
+  <g stroke="#0f172a" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.14" transform="translate(0, 1.8)">
+    <path d="M60 42 C53 35 43 33 32 36 V84 C43 81 53 83 60 89 C67 83 77 81 88 84 V36 C77 33 67 35 60 42 Z" fill="none" stroke-width="6"/>
+    <path d="M60 42 V89" fill="none" stroke-width="5"/>
+    <path d="M40 50 h11 M40 60 h11 M69 50 h11 M69 60 h11" fill="none" stroke-width="4"/>
+  </g>
+  <g stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M60 42 C53 35 43 33 32 36 V84 C43 81 53 83 60 89 C67 83 77 81 88 84 V36 C77 33 67 35 60 42 Z" fill="none" stroke-width="6"/>
+    <path d="M60 42 V89" fill="none" stroke-width="5"/>
+    <path d="M40 50 h11 M40 60 h11 M69 50 h11 M69 60 h11" fill="none" stroke-width="4"/>
+  </g>
+</svg>

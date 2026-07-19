@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320" width="400" height="320">
+  <!-- Background shapes -->
+  <rect x="20" y="20" width="360" height="280" rx="32" fill="#f0fdfa"/>
+  
+  <!-- Main figure -->
+  <circle cx="200" cy="110" r="36" fill="none" stroke="#0d9488" stroke-width="4"/>
+  <path d="M200 78 L200 102" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="188" cy="104" r="4" fill="#0d9488"/>
+  <circle cx="212" cy="104" r="4" fill="#0d9488"/>
+  <path d="M190 124 Q200 132 210 124" fill="none" stroke="#0d9488" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Body -->
+  <path d="M160 210 Q160 170 200 170 Q240 170 240 210 L240 260 L160 260 Z" fill="none" stroke="#0d9488" stroke-width="4" stroke-linejoin="round"/>
+  
+  <!-- Arms connecting elements -->
+  <path d="M162 195 L120 170" fill="none" stroke="#0d9488" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M238 195 L280 170" fill="none" stroke="#0d9488" stroke-width="3.5" stroke-linecap="round"/>
+  
+  <!-- Left: Medical / Healthcare -->
+  <rect x="70" y="130" width="56" height="56" rx="14" fill="white" stroke="#0d9488" stroke-width="3"/>
+  <path d="M98 144 L98 172" fill="none" stroke="#0d9488" stroke-width="4" stroke-linecap="round"/>
+  <path d="M86 158 L110 158" fill="none" stroke="#0d9488" stroke-width="4" stroke-linecap="round"/>
+  
+  <!-- Right: AI / Data -->
+  <rect x="274" y="130" width="56" height="56" rx="14" fill="white" stroke="#0d9488" stroke-width="3"/>
+  <circle cx="302" cy="152" r="4" fill="#0d9488"/>
+  <circle cx="292" cy="164" r="4" fill="#0d9488"/>
+  <circle cx="312" cy="164" r="4" fill="#0d9488"/>
+  <path d="M292 164 L302 152 L312 164" fill="none" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Bottom: Product cards / screens -->
+  <rect x="110" y="220" width="64" height="48" rx="8" fill="white" stroke="#334155" stroke-width="3"/>
+  <path d="M122 236 L162 236" fill="none" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M122 248 L152 248" fill="none" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <rect x="226" y="220" width="64" height="48" rx="8" fill="white" stroke="#334155" stroke-width="3"/>
+  <path d="M238 240 L278 240" fill="none" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="244" cy="256" r="3" fill="#0d9488"/>
+  <circle cx="258" cy="256" r="3" fill="#0d9488"/>
+  <circle cx="272" cy="256" r="3" fill="#0d9488"/>
+  
+  <!-- Connection lines -->
+  <path d="M174 260 L174 286" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+  <path d="M226 260 L226 286" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+  <path d="M174 286 L226 286" fill="none" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Floating dots -->
+  <circle cx="50" cy="100" r="5" fill="#ccfbf1"/>
+  <circle cx="350" cy="90" r="6" fill="#ccfbf1"/>
+  <circle cx="60" cy="250" r="4" fill="#ccfbf1"/>
+  <circle cx="340" cy="240" r="5" fill="#ccfbf1"/>
+</svg>
