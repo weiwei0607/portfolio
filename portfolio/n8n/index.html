@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Two n8n automations I run every day: a multi-source job monitor with LLM scoring, and a freelance gig monitor that drafts the outreach message. Workflow JSON available to download.">
+<meta property="og:title" content="n8n Automations · Wei-Ning Ma">
+<meta property="og:description" content="Not demos. Two workflows that run unattended every morning. Download the JSON.">
+<title>n8n Automations · Wei-Ning Ma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0d9488;--primary-dark:#0f766e;--primary-light:#ccfbf1;--bg:#fff;--bg-subtle:#f8fafc;
+--text:#0f172a;--text-secondary:#475569;--text-muted:#64748b;--border:#e2e8f0;
+--shadow-lg:0 10px 15px -3px rgba(15,23,42,.06),0 4px 6px -2px rgba(15,23,42,.03);--radius:12px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding:0 24px}
+header{padding:64px 0 36px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--primary);font-weight:700;margin-bottom:12px}
+h1{font-size:2.1rem;font-weight:800;letter-spacing:-.022em;line-height:1.25;margin-bottom:14px}
+.lede{font-size:1.06rem;color:var(--text-secondary);max-width:62ch}
+section{padding:38px 0;border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:none}
+h2{font-size:1.32rem;font-weight:800;margin-bottom:6px;letter-spacing:-.01em}
+.sub{color:var(--text-muted);font-size:.93rem;margin-bottom:18px}
+p{color:var(--text-secondary);margin-bottom:12px}
+strong{color:var(--text);font-weight:700}
+ul{list-style:none;margin-bottom:12px}
+li{position:relative;padding-left:20px;color:var(--text-secondary);margin-bottom:9px}
+li::before{content:"";position:absolute;left:4px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--primary)}
+.card{background:#fff;border:1px solid var(--primary);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-lg);margin-bottom:16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--bg-subtle);border:1px solid var(--border);border-radius:10px;padding:14px}
+.stat b{display:block;font-size:1.4rem;font-weight:800;color:var(--primary-dark);line-height:1.2}
+.stat span{display:block;font-size:.8rem;color:var(--text-muted);margin-top:3px}
+.dl{display:inline-block;background:var(--primary);color:#fff;font-weight:700;padding:11px 24px;border-radius:999px;text-decoration:none;margin-top:6px;font-size:.95rem}
+.dl:hover{background:var(--primary-dark)}
+.dl.alt{background:#fff;color:var(--primary-dark);border:1.5px solid var(--primary)}
+.stack{margin-top:10px;font-size:.83rem;color:var(--text-muted);font-family:ui-monospace,Menlo,monospace;line-height:1.5}
+.note{background:var(--primary-light);border-radius:10px;padding:14px 16px;font-size:.9rem;color:var(--primary-dark);margin-top:14px}
+footer{padding:38px 0 60px;text-align:center;color:var(--text-muted);font-size:.9rem}
+footer a{color:var(--primary-dark)}
+@media(max-width:600px){header{padding:44px 0 28px}h1{font-size:1.6rem}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap">
+  <div class="eyebrow">n8n Automation</div>
+  <h1>Two automations I actually run every day</h1>
+  <p class="lede">Not demos. These run unattended every morning and I read the output. You can download either workflow as JSON and import it into your own n8n to see how it's built. API keys have been stripped.</p>
+</div></header>
+
+<section><div class="wrap">
+  <h2>1. Multi-source job monitor with LLM scoring</h2>
+  <p class="sub">Runs once each morning and only surfaces what appeared today</p>
+
+  <div class="stats">
+    <div class="stat"><b>13</b><span>data sources</span></div>
+    <div class="stat"><b>21</b><span>nodes</span></div>
+    <div class="stat"><b>1×</b><span>per day, guaranteed</span></div>
+  </div>
+
+  <div class="card">
+    <p><strong>The problem</strong>: checking a dozen job boards by hand every morning, where most of what you see is the same set you already read yesterday. It costs time, and worse, you start ignoring the whole thing.</p>
+    <p><strong>Decisions I made</strong></p>
+    <ul>
+      <li><strong>Remember what was already sent.</strong> Surfaced listings are stored in workflow static data and never go to the model again. On a typical day 70 to 80 percent are repeats, so this saves time and API spend at the same time.</li>
+      <li><strong>Handle the source that fights back.</strong> One feed returns 403 to plain requests, so that branch routes through headless Chrome instead.</li>
+      <li><strong>Control cost deliberately.</strong> The primary model is a free tier. I disabled the internal reasoning budget that was silently eating the output allowance, and wired a paid model as fallback that only runs if the primary fails.</li>
+      <li><strong>Assume the machine is off.</strong> If the 8am run doesn't happen it retries every two hours, with a guard so it can still only push once per day.</li>
+      <li><strong>Cheap filters before expensive ones.</strong> Roles requiring local work authorisation or a senior title are cut by rules first, so the model never sees them.</li>
+    </ul>
+    <div class="stack">n8n · headless Chrome · Groq / Gemini · Telegram Bot API · Ashby / Greenhouse / Lever APIs · RSS</div>
+  </div>
+  <a class="dl" href="job-monitor.json" download>Download workflow JSON</a>
+</div></section>
+
+<section><div class="wrap">
+  <h2>2. Freelance gig monitor that drafts the outreach</h2>
+  <p class="sub">Finding the gig is the easy half. Writing a tailored opener for each one is the work.</p>
+
+  <div class="stats">
+    <div class="stat"><b>6</b><span>data sources</span></div>
+    <div class="stat"><b>5</b><span>max pushed per day</span></div>
+    <div class="stat"><b>0</b><span>auto-submitted</span></div>
+  </div>
+
+  <div class="card">
+    <p><strong>The problem</strong>: freelance boards post constantly, but most listings aren't worth bidding on. Budget too low, requires local residency, or it's someone advertising themselves rather than hiring. Filtering is tedious, and after filtering you still have to write a custom opener for each one.</p>
+    <p><strong>Decisions I made</strong></p>
+    <ul>
+      <li><strong>Rules eliminate, the model judges.</strong> Obvious non-starters are removed by pattern matching. Only the survivors get scored, which keeps the token bill small.</li>
+      <li><strong>Output something I can actually send.</strong> Each surviving gig comes with a 60 to 90 word opener that names what the client needs, cites the closest thing I've genuinely built, and proposes a concrete next step.</li>
+      <li><strong>Never auto-submit.</strong> Platforms ban automated bidding and the account is the thing you can't get back. Cold proposals also convert badly, so volume is the wrong goal. The send stays human.</li>
+    </ul>
+    <div class="stack">n8n · Groq / Gemini · Telegram · n8n Community RSS · Remotive · We Work Remotely · RemoteOK · Freelancer API · Working Nomads</div>
+  </div>
+  <a class="dl alt" href="gig-monitor.json" download>Download workflow JSON</a>
+
+  <div class="note">API keys in both files are replaced with placeholders. Credentials never export with n8n workflow JSON by design, so you'll add your own after importing.</div>
+</div></section>
+
+<footer><div class="wrap">
+  More work at <a href="/">weining-ma.vercel.app</a> · vernessa0607@gmail.com
+</div></footer>
+
+</body>
+</html>

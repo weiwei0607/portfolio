@@ -1,0 +1,493 @@
+{
+  "updatedAt": "2026-08-14T05:11:30.000Z",
+  "createdAt": "2026-08-14T05:11:27.605Z",
+  "id": "gigmonitor0001",
+  "name": "接案3 - 每日接案機會監控(多來源+AI篩選)推Telegram",
+  "description": null,
+  "active": false,
+  "isArchived": false,
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "g0-0000-0000-0000-000000000000",
+      "name": "手動啟動",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        120,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 7,9,11,13,15 * * *"
+            }
+          ]
+        }
+      },
+      "id": "g0-0000-0000-0000-0000000000cc",
+      "name": "每天早上嘗試",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        120,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "const s=$getWorkflowStaticData('global');const d=new Date().toLocaleDateString('en-CA',{timeZone:'Asia/Taipei'});if(s.lastGig===d)return [];s.lastGig=d;return [{json:{d}}];"
+      },
+      "id": "g0-0000-0000-0000-0000000000dd",
+      "name": "每日只跑一次",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        340,
+        560
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://community.n8n.io/c/jobs/13.rss",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "g1-0000-0000-0000-000000000001",
+      "name": "n8n社群Jobs",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        340,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://jobicy.com/api/v2/remote-jobs?count=50",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "g2-0000-0000-0000-000000000002",
+      "name": "Jobicy",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        560,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://weworkremotely.com/remote-jobs.rss",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "g3-0000-0000-0000-000000000003",
+      "name": "WWR全部",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        780,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://remoteok.com/api?tags=contract",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "g4-0000-0000-0000-000000000004",
+      "name": "RemoteOK接案",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1000,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.freelancer.com/api/projects/0.1/projects/active/?query=automation&limit=30",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "g5-0000-0000-0000-000000000005",
+      "name": "Freelancer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1220,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "url": "https://www.workingnomads.com/api/exposed_jobs/",
+        "options": {
+          "response": {
+            "response": {
+              "responseFormat": "text"
+            }
+          }
+        }
+      },
+      "id": "g6-0000-0000-0000-000000000006",
+      "name": "WorkingNomads",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1440,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst un=s=>(s||'').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&#39;/g,\"'\").replace(/&quot;/g,'\"');\nconst T=n=>{try{const j=$(n).first().json;return typeof j==='string'?j:(j.data||j.body||'');}catch(e){return '';}};\nconst J=n=>{try{return JSON.parse(T(n));}catch(e){return null;}};\nfunction rss(n,src){const x=un(T(n));const items=[...x.matchAll(/<item>([\\s\\S]*?)<\\/item>/g)].map(m=>m[1]);return items.map(it=>{const g=t=>un(((it.match(new RegExp('<'+t+'>([\\\\s\\\\S]*?)<\\\\/'+t+'>'))||[])[1]||'').replace(/<!\\[CDATA\\[|\\]\\]>/g,'')).trim();return {title:g('title'),company:g('dc:creator')||src,link:g('link'),date:g('pubDate'),src};});}\nlet all=[];\nall=all.concat(rss('n8n社群Jobs','n8n社群'));\nall=all.concat(rss('WWR全部','WWR'));\nconst jb=J('Jobicy'); if(jb&&jb.jobs) all=all.concat(jb.jobs.map(j=>({title:j.jobTitle||'',company:j.companyName||'',link:j.url||'',date:j.pubDate||'',src:'Jobicy'})));\nconst rk=J('RemoteOK接案'); if(Array.isArray(rk)) all=all.concat(rk.filter(j=>j&&j.position).map(j=>({title:j.position,company:j.company||'',link:j.url||'',date:j.date||'',src:'RemoteOK'})));\nconst fl=J('Freelancer'); const flp=fl&&fl.result&&fl.result.projects; if(Array.isArray(flp)) all=all.concat(flp.map(p=>({title:p.title||'',company:'Freelancer案主',link:'https://www.freelancer.com/projects/'+(p.seo_url||''),date:'',src:'Freelancer',budget:(p.budget?('$'+p.budget.minimum+'-'+p.budget.maximum):'')})));\nconst wn=J('WorkingNomads'); if(Array.isArray(wn)) all=all.concat(wn.map(j=>({title:j.title||'',company:j.company_name||'',link:j.url||'',date:j.pub_date||'',src:'WorkingNomads'})));\n\n// 只留接案/自動化相關，砍掉自我推薦與資深職\nconst want=/automation|n8n|zapier|make\\.com|workflow|integration|\\bapi\\b|\\bllm\\b|\\bai\\b|prompt|agent|chatbot|scraping|data pipeline|no[- ]?code|python|freelance|contract|consultant/i;\nconst skip=/\\[for hire\\]|available for|open to collaboration|disponible|\\bfilled\\b|senior|staff|principal|head of|director|\\bvp\\b|lead engineer|10\\+ years/i;\nconst junk=/casino|crypto trading|forex|adult|essay writ|data entry|virtual assistant|telemarket/i;\n\nconst store=$getWorkflowStaticData('global');\nif(!Array.isArray(store.pushed))store.pushed=[];\nconst pushedSet=new Set(store.pushed);\nconst seen=new Set(); const rows=[];\nfor(const j of all){\n  const t=(j.title||'').trim(); if(!t) continue;\n  if(!want.test(t)||skip.test(t)||junk.test(t)) continue;\n  const k=(t+'@'+(j.company||'')).toLowerCase().replace(/\\s+/g,'');\n  if(seen.has(k)) continue; seen.add(k);\n  if(pushedSet.has(k)) continue;  // 推過的不再送 AI\n  j._k=k; rows.push(j);\n}\nconst list=rows.slice(0,45).map((j,i)=>`${i+1}. [${j.src}] ${j.title} | ${j.company} | ${j.budget||''} | ${j.link}`).join('\\n');\nconst prompt=`你是韡寧的接案顧問。她會 n8n、串 API、做 LLM 應用、爬蟲、Telegram/LINE bot、做過真實在跑的自動化系統（職缺監控+AI評分、每日回報管線、多agent協作）。她在台灣，要遠距接案，英文流利（TOEIC 915），中英雙語。\n\n從下面的機會裡挑出最值得她投的最多 8 個。評分 1-10。\n\n淘汰規則（給 0 分不要選）：\n- 需要美國/歐洲當地身分或當地銀行帳戶才能做\n- 明顯是別人的自我推薦文（不是在徵人）\n- 要求資深或多年團隊經驗\n- 預算過低（低於 100 美金的整案）\n- 純業務、純客服、純資料輸入\n\n加分：明確寫 n8n/Zapier/Make/自動化/AI 整合、預算清楚、遠距、小而明確的專案。\n\n每個機會都要幫她寫好可以直接複製送出的開場訊息（pitch）。只輸出 JSON 陣列，不要其他文字：\n[{\"score\":9,\"title\":\"...\",\"company\":\"...\",\"link\":\"...\",\"why\":\"為什麼適合她，20字內\",\"pitch\":\"直接可複製的開場訊息，英文，60-90字，具體提到這個案子要解決什麼、她做過什麼類似的、給一個小額試單或明確下一步\"}]\n\n機會清單：\n${list}`;\nif(!rows.length) return [{json:{skip:true}}];\nconst groqBody=JSON.stringify({model:'openai/gpt-oss-120b',messages:[{role:'user',content:prompt}],temperature:0.3,max_tokens:2200});\nreturn [{json:{groqBody, candKeys:rows.slice(0,45).map(x=>x._k), total: rows.length}}];\n"
+      },
+      "id": "g7-0000-0000-0000-000000000007",
+      "name": "收集+組Prompt",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        340,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.groq.com/openai/v1/chat/completions",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer YOUR_GROQ_API_KEY"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.groqBody }}",
+        "options": {}
+      },
+      "id": "g8-0000-0000-0000-000000000008",
+      "name": "AI篩選+寫開場(Groq)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        560,
+        400
+      ],
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst resp=$input.first().json;\nlet txt='';\ntry{\n  if(resp.choices) txt=resp.choices[0].message.content;\n  else if(resp.candidates) txt=resp.candidates[0].content.parts[0].text;\n}catch(e){}\nif(!txt) return [{json:{note:'AI 回應解析失敗'}}];\ntxt=txt.replace(/```json|```/g,'').trim();\nlet arr=[];\ntry{arr=JSON.parse(txt);}catch(e){const m=txt.match(/\\[[\\s\\S]*\\]/);if(m){try{arr=JSON.parse(m[0]);}catch(e2){}}}\nif(!arr.length){const objs=txt.match(/\\{[^{}]*?\"score\"[^{}]*?\\}/g)||[];for(const o of objs){try{arr.push(JSON.parse(o));}catch(e){}}}\narr=arr.filter(x=>x&&(x.score||0)>=7);\narr.sort((a,b)=>(b.score||0)-(a.score||0));\ntry{\n  const store=$getWorkflowStaticData('global');\n  if(!Array.isArray(store.pushed))store.pushed=[];\n  const keys=$('收集+組Prompt').first().json.candKeys||[];\n  store.pushed=[...new Set([...store.pushed,...keys])].slice(-800);\n}catch(e){}\nconst out=arr.slice(0,5);\nreturn out.length?out.map(x=>({json:x})):[{json:{note:'今天沒有值得投的新案'}}];\n"
+      },
+      "id": "g9-0000-0000-0000-000000000009",
+      "name": "解析AI結果",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        780,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "jsCode": "\nconst items=$input.all(); const d=new Date();\nlet L=['💼 今日接案機會 ('+(d.getMonth()+1)+'/'+(d.getDate())+')','','已附開場訊息，複製就能送',''];\nlet n=0;\nitems.forEach(it=>{const j=it.json; if(!j.title){if(j.note)L.push(j.note);return;} n++;\n  L.push('━━━━━━━━━━');\n  L.push(n+'. ['+(j.score||'')+'分] '+j.title);\n  if(j.company) L.push('   '+j.company);\n  if(j.why) L.push('   ✓ '+j.why);\n  L.push('   '+(j.link||''));\n  if(j.pitch){L.push('');L.push('📋 開場訊息：');L.push(j.pitch);}\n  L.push('');\n});\nif(!n && !L.some(x=>/沒有|失敗/.test(x))) L.push('今天沒有值得投的新案。');\nreturn [{json:{text:L.join('\\n')}}];\n"
+      },
+      "id": "ga-0000-0000-0000-00000000000a",
+      "name": "組成訊息",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1000,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "8230417743",
+        "text": "={{ $json.text }}",
+        "additionalFields": {
+          "disable_web_page_preview": true
+        }
+      },
+      "id": "gb-0000-0000-0000-00000000000b",
+      "name": "推到Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1220,
+        400
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "YqsqrwJJfPOg1V4Y",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googlePalmApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({contents:[{parts:[{text: JSON.parse($('收集+組Prompt').first().json.groqBody).messages[0].content}]}], generationConfig:{temperature:0.3,maxOutputTokens:2200,thinkingConfig:{thinkingBudget:0}}}) }}",
+        "options": {}
+      },
+      "id": "gfb-0000-0000-0000-0000000000fb",
+      "name": "備援 Gemini",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        560,
+        560
+      ],
+      "credentials": {
+        "googlePalmApi": {
+          "id": "1dGaYpb9cVsc8jF7",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "手動啟動": {
+      "main": [
+        [
+          {
+            "node": "n8n社群Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "每天早上嘗試": {
+      "main": [
+        [
+          {
+            "node": "每日只跑一次",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "每日只跑一次": {
+      "main": [
+        [
+          {
+            "node": "n8n社群Jobs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "n8n社群Jobs": {
+      "main": [
+        [
+          {
+            "node": "Jobicy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Jobicy": {
+      "main": [
+        [
+          {
+            "node": "WWR全部",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WWR全部": {
+      "main": [
+        [
+          {
+            "node": "RemoteOK接案",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "RemoteOK接案": {
+      "main": [
+        [
+          {
+            "node": "Freelancer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Freelancer": {
+      "main": [
+        [
+          {
+            "node": "WorkingNomads",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WorkingNomads": {
+      "main": [
+        [
+          {
+            "node": "收集+組Prompt",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "收集+組Prompt": {
+      "main": [
+        [
+          {
+            "node": "AI篩選+寫開場(Groq)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "解析AI結果": {
+      "main": [
+        [
+          {
+            "node": "組成訊息",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "組成訊息": {
+      "main": [
+        [
+          {
+            "node": "推到Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI篩選+寫開場(Groq)": {
+      "main": [
+        [
+          {
+            "node": "解析AI結果",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "備援 Gemini",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "備援 Gemini": {
+      "main": [
+        [
+          {
+            "node": "解析AI結果",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {},
+  "staticData": {
+    "node:每天早上嘗試": {
+      "recurrenceRules": []
+    }
+  },
+  "meta": null,
+  "nodeGroups": [],
+  "pinData": null,
+  "versionId": "48bf7890-f6eb-4baf-bb58-0e356db95b9e",
+  "activeVersionId": null,
+  "versionCounter": 3,
+  "triggerCount": 1,
+  "sourceWorkflowId": null,
+  "tags": [],
+  "shared": [
+    {
+      "updatedAt": "2026-08-14T05:11:27.619Z",
+      "createdAt": "2026-08-14T05:11:27.619Z",
+      "role": "workflow:owner",
+      "workflowId": "gigmonitor0001",
+      "projectId": "vEL1eJywytx27bMA",
+      "project": {
+        "updatedAt": "2026-06-18T19:40:28.287Z",
+        "createdAt": "2026-06-18T19:38:14.974Z",
+        "id": "vEL1eJywytx27bMA",
+        "name": "weiwei ma <vernessa0607@gmail.com>",
+        "type": "personal",
+        "icon": null,
+        "description": null,
+        "customTelemetryTags": [],
+        "creatorId": "5362cff8-3b24-4035-953f-16aab0a84203"
+      }
+    }
+  ],
+  "versionMetadata": {
+    "name": null,
+    "description": null
+  }
+}

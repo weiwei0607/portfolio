@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="I build AI automations that run every day without anyone watching. n8n, LLM APIs, Telegram, scraping, scheduled pipelines.">
+<meta property="og:title" content="Wei-Ning Ma — AI Automation & Workflow Engineer">
+<meta property="og:description" content="Monitoring, AI scoring, and notification pipelines that run daily in production. Built and maintained solo.">
+<meta property="og:type" content="website">
+<title>Wei-Ning Ma — AI Automation & Workflow Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#0d9488;--primary-dark:#0f766e;--primary-light:#ccfbf1;
+  --bg:#fff;--bg-subtle:#f8fafc;--text:#0f172a;--text-secondary:#475569;--text-muted:#64748b;
+  --border:#e2e8f0;--border-strong:#cbd5e1;
+  --shadow-lg:0 10px 15px -3px rgba(15,23,42,.06),0 4px 6px -2px rgba(15,23,42,.03);
+  --radius:12px;--radius-sm:8px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+::selection{background:var(--primary-light);color:var(--primary-dark)}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+header{padding:76px 0 44px;border-bottom:1px solid var(--border)}
+.eyebrow{font-size:.78rem;letter-spacing:.15em;text-transform:uppercase;color:var(--primary);font-weight:700;margin-bottom:14px}
+h1{font-size:2.5rem;font-weight:800;letter-spacing:-.025em;line-height:1.2;margin-bottom:18px}
+h1 span{color:var(--primary)}
+.lede{font-size:1.14rem;color:var(--text-secondary);max-width:62ch;margin-bottom:8px}
+.meta{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px 18px;font-size:.92rem;color:var(--text-muted)}
+section{padding:52px 0;border-bottom:1px solid var(--border)}
+section:last-of-type{border-bottom:none}
+h2{font-size:1.5rem;font-weight:800;letter-spacing:-.015em;margin-bottom:10px}
+.sub{color:var(--text-muted);font-size:.95rem;margin-bottom:26px;max-width:60ch}
+h3{font-size:1.06rem;font-weight:700;margin-bottom:6px}
+p{color:var(--text-secondary);margin-bottom:14px}
+strong{color:var(--text);font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:22px}
+.box{background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.box h3{font-size:.98rem;margin-bottom:5px}
+.box p{font-size:.92rem;margin:0}
+.case{background:#fff;border:1px solid var(--border);border-left:3px solid var(--primary);border-radius:var(--radius);padding:24px;margin-bottom:16px;box-shadow:var(--shadow-lg)}
+.case .tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--primary-dark);background:var(--primary-light);padding:4px 10px;border-radius:999px;margin-bottom:10px}
+.stack{margin-top:12px;font-size:.85rem;color:var(--text-muted);font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+ul{list-style:none}
+li{position:relative;padding-left:20px;color:var(--text-secondary);margin-bottom:9px}
+li::before{content:"";position:absolute;left:4px;top:.72em;width:5px;height:5px;border-radius:50%;background:var(--primary)}
+table{width:100%;border-collapse:collapse;margin-top:18px;font-size:.94rem}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--border)}
+th{font-weight:700;color:var(--text);font-size:.86rem;letter-spacing:.03em;text-transform:uppercase;color:var(--text-muted)}
+td strong{color:var(--primary-dark)}
+.note{background:var(--bg-subtle);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px 18px;font-size:.93rem;color:var(--text-secondary);margin-top:20px}
+footer{padding:52px 0 72px;text-align:center}
+.cta{display:inline-block;background:var(--primary);color:#fff;font-weight:700;padding:14px 32px;border-radius:999px;text-decoration:none;transition:.15s;font-size:1.02rem}
+.cta:hover{background:var(--primary-dark)}
+.fine{margin-top:18px;font-size:.88rem;color:var(--text-muted)}
+.fine a{color:var(--primary-dark)}
+@media(max-width:600px){header{padding:54px 0 34px}h1{font-size:1.95rem}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">AI Automation &amp; Workflow Engineer</div>
+    <h1>I build automations that <span>run every day without anyone watching them</span></h1>
+    <p class="lede">Most automation demos work once. The hard part is the thing that still runs on day 60, when the site changed its HTML, the API rate-limited you, and the model returned something you didn't expect. That's the part I build for.</p>
+    <div class="meta">
+      <span>vernessa0607@gmail.com</span>
+      <span>APAC timezone · async friendly</span>
+      <span>English &amp; Mandarin</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>What I build</h2>
+    <p class="sub">If it is repetitive, has a clear trigger, and someone is currently doing it by hand, it can probably be automated.</p>
+    <div class="grid">
+      <div class="box"><h3>Monitoring &amp; alerts</h3><p>Watch sites, feeds, or APIs. Detect what changed. Send it to Telegram, Slack, or email.</p></div>
+      <div class="box"><h3>AI filtering &amp; scoring</h3><p>Use an LLM to rank, tag, or summarise incoming items so you only read what matters.</p></div>
+      <div class="box"><h3>Data pipelines</h3><p>Scrape or pull, clean, store, then push a scheduled digest. Runs on a cron, not on you.</p></div>
+      <div class="box"><h3>Chat bots &amp; assistants</h3><p>LINE, Telegram, or web. Commands, scheduled jobs, persistent state, real users.</p></div>
+      <div class="box"><h3>Internal tools</h3><p>Small dashboards and forms that write to a real database and sync across devices.</p></div>
+      <div class="box"><h3>Automation rescue</h3><p>You have a workflow that keeps breaking. I find out why and make it survive.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Systems I built and still run</h2>
+    <p class="sub">These are my own production systems, not client case studies. They run daily, unattended, and I maintain them. Everything below is something you can ask me to walk through.</p>
+
+    <div class="case">
+      <span class="tag">Monitoring · AI scoring · Alerts</span>
+      <h3>Daily job monitor with LLM scoring</h3>
+      <p>Pulls listings from multiple sources every morning, deduplicates them, hard-filters by rules, then sends the rest to an LLM that scores each one for fit and writes a one-line reason. The top results land in Telegram as a single short digest.</p>
+      <ul>
+        <li>Anti-bot handling: one source returns 403 to plain requests, so it routes through headless Chrome instead.</li>
+        <li>Cost control: the model kept exhausting its output budget on internal reasoning, so I disabled that and the responses became complete, faster, and cheaper.</li>
+        <li>Catch-up scheduling: if the machine is off at 8am it retries every two hours, with a guard so it only ever runs once per day.</li>
+      </ul>
+      <div class="stack">n8n · headless Chrome · Gemini API · Telegram Bot API · cron</div>
+    </div>
+
+    <div class="case">
+      <span class="tag">Pipeline · Scheduled digest</span>
+      <h3>Web app to database to nightly report</h3>
+      <p>A daily tracking web app writes snapshots to a realtime database. A scheduled job reads that data every night, formats it into a readable summary, and pushes it to Telegram. No manual export, no spreadsheet.</p>
+      <ul>
+        <li>Deployed frontend, hosted database, and a scheduled worker, all wired together.</li>
+        <li>Idempotent writes so a refresh never duplicates a day's record.</li>
+      </ul>
+      <div class="stack">Vercel · Firebase Realtime DB · GitHub Actions cron · Python · Telegram</div>
+    </div>
+
+    <div class="case">
+      <span class="tag">Multi-agent · Context management</span>
+      <h3>Multi-agent coordination with automatic compaction</h3>
+      <p>Three AI agents collaborate through a single shared file as the source of truth. A file watcher wakes the right agent when the file changes. When the log grows too long, a compaction step archives the full history and rewrites it into a summary that keeps decisions and open tasks while dropping the noise.</p>
+      <ul>
+        <li>Turn protocol with a hard round limit so the agents cannot loop forever.</li>
+        <li>Compaction backs up the original first, so nothing is ever lost.</li>
+        <li>Cut a 1,592-line log to 220 lines with no loss of decisions or open items.</li>
+      </ul>
+      <div class="stack">Bash · file watcher · LLM CLI · structured summarisation</div>
+    </div>
+
+    <div class="case">
+      <span class="tag">Bot · Real users</span>
+      <h3>Group chat assistant, in daily use</h3>
+      <p>A chat bot with 50+ commands, scheduled jobs, persistent state, and 20+ external API integrations. It has been in daily use by a real group since launch, which means it has met every failure mode I did not design for.</p>
+      <div class="stack">Python · Flask · SQLite · LLM API · Render</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How I work</h2>
+    <div class="grid">
+      <div class="box"><h3>1 · Scope call</h3><p>Tell me the manual process. I tell you honestly whether automating it is worth the money.</p></div>
+      <div class="box"><h3>2 · Fixed quote</h3><p>Written scope, fixed price, clear definition of done. No hourly surprises.</p></div>
+      <div class="box"><h3>3 · Build and test</h3><p>You get it running on real data, not a demo with fake inputs.</p></div>
+      <div class="box"><h3>4 · Handover</h3><p>Documentation, a walkthrough, and a fix window in case something breaks.</p></div>
+    </div>
+    <div class="note">I will tell you when automation is the wrong answer. Some processes run five times a year, and a checklist beats a pipeline. Saying so upfront is cheaper for both of us than building something you will not use.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Engagements</h2>
+    <table>
+      <tr><th>Type</th><th>What it covers</th><th>From</th></tr>
+      <tr><td><strong>Single automation</strong></td><td>One workflow, built, tested, handed over with docs</td><td>USD 400</td></tr>
+      <tr><td><strong>System build</strong></td><td>Multi-step pipeline, storage, scheduling, notifications</td><td>USD 1,200</td></tr>
+      <tr><td><strong>Rescue &amp; hardening</strong></td><td>Diagnose a broken workflow, fix root cause, add guards</td><td>USD 300</td></tr>
+      <tr><td><strong>Ongoing maintenance</strong></td><td>Monitoring, fixes, small changes, monthly</td><td>USD 250/mo</td></tr>
+    </table>
+    <p style="margin-top:16px;font-size:.93rem;color:var(--text-muted)">Final pricing depends on scope. Small, well-defined jobs are quoted flat and usually delivered within a week.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a class="cta" href="mailto:vernessa0607@gmail.com?subject=Automation%20project">Tell me what you're doing by hand</a>
+    <p class="fine">Also: <a href="/">AI products I've built</a></p>
+  </div>
+</footer>
+
+</body>
+</html>

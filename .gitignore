@@ -7,3 +7,6 @@ build/
 .env.local
 .next/
 .cache/
+
+# 專案改寫的工作草稿，不對外
+DRAFT-*.md
