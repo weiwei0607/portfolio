@@ -1032,12 +1032,12 @@
 
             <div class="project-card">
                 <img class="project-icon" src="icons/special-forces-planner.svg" alt="Special Forces Planner">
-                <h3 class="project-title">Special Forces Planner</h3>
-                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：我排行程的方式是先列一堆想去的點，然後卡在「今天先去哪」。人腦排順序排到五、六個點就開始亂，排出來的路線常常在同一區來回繞，走的路比實際需要的多。<br><strong>取捨</strong>：把它當成旅行推銷員問題來解，直接算出最短路線並畫在地圖上。我沒有做行程建議或景點推薦，因為想去哪是使用者自己的事，這個工具只負責解決「順序」這一件他算不動的事。</span><span class="en-only"><strong>Problem</strong>: I plan trips by listing everywhere I want to go and then getting stuck on where to start. Ordering more than five or six stops in your head falls apart quickly, and the route you come up with usually doubles back through the same area and walks further than it needs to.<br><strong>Trade-off</strong>: I treated it as a travelling salesman problem, computed the shortest route and drew it on the map. I deliberately didn't add itinerary suggestions or attraction recommendations, because where you want to go is yours to decide. The tool solves only the ordering, which is the part a person can't do in their head.</span></p>
+                <h3 class="project-title">Special Forces Planner<span class="zh-only"> · 行程順序最佳化</span><span class="en-only"> · Route Order Optimiser</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>一句話</strong>：用 nearest neighbor 加 2-opt 算最短的景點順序，介面是刻意做成「特種兵旅遊」的軍事風格。<br><strong>問題</strong>：我排行程的方式是先列一堆想去的點，然後卡在「今天先去哪」。人腦排順序排到五、六個點就開始亂，排出來的路線常常在同一區來回繞，走的路比實際需要的多。<br><strong>取捨</strong>：把它當成旅行推銷員問題來解，直接算出最短路線並畫在地圖上。我沒有做行程建議或景點推薦，因為想去哪是使用者自己的事，這個工具只負責解決「順序」這一件他算不動的事。</span><span class="en-only"><strong>In one line</strong>: computes the shortest visiting order with nearest neighbour plus 2-opt. The military styling is a deliberate "special forces travel" theme.<br><strong>Problem</strong>: I plan trips by listing everywhere I want to go and then getting stuck on where to start. Ordering more than five or six stops in your head falls apart quickly, and the route you come up with usually doubles back through the same area and walks further than it needs to.<br><strong>Trade-off</strong>: I treated it as a travelling salesman problem, computed the shortest route and drew it on the map. I deliberately didn't add itinerary suggestions or attraction recommendations, because where you want to go is yours to decide. The tool solves only the ordering, which is the part a person can't do in their head.</span></p>
                 <div class="project-tags">
                     <span class="project-tag">React</span>
                     <span class="project-tag">Dexie</span>
-                    <span class="project-tag">TSP Algorithm</span>
+                    <span class="project-tag">TSP · 2-opt</span>
                     <span class="project-tag">Leaflet</span>
                 </div>
                 <div class="project-links">
