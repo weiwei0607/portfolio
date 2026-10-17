@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wei-Ning (Vernessa) Ma — biomedical engineer moving into product. 20+ products across healthcare, productivity, and education, most of them deployed.">
-    <meta property="og:title" content="Wei-Ning (Vernessa) Ma — Portfolio">
-    <meta property="og:description" content="Biomedical engineer moving into product. 20+ products, most of them deployed and public.">
+    <meta name="description" content="Wei-Ning (Vernessa) Ma. Remote AI product and overseas growth. 20+ AI products, most of them deployed, each with a note on what I chose not to build.">
+    <meta property="og:title" content="Wei-Ning (Vernessa) Ma | AI Product &amp; Growth">
+    <meta property="og:description" content="Remote AI product and overseas growth. 20+ AI products, most of them deployed and public.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://weining-ma.vercel.app/">
     <meta property="og:image" content="https://weining-ma.vercel.app/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Wei-Ning (Vernessa) Ma — biomedical engineering to product. 20+ products, most of them deployed.">
+    <meta property="og:image:alt" content="Wei-Ning (Vernessa) Ma, AI product and overseas growth. 20+ products, most of them deployed.">
     <meta name="twitter:image" content="https://weining-ma.vercel.app/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wei-Ning (Vernessa) Ma — Portfolio">
-    <meta name="twitter:description" content="Biomedical engineer moving into product. 20+ products, most of them deployed.">
+    <meta name="twitter:title" content="Wei-Ning (Vernessa) Ma | AI Product &amp; Growth">
+    <meta name="twitter:description" content="Remote AI product and overseas growth. 20+ AI products, most of them deployed.">
     <link rel="canonical" href="https://weining-ma.vercel.app/">
-    <title>Wei-Ning (Vernessa) Ma — Portfolio</title>
+    <title>Wei-Ning (Vernessa) Ma | AI Product &amp; Growth</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -172,6 +172,8 @@
             letter-spacing: -0.03em;
             color: var(--secondary);
         }
+
+        .hero h1 .tagline { display: block; font-size: 0.6em; line-height: 1.3; margin-top: 0.5rem; }
 
         .hero h1 .accent {
             color: var(--primary);
@@ -431,6 +433,19 @@
             color: white;
         }
 
+
+        .more-projects { margin-top: 2.5rem; }
+        .more-projects > summary {
+            cursor: pointer; list-style: none; text-align: center;
+            font-weight: 600; color: var(--primary); padding: 0.9rem 1rem;
+            border: 1px solid var(--border-strong); border-radius: var(--radius);
+            background: var(--bg-card); max-width: 360px; margin: 0 auto 1.5rem;
+        }
+        .more-projects > summary::-webkit-details-marker { display: none; }
+        .more-projects > summary::after { content: " ▾"; }
+        .more-projects[open] > summary::after { content: " ▴"; }
+        .more-projects > summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
         .category-title {
             font-size: 1.1rem;
             font-weight: 700;
@@ -591,20 +606,21 @@
             <div class="hero-main">
                 <div class="hero-badge">
                     <span class="dot"></span>
-                    <span class="zh-only">正在尋找產品相關職缺</span><span class="en-only">Open to product roles</span>
+                    <span class="zh-only">開放遠距職缺 · AI 產品／海外增長</span><span class="en-only">Open to remote roles · AI product &amp; overseas growth</span>
                 </div>
                 <h1>
-                    <span class="zh-only">馬韡寧 <span class="accent">Vernessa Ma</span><br>生醫工程 → 產品</span>
-                    <span class="en-only">Wei-Ning (Vernessa) Ma<br><span class="accent">Biomedical Engineering → Product</span></span>
+                    <span class="zh-only">馬韡寧 <span class="accent">Vernessa Ma</span><span class="tagline">做小而能用的 AI 產品，砍掉的比做出來的多</span></span>
+                    <span class="en-only">Wei-Ning (Vernessa) Ma<span class="accent tagline">I build small AI products, and cut more than I build.</span></span>
                 </h1>
                 <p class="hero-desc">
-                    <span class="zh-only">我做產品的方式是先確認那個問題是真的，再決定哪些東西不要做。20 幾個產品裡，有的有真實用戶，有的我自己每天在用，也有幾個我後來把功能砍掉。下面每一個都寫了當時的判斷過程。</span>
-                    <span class="en-only">The way I build is to first check the problem is real, then decide what not to build. Of the 20+ products below, some have real users, some I use myself every day, and a few I later cut features from. Each one records the judgement I made at the time.</span>
+                    <span class="zh-only">現在遠距在一家 AI 陪伴新創做海外增長：每天經營 X 和 Threads、跟英語圈用戶互動。之前在 PicWiz 從零做短影音增長。我做產品的方式是先確認那個問題是真的，再決定哪些東西不要做。20 幾個產品裡，有的有真實用戶，有的我自己每天在用，也有幾個我後來把功能砍掉。下面每一個都寫了當時的判斷過程。</span>
+                    <span class="en-only">Right now I work remotely on overseas growth for an AI companion startup: daily posts on X and Threads and community engagement with English-speaking users. Before that I grew PicWiz, an AI photo app, from zero with short-form video. The way I build is to first check the problem is real, then decide what not to build. Of the 20+ products below, some have real users, some I use myself every day, and a few I later cut features from. Each one records the judgement I made at the time.</span>
                 </p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary"><span class="zh-only">查看作品集</span><span class="en-only">View Projects</span></a>
                     <a href="Wei-Ning-Ma-Resume-AI-Product-Manager.pdf" download class="btn btn-secondary"><span class="zh-only">履歷 · 產品</span><span class="en-only">Resume · Product</span></a>
                     <a href="Wei-Ning-Ma-Resume-Growth-Operations.pdf" download class="btn btn-secondary"><span class="zh-only">履歷 · 運營</span><span class="en-only">Resume · Growth</span></a>
+                    <a href="/growth/" class="btn btn-secondary"><span class="zh-only">增長案例</span><span class="en-only">Growth case (中文)</span></a>
                     <a href="mailto:vernessa0607@gmail.com" class="btn btn-secondary"><span class="zh-only">聯繫我</span><span class="en-only">Contact Me</span></a>
                 </div>
             </div>
@@ -620,9 +636,9 @@
                     <div class="hero-card-desc"><span class="zh-only">OpenAI、Gemini、Claude、Groq、Moonshot</span><span class="en-only">OpenAI, Gemini, Claude, Groq, Moonshot</span></div>
                 </div>
                 <div class="hero-card">
-                    <div class="hero-card-value">3</div>
-                    <div class="hero-card-label"><span class="zh-only">跨平台經驗</span><span class="en-only">Cross-Platform Experience</span></div>
-                    <div class="hero-card-desc"><span class="zh-only">Mobile、Web、Backend 全端實作背景</span><span class="en-only">Mobile, web, and backend hands-on background</span></div>
+                    <div class="hero-card-value"><span class="zh-only">遠距</span><span class="en-only">Remote</span></div>
+                    <div class="hero-card-label"><span class="zh-only">海外增長，2026/9 至今</span><span class="en-only">Overseas growth since Sep 2026</span></div>
+                    <div class="hero-card-desc"><span class="zh-only">AI 陪伴新創：X、Threads、社群經營</span><span class="en-only">AI companion startup: X, Threads, community</span></div>
                 </div>
             </div>
         </div>
@@ -634,13 +650,16 @@
             <h2 class="section-title"><span class="zh-only">從生醫背景到動手做出產品</span><span class="en-only">From a biomedical background to shipped product</span></h2>
             <p class="section-desc">
                 <span class="zh-only">生醫工程背景，具備 AI 產品運營與數據驅動決策思維。從教育科技到心理健康，從 B2B SaaS 到 AI 原生應用，用產品解決真實問題。</span>
-                <span class="en-only">Biomedical engineering foundation, with GCP certification (ICH E6(R2)). I combine clinical and lab methodology with product discovery to identify real problems, define requirements, and deliver working AI solutions.</span>
+                <span class="en-only">Biomedical engineering background, now working on AI products and overseas growth. I start from a real problem, decide what is worth building, and ship working AI tools.</span>
             </p>
         </div>
         <div class="about-grid">
             <div class="about-text">
                 <p>
                     <span class="zh-only">我認為好的 AI PM 不只是「提需求的人」，而是要能深入理解技術邊界、設計可行的 AI 交互流程、並用數據驗證假設。</span><span class="en-only">A great AI PM isn't just someone who files requirements. They understand technical constraints, design usable AI interactions, and validate assumptions with data.</span>
+                </p>
+                <p>
+                    <span class="zh-only">現在遠距在一家 AI 陪伴新創做海外增長：每天用英文經營 X 和 Threads、在社群裡回覆 AI 陪伴用戶，也自己提案新功能並做出可點的 demo。</span><span class="en-only">I currently work remotely on overseas growth for an AI companion startup: daily English posts on X and Threads, community replies to AI companion users, and feature ideas I pitch with a clickable demo.</span>
                 </p>
                 <p>
                     <span class="zh-only">在炫圖 AI 實習期間，我定義北美市場短視頻內容策略，分析 TikTok/Instagram/YouTube 用戶行為模式，建立可量化的每日內容決策框架。</span><span class="en-only">During my internship at Xuantu AI, I drove international user acquisition through short-form video, producing ~20 TikToks and Instagram Reels monthly and building tracking systems that grew overseas reach to 5,000+ per week.</span>
@@ -720,39 +739,39 @@
             </p>
         </div>
 
-        <h3 class="category-title"><span class="zh-only">AI-Native Apps</span><span class="en-only">AI-Native Apps</span></h3>
+        <h3 class="category-title"><span class="zh-only">精選：有真實用戶或最能說明判斷的作品</span><span class="en-only">Featured: real users or the clearest product decisions</span></h3>
         <div class="projects-grid">
             <div class="project-card">
-                <img class="project-icon" src="icons/memoir-novelist.svg" alt="Memoir Novelist">
-                <h3 class="project-title"><span class="zh-only">回憶小說家 Memoir Novelist</span><span class="en-only">Memoir Novelist</span></h3>
-                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：每個人都幻想過自己是自己故事裡的主角，但真的要寫，常常想一想小說就胎死腹中了。難的不是想像，是把它變成一段讀得下去的文字。<br><strong>取捨</strong>：不要求使用者會寫小說，只要求寫日記。日記本來就是很多人已經在做的事，門檻低到不需要建立新習慣，AI 再把累積的日記串成有情節的故事。使用者選風格和角色，但故事骨架來自他自己真實寫下的東西，這樣讀起來才是自己的人生。</span><span class="en-only"><strong>Problem</strong>: Everyone has imagined themselves as the protagonist of their own story, but the moment you try to write it the novel dies in your head. The hard part isn't the imagining, it's turning it into prose someone would read.<br><strong>Trade-off</strong>: It doesn't ask you to write fiction, only to keep a diary. Journaling is something many people already do, so there's no new habit to build, and the AI weaves the accumulated entries into a plot. You pick the genre and the characters, but the skeleton comes from what you actually wrote, which is what makes it read like your life rather than a generated story.</span></p>
+                <div class="project-highlight">Live</div>
+                <img class="project-icon" src="icons/family-destiny.svg" alt="Family Destiny">
+                <h3 class="project-title">Family Destiny</h3>
+                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：同一張命盤在不同系統下講的東西不一樣，八字一套、占星一套、人類圖又是另一套。網路上的工具一次只給一種說法，每換一個系統就要重填一次生日時辰，沒有人有耐心做完，也就沒辦法對照著看。<br><strong>取捨</strong>：把五個系統放在同一個輸入之下，填一次，五種一起出。星曆走真實天文計算而不是查表，因為只要時辰算錯，五個系統會一起錯。<br><strong>驗證</strong>：已上線，有真實用戶在用，回饋是「準」。這是我唯一一個不用我推、別人自己會回來用的作品。<br><em>註：後端跑在免費方案，閒置後首次開啟需等伺服器喚醒約 30 秒。</em></span><span class="en-only"><strong>Problem</strong>: The same birth chart says different things in different systems. Online tools give you one system at a time and make you re-enter your birth date and hour for each, so nobody finishes, and nobody ever reads them side by side.<br><strong>Trade-off</strong>: I put all five systems behind a single input: fill it once, get five readings. The ephemeris is computed from real astronomy rather than lookup tables, because if the birth hour is off, all five are wrong together.<br><strong>How I know it works</strong>: It's live with real users and the feedback is that the readings land. It's the one project people come back to without me promoting it.<br><em>Note: the backend runs on a free tier, so the first load after idle takes about 30 seconds to wake.</em></span></p>
                 <div class="project-tags">
-                    <span class="project-tag">Flutter</span>
-                    <span class="project-tag">FastAPI</span>
-                    <span class="project-tag">React</span>
-                    <span class="project-tag">Gemini</span>
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Flask</span>
+                    <span class="project-tag">Skyfield</span>
+                    <span class="project-tag">Render</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/memoir-novelist" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://memoir-novelist.web.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/family-destiny-app" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://family-destiny.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-
             <div class="project-card">
-                <img class="project-icon" src="icons/task-shredder.svg" alt="Task Shredder">
-                <h3 class="project-title"><span class="zh-only">Task Shredder</span><span class="en-only">Task Shredder</span></h3>
-                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：我們常常知道自己想做一件事，但就是不知道從哪裡開始，於是那件事一直放著。卡住的不是動力，是第一步太模糊。<br><strong>取捨</strong>：市面上的工具是你丟一段模糊的話，它回一份很有自信的清單。但輸入本來就模糊，直接生成只會得到一份自信的錯答案，而且你不會照做。所以我讓它先反問，問夠了才拆，直到第一步變成今天就能動手的東西。<br><strong>驗證</strong>：我自己拿它管開發排程，用到現在。會繼續用是因為它產出的東西我真的會照做。</span><span class="en-only"><strong>Problem</strong>: You often know what you want to do but not where to start, so it sits there. The blocker isn't motivation, it's that the first step is too vague to begin.<br><strong>Trade-off</strong>: Most AI task tools take a vague brain-dump and hand back a confident list. The input was vague, so the output is a confident wrong answer you won't follow. Mine asks clarifying questions first and only generates once the first step is something you could start today.<br><strong>How I know it works</strong>: I use it to plan my own build schedule and still do, because I actually follow what it produces.</span></p>
+                <div class="project-highlight">Live</div>
+                <img class="project-icon" src="icons/line-family-bot.svg" alt="Line Family Bot">
+                <h3 class="project-title">Line Family Bot</h3>
+                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：家事的問題從來不是誰不做，是沒有人想當那個一直開口提醒的人。誰記得誰就得說，說久了在家人聽起來就變成抱怨，於是大家乾脆都不講。<br><strong>取捨</strong>：讓機器人來當那個開口的角色，家事變成點數、購物清單放在群組裡大家都看得到，提醒由它發不由人發。改成明確指令而不是自然語言對話，因為家人不會為了一個機器人學怎麼跟它聊天，指令醜一點但真的會被用。<br><strong>驗證</strong>：已部署，有真實家庭在用。</span><span class="en-only"><strong>Problem</strong>: Chores are never really about who won't do them, they're about nobody wanting to be the person who keeps bringing it up. Whoever remembers has to say it, and said often enough it sounds like nagging to your own family, so everyone stops mentioning it.<br><strong>Trade-off</strong>: The bot becomes the one that brings it up. Chores turn into points, the shopping list lives where everyone can see it, and reminders come from the bot rather than from a person. I went with explicit commands over natural-language chat, because family members won't learn how to converse with a bot; commands look uglier and actually get used.<br><strong>How I know it works</strong>: Deployed and in use by a real family.</span></p>
                 <div class="project-tags">
-                    <span class="project-tag">React Native</span>
-                    <span class="project-tag">Expo</span>
-                    <span class="project-tag"><span class="zh-only">AI 任務分解</span><span class="en-only">AI Task Decomposition</span></span>
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Flask</span>
+                    <span class="project-tag">LINE SDK</span>
+                    <span class="project-tag">Render</span>
                 </div>
                 <div class="project-links">
-                    <a href="https://github.com/weiwei0607/task-shredder" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://task-shredder-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                    <a href="https://github.com/weiwei0607/line-family-bot" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
-
             <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
                 <img class="project-icon" src="icons/interactive-novel.svg" alt="Interactive Mystery Novel">
@@ -769,10 +788,6 @@
                     <a href="https://interactive-novel.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-        </div>
-
-        <h3 class="category-title"><span class="zh-only">Utility Tools</span><span class="en-only">Life Utilities</span></h3>
-        <div class="projects-grid">
             <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
                 <img class="project-icon" src="icons/fairmeet.svg" alt="FairMeet">
@@ -789,7 +804,20 @@
                     <a href="https://fairmeet-plum.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-
+            <div class="project-card">
+                <img class="project-icon" src="icons/task-shredder.svg" alt="Task Shredder">
+                <h3 class="project-title"><span class="zh-only">Task Shredder</span><span class="en-only">Task Shredder</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：我們常常知道自己想做一件事，但就是不知道從哪裡開始，於是那件事一直放著。卡住的不是動力，是第一步太模糊。<br><strong>取捨</strong>：市面上的工具是你丟一段模糊的話，它回一份很有自信的清單。但輸入本來就模糊，直接生成只會得到一份自信的錯答案，而且你不會照做。所以我讓它先反問，問夠了才拆，直到第一步變成今天就能動手的東西。<br><strong>驗證</strong>：我自己拿它管開發排程，用到現在。會繼續用是因為它產出的東西我真的會照做。</span><span class="en-only"><strong>Problem</strong>: You often know what you want to do but not where to start, so it sits there. The blocker isn't motivation, it's that the first step is too vague to begin.<br><strong>Trade-off</strong>: Most AI task tools take a vague brain-dump and hand back a confident list. The input was vague, so the output is a confident wrong answer you won't follow. Mine asks clarifying questions first and only generates once the first step is something you could start today.<br><strong>How I know it works</strong>: I use it to plan my own build schedule and still do, because I actually follow what it produces.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React Native</span>
+                    <span class="project-tag">Expo</span>
+                    <span class="project-tag"><span class="zh-only">AI 任務分解</span><span class="en-only">AI Task Decomposition</span></span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/task-shredder" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://task-shredder-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
             <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
                 <img class="project-icon" src="icons/food-map.svg" alt="My Food Map">
@@ -807,55 +835,6 @@
                 </div>
             </div>
             <div class="project-card">
-                <img class="project-icon" src="icons/daily-dose.svg" alt="Daily Dose">
-                <h3 class="project-title"><span class="zh-only">Daily Dose 每日一劑</span><span class="en-only">Daily Dose</span></h3>
-                <p class="project-desc"><span class="zh-only">有些人想每天進步一點，但不想要壓力。市面上的自我成長工具都建立在連續紀錄和進度條上，一旦斷了那天你就不想再打開了。所以這個刻意不做帳號、不做連續天數、不做任何進度追蹤，每天就是一則短內容，看了就走。沒有東西可以斷，就不會有放棄這件事。<br><em>註：原本的內容來源後端已下線，Demo 目前使用內建示範資料組，功能流程完整可操作。</em></span><span class="en-only">Some people want to get a little better each day without the pressure that usually comes with it. Self-improvement tools are built on streaks and progress bars, and the day you break one is the day you stop opening the app. So this one deliberately has no account, no streak, and no progress tracking: one short piece of content a day, read it and leave. Nothing can break, so there is nothing to give up on.<br><em>Note: the original content backend is offline, so the demo now runs on a built-in sample data set. The full flow is still operable.</em></span></p>
-                <div class="project-tags">
-                    <span class="project-tag">React</span>
-                    <span class="project-tag"><span class="zh-only">API 整合</span><span class="en-only">API Integration</span></span>
-                </div>
-                <div class="project-links">
-                    <a href="https://daily-dose-virid.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
-                </div>
-            </div>
-        </div>
-
-        <h3 class="category-title"><span class="zh-only">EdTech</span><span class="en-only">EdTech</span></h3>
-        <div class="projects-grid">
-            <div class="project-card">
-                <img class="project-icon" src="icons/tutoring-bot.svg" alt="Tutoring Bot">
-                <h3 class="project-title"><span class="zh-only">Tutoring Bot</span><span class="en-only">Tutoring Bot</span></h3>
-                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：我同時帶 20 幾個學生，每個人卡的地方都不一樣。有人是計算粗心，有人是根本沒讀懂題目，但我能給的練習題是同一份。真正該做的是針對每個人的弱項出題，一個人手動做不到 20 份。<br><strong>取捨</strong>：讓學生把答錯的題目丟進來，AI 判斷弱點在哪，再生成針對性的練習；老師端看得到每個人的進度和退步的科目。做成 LINE Bot 而不是 App，因為學生本來就在 LINE 上，多下載一個 App 就沒人用了。</span><span class="en-only"><strong>Problem</strong>: I tutor 20-odd students at once and every one of them is stuck somewhere different. One makes careless arithmetic errors, another never understood the question. But the practice set I can hand out is the same for all of them, and building 20 targeted sets by hand isn't possible.<br><strong>Trade-off</strong>: Students submit the questions they got wrong, the AI works out where the weakness is, and generates practice aimed at it. Teachers see each student's progress and which subjects are slipping. I built it as a LINE bot rather than an app, because the students are already on LINE and one more download means nobody uses it.</span></p>
-                <div class="project-tags">
-                    <span class="project-tag">FastAPI</span>
-                    <span class="project-tag">LINE Bot</span>
-                    <span class="project-tag">Chart.js</span>
-                    <span class="project-tag">SaaS</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/weiwei0607" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <img class="project-icon" src="icons/history-bridge.svg" alt="History Bridge">
-                <h3 class="project-title"><span class="zh-only">History Bridge</span><span class="en-only">History Bridge</span></h3>
-                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：歷史課都是分開講的，中國史一條線、西洋史一條線。但這些人其實活在同一個時間軸上，有些甚至互相認識。你讀完會知道很多人名，卻不知道他們怎麼串在一起。<br><strong>取捨</strong>：輸入兩個歷史人物，找出他們之間最短的關聯路徑，像六度分隔那樣。重點不是給你正確答案，是讓你看到原本以為毫無關係的兩個人中間隔著誰。</span><span class="en-only"><strong>Problem</strong>: History is taught in separate lanes: one for China, one for the West. But these people lived on the same timeline and some of them knew each other. You finish the course knowing a lot of names and no idea how they connect.<br><strong>Trade-off</strong>: Enter two historical figures and it finds the shortest chain between them, six-degrees style. The point isn't to hand you a correct answer, it's to show you who stands between two people you assumed had nothing to do with each other.</span></p>
-                <div class="project-tags">
-                    <span class="project-tag">React</span>
-                    <span class="project-tag"><span class="zh-only">BFS 演算法</span><span class="en-only">BFS Algorithm</span></span>
-                    <span class="project-tag"><span class="zh-only">教育遊戲</span><span class="en-only">Educational Games</span></span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/weiwei0607/history-bridge" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://history-bridge-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
-                </div>
-            </div>
-        </div>
-
-        <h3 class="category-title"><span class="zh-only">Gamification</span><span class="en-only">Gamification</span></h3>
-        <div class="projects-grid">
-            <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
                 <img class="project-icon" src="icons/b-battle.svg" alt="B-Battle">
                 <h3 class="project-title"><span class="zh-only">B-Battle 意志力記帳遊戲</span><span class="en-only">B-Battle</span></h3>
@@ -871,8 +850,67 @@
                     <a href="https://b-battle.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
+        </div>
 
-            <div class="project-card">
+        <details class="more-projects">
+            <summary><span class="zh-only">更多實驗（14 個）</span><span class="en-only">More experiments (14)</span></summary>
+            <div class="projects-grid">
+                <div class="project-card">
+                <img class="project-icon" src="icons/memoir-novelist.svg" alt="Memoir Novelist">
+                <h3 class="project-title"><span class="zh-only">回憶小說家 Memoir Novelist</span><span class="en-only">Memoir Novelist</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：每個人都幻想過自己是自己故事裡的主角，但真的要寫，常常想一想小說就胎死腹中了。難的不是想像，是把它變成一段讀得下去的文字。<br><strong>取捨</strong>：不要求使用者會寫小說，只要求寫日記。日記本來就是很多人已經在做的事，門檻低到不需要建立新習慣，AI 再把累積的日記串成有情節的故事。使用者選風格和角色，但故事骨架來自他自己真實寫下的東西，這樣讀起來才是自己的人生。</span><span class="en-only"><strong>Problem</strong>: Everyone has imagined themselves as the protagonist of their own story, but the moment you try to write it the novel dies in your head. The hard part isn't the imagining, it's turning it into prose someone would read.<br><strong>Trade-off</strong>: It doesn't ask you to write fiction, only to keep a diary. Journaling is something many people already do, so there's no new habit to build, and the AI weaves the accumulated entries into a plot. You pick the genre and the characters, but the skeleton comes from what you actually wrote, which is what makes it read like your life rather than a generated story.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">Flutter</span>
+                    <span class="project-tag">FastAPI</span>
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Gemini</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/memoir-novelist" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://memoir-novelist.web.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/daily-dose.svg" alt="Daily Dose">
+                <h3 class="project-title"><span class="zh-only">Daily Dose 每日一劑</span><span class="en-only">Daily Dose</span></h3>
+                <p class="project-desc"><span class="zh-only">有些人想每天進步一點，但不想要壓力。市面上的自我成長工具都建立在連續紀錄和進度條上，一旦斷了那天你就不想再打開了。所以這個刻意不做帳號、不做連續天數、不做任何進度追蹤，每天就是一則短內容，看了就走。沒有東西可以斷，就不會有放棄這件事。<br><em>註：原本的內容來源後端已下線，Demo 目前使用內建示範資料組，功能流程完整可操作。</em></span><span class="en-only">Some people want to get a little better each day without the pressure that usually comes with it. Self-improvement tools are built on streaks and progress bars, and the day you break one is the day you stop opening the app. So this one deliberately has no account, no streak, and no progress tracking: one short piece of content a day, read it and leave. Nothing can break, so there is nothing to give up on.<br><em>Note: the original content backend is offline, so the demo now runs on a built-in sample data set. The full flow is still operable.</em></span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag"><span class="zh-only">API 整合</span><span class="en-only">API Integration</span></span>
+                </div>
+                <div class="project-links">
+                    <a href="https://daily-dose-virid.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/tutoring-bot.svg" alt="Tutoring Bot">
+                <h3 class="project-title"><span class="zh-only">Tutoring Bot</span><span class="en-only">Tutoring Bot</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：我同時帶 20 幾個學生，每個人卡的地方都不一樣。有人是計算粗心，有人是根本沒讀懂題目，但我能給的練習題是同一份。真正該做的是針對每個人的弱項出題，一個人手動做不到 20 份。<br><strong>取捨</strong>：讓學生把答錯的題目丟進來，AI 判斷弱點在哪，再生成針對性的練習；老師端看得到每個人的進度和退步的科目。做成 LINE Bot 而不是 App，因為學生本來就在 LINE 上，多下載一個 App 就沒人用了。</span><span class="en-only"><strong>Problem</strong>: I tutor 20-odd students at once and every one of them is stuck somewhere different. One makes careless arithmetic errors, another never understood the question. But the practice set I can hand out is the same for all of them, and building 20 targeted sets by hand isn't possible.<br><strong>Trade-off</strong>: Students submit the questions they got wrong, the AI works out where the weakness is, and generates practice aimed at it. Teachers see each student's progress and which subjects are slipping. I built it as a LINE bot rather than an app, because the students are already on LINE and one more download means nobody uses it.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">FastAPI</span>
+                    <span class="project-tag">LINE Bot</span>
+                    <span class="project-tag">Chart.js</span>
+                    <span class="project-tag">SaaS</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/history-bridge.svg" alt="History Bridge">
+                <h3 class="project-title"><span class="zh-only">History Bridge</span><span class="en-only">History Bridge</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：歷史課都是分開講的，中國史一條線、西洋史一條線。但這些人其實活在同一個時間軸上，有些甚至互相認識。你讀完會知道很多人名，卻不知道他們怎麼串在一起。<br><strong>取捨</strong>：輸入兩個歷史人物，找出他們之間最短的關聯路徑，像六度分隔那樣。重點不是給你正確答案，是讓你看到原本以為毫無關係的兩個人中間隔著誰。</span><span class="en-only"><strong>Problem</strong>: History is taught in separate lanes: one for China, one for the West. But these people lived on the same timeline and some of them knew each other. You finish the course knowing a lot of names and no idea how they connect.<br><strong>Trade-off</strong>: Enter two historical figures and it finds the shortest chain between them, six-degrees style. The point isn't to hand you a correct answer, it's to show you who stands between two people you assumed had nothing to do with each other.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag"><span class="zh-only">BFS 演算法</span><span class="en-only">BFS Algorithm</span></span>
+                    <span class="project-tag"><span class="zh-only">教育遊戲</span><span class="en-only">Educational Games</span></span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/history-bridge" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://history-bridge-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
                 <img class="project-icon" src="icons/budget-battle.svg" alt="Budget Battle">
                 <h3 class="project-title"><span class="zh-only">Budget Battle</span><span class="en-only">Budget Battle</span></h3>
                 <p class="project-desc"><span class="zh-only"><strong>問題</strong>：B-Battle 是網頁版，我想知道同一個產品用 Flutter 重做一次會遇到什麼。這個純粹是我想練跨平台開發。<br><strong>取捨</strong>：功能刻意做得跟網頁版一樣，不加新東西，這樣比較的才是框架本身而不是產品。<br><strong>結論</strong>：原生手機體驗確實好很多，但開發速度慢下來的幅度超過我預期。</span><span class="en-only"><strong>Problem</strong>: B-Battle is a web app and I wanted to know what rebuilding the same product in Flutter would actually cost. This one is purely me practising cross-platform development.<br><strong>Trade-off</strong>: I kept the feature set identical to the web version and added nothing new, so what I was comparing was the framework rather than the product.<br><strong>What I concluded</strong>: The native mobile experience is meaningfully better, but the slowdown in development speed was larger than I expected.</span></p>
@@ -885,8 +923,7 @@
                     <a href="https://github.com/weiwei0607" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
-
-            <div class="project-card">
+                <div class="project-card">
                 <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
                 <img class="project-icon" src="icons/break-the-loop.svg" alt="Break the Loop">
                 <h3 class="project-title"><span class="zh-only">Break the Loop 生活破圈器</span><span class="en-only">Break the Loop</span></h3>
@@ -902,7 +939,7 @@
                     <a href="https://break-the-loop-web.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-            <div class="project-card">
+                <div class="project-card">
                 <img class="project-icon" src="icons/era-survival.svg" alt="Era Survival">
                 <h3 class="project-title"><span class="zh-only">時代大逃殺</span><span class="en-only">Era Survival</span></h3>
                 <p class="project-desc"><span class="zh-only"><strong>問題</strong>：讀紅樓夢的時候會想，如果我活在那個時代、那個身分，我撐得下去嗎。這個好奇心很難靠讀書滿足，因為書裡的人生不是你的選擇。<br><strong>取捨</strong>：選一個時代和身分，用文字 RPG 活一遍，每個選擇都影響數值，活不下去就結束。用大模型生成事件而不是寫死劇本，因為固定劇本玩第二次就知道答案了。</span><span class="en-only"><strong>Problem</strong>: Reading a classical novel, you start wondering whether you would have survived that era in that social position. Reading can't answer it, because the life on the page isn't yours to choose.<br><strong>Trade-off</strong>: Pick an era and a role and live through it as a text RPG, where every choice moves your stats and running out ends the run. Events are generated by an LLM rather than scripted, because a fixed script means you already know the answers on your second playthrough.</span></p>
@@ -916,11 +953,7 @@
                     <a href="https://era-survival.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-        </div>
-
-        <h3 class="category-title"><span class="zh-only">Productivity Tools</span><span class="en-only">Productivity Tools</span></h3>
-        <div class="projects-grid">
-            <div class="project-card">
+                <div class="project-card">
                 <img class="project-icon" src="icons/office-survival.svg" alt="Office Survival Toolkit">
                 <h3 class="project-title"><span class="zh-only">職場生存工具</span><span class="en-only">Office Survival Toolkit</span></h3>
                 <p class="project-desc"><span class="zh-only"><strong>問題</strong>：上班想喘口氣，但螢幕隨時可能被看到。用手機太明顯，開網頁又怕被瞄到。<br><strong>取捨</strong>：做成 PWA，可以偽裝成一般工作頁面，聊天內容加密，一鍵切換回「正在工作」的畫面。這個東西的價值全在被看到的那一秒，所以偽裝速度比功能豐富重要。</span><span class="en-only"><strong>Problem</strong>: You want a moment off at work, but your screen could be seen at any time. Reaching for your phone is obvious, and opening a browser tab risks someone glancing over.<br><strong>Trade-off</strong>: A PWA that disguises itself as an ordinary work page, with encrypted chat and one-key switching back to a "currently working" screen. The entire value of this thing lives in the second you get looked at, so how fast the disguise lands matters more than how many features it has.</span></p>
@@ -935,8 +968,7 @@
                     <a href="https://office-survival-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-
-            <div class="project-card">
+                <div class="project-card">
                 <img class="project-icon" src="icons/declutter.svg" alt="SpaceClear">
                 <h3 class="project-title"><span class="zh-only">SpaceClear 空間歸零</span><span class="en-only">SpaceClear</span></h3>
                 <p class="project-desc"><span class="zh-only"><strong>問題</strong>：東西越積越多，但「整理房間」這個目標大到永遠不會開始。而且真正讓人停下來的不是丟不掉，是丟完之後那股說不上來的後悔，久了就不想再開始。<br><strong>取捨</strong>：任務切到兩分鐘一個、依居家／辦公／外出分場景，讓人隨時都能做一件。丟完之後不是給你打勾，而是問你現在什麼感覺，再記下釋放了多少壓力。累積下來你會知道自己丟哪一類東西會後悔、哪一類丟完是鬆一口氣，下次就有依據。<br><strong>取捨之二</strong>：進度做成一片慢慢長出來的森林，不是待辦清單的完成率。清單會讓人覺得自己還差多少，森林讓人看到自己已經清掉多少。</span><span class="en-only"><strong>Problem</strong>: Clutter accumulates, but "tidy the whole room" is too big a goal to ever start. And what actually stops people isn't the letting go, it's the vague regret afterwards, which over time makes you avoid starting at all.<br><strong>Trade-off</strong>: Tasks are cut down to two minutes each and split by setting (home / office / out), so there is always one you can do right now. Finishing one doesn't give you a checkmark, it asks how you feel and how much pressure that released. Over time you learn which categories you regret letting go of and which ones leave you lighter, so the next decision has something to stand on.<br><strong>Second trade-off</strong>: Progress is a forest that slowly grows in, not a completion percentage. A checklist shows you how far you still are; the forest shows you how much you already cleared.</span></p>
@@ -949,11 +981,7 @@
                     <a href="https://space-clear.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-        </div>
-
-        <h3 class="category-title"><span class="zh-only">Automation</span><span class="en-only">Automation</span></h3>
-        <div class="projects-grid">
-            <div class="project-card">
+                <div class="project-card">
                 <img class="project-icon" src="icons/weiwei-reminders.svg" alt="WeiWei Reminders">
                 <h3 class="project-title"><span class="zh-only">WeiWei Reminders</span><span class="en-only">WeiWei Reminders</span></h3>
                 <p class="project-desc"><span class="zh-only">我每天要做的事其實固定：喝水、讀書、今天該完成什麼。但靠自己記，忙起來就全部漏掉；靠手機內建提醒又只會響一聲然後被滑掉。所以我把這些做成排程，準時推到我每天本來就在看的 Telegram，不用另外開任何 app。提醒我控制在一天幾則，因為推太多的下場一定是靜音，靜音之後這個系統就等於不存在。</span><span class="en-only">The things I need to do each day are fairly fixed: drink water, study, whatever today's task is. Remembering them myself means dropping all of them on a busy day, and a phone reminder pings once and gets swiped away. So I put them on a schedule that pushes to Telegram, which I'm already reading all day, so there's no extra app to open. I keep it to a few messages a day, because the outcome of pushing more is that it gets muted, and a muted reminder system may as well not exist.</span></p>
@@ -966,11 +994,7 @@
                 <div class="project-links">
                 </div>
             </div>
-        </div>
-
-        <h3 class="category-title"><span class="zh-only">更多作品</span><span class="en-only">Additional Work</span></h3>
-        <div class="projects-grid">
-            <div class="project-card">
+                <div class="project-card">
                 <img class="project-icon" src="icons/album-organizer.svg" alt="Album Organizer">
                 <h3 class="project-title">Album Organizer</h3>
                 <p class="project-desc"><span class="zh-only">相簿裡一半是資訊截圖：菜單、地址、螢幕畫面。它們把真正的回憶淹掉了，想刪又怕裡面有還沒抄下來的東西。所以我先用 OCR 把截圖裡的文字抽出來變成可搜尋的筆記，抽完才敢刪。資料全部存在瀏覽器本機，因為相簿是最私密的東西，上傳到別人的伺服器這件事本身就會讓人不想用。</span><span class="en-only">Half my camera roll is screenshots: menus, addresses, things off a screen. They bury the actual memories, and I can't delete them because some hold information I never wrote down. So I run OCR first, turn the text into searchable notes, and only then is deleting safe. Everything stays local in the browser, because a photo library is about as private as data gets, and uploading it to someone else's server is itself a reason people won't use the thing.</span></p>
@@ -985,8 +1009,7 @@
                     <a href="https://album-organizer-mu.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-
-            <div class="project-card">
+                <div class="project-card">
                 <img class="project-icon" src="icons/partner-brain.svg" alt="Partner Brain">
                 <h3 class="project-title">Partner Brain</h3>
                 <p class="project-desc"><span class="zh-only">朋友講過想要什麼、喜歡什麼、家人生日是哪天，當下都記得，真的要送禮的時候完全想不起來。所以我做了一個只給自己看的人際筆記：每個人一份，可以丟截圖進去自動抽出興趣，要送禮的時候直接問它。我沒有做社群功能，因為這種東西一旦牽涉到別人看得到，就沒有人敢誠實記錄了。</span><span class="en-only">Someone mentions what they want, what they like, when their birthday is. You remember it in the moment and have nothing left when it's time to buy a gift. So I built a private notebook for people: one profile each, drop in a screenshot and it pulls out the interests, ask it when you need a gift. I deliberately built no social layer, because the moment other people can see these notes, nobody records anything honest.</span></p>
@@ -1001,25 +1024,7 @@
                     <a href="https://weiwei0607.github.io/partner-brain/" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="project-highlight">Live</div>
-                <img class="project-icon" src="icons/family-destiny.svg" alt="Family Destiny">
-                <h3 class="project-title">Family Destiny</h3>
-                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：同一張命盤在不同系統下講的東西不一樣，八字一套、占星一套、人類圖又是另一套。網路上的工具一次只給一種說法，每換一個系統就要重填一次生日時辰，沒有人有耐心做完，也就沒辦法對照著看。<br><strong>取捨</strong>：把五個系統放在同一個輸入之下，填一次，五種一起出。星曆走真實天文計算而不是查表，因為只要時辰算錯，五個系統會一起錯。<br><strong>驗證</strong>：已上線，有真實用戶在用，回饋是「準」。這是我唯一一個不用我推、別人自己會回來用的作品。<br><em>註：後端跑在免費方案，閒置後首次開啟需等伺服器喚醒約 30 秒。</em></span><span class="en-only"><strong>Problem</strong>: The same birth chart says different things in different systems. Online tools give you one system at a time and make you re-enter your birth date and hour for each, so nobody finishes, and nobody ever reads them side by side.<br><strong>Trade-off</strong>: I put all five systems behind a single input: fill it once, get five readings. The ephemeris is computed from real astronomy rather than lookup tables, because if the birth hour is off, all five are wrong together.<br><strong>How I know it works</strong>: It's live with real users and the feedback is that the readings land. It's the one project people come back to without me promoting it.<br><em>Note: the backend runs on a free tier, so the first load after idle takes about 30 seconds to wake.</em></span></p>
-                <div class="project-tags">
-                    <span class="project-tag">Python</span>
-                    <span class="project-tag">Flask</span>
-                    <span class="project-tag">Skyfield</span>
-                    <span class="project-tag">Render</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/weiwei0607/family-destiny-app" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                    <a href="https://family-destiny.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
-                </div>
-            </div>
-
-            <div class="project-card">
+                <div class="project-card">
                 <img class="project-icon" src="icons/travel-journal.svg" alt="Travel Journal">
                 <h3 class="project-title">Travel Journal</h3>
                 <p class="project-desc"><span class="zh-only">旅行完照片一堆，但遊記永遠沒寫，過兩年細節就全忘了。卡住的不是懶，是打開空白頁不知道從哪裡開始寫。所以我讓行程、照片、地圖軌跡先自動排成一份有版型的東西，你只要補文字，最後一鍵匯出 PDF。做成可以印出來是刻意的，因為存在雲端的遊記跟沒寫過差不多。</span><span class="en-only">After a trip you have hundreds of photos and never write the journal, and two years later the details are gone. The blocker isn't laziness, it's a blank page with no obvious starting point. So the itinerary, photos and map track lay themselves out first and you only fill in the words, then export to PDF in one click. Making it printable was deliberate: a travel journal that lives in the cloud is barely different from one you never wrote.</span></p>
@@ -1034,8 +1039,7 @@
                     <a href="https://travel-journal-mocha-delta.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-
-            <div class="project-card">
+                <div class="project-card">
                 <img class="project-icon" src="icons/special-forces-planner.svg" alt="Special Forces Planner">
                 <h3 class="project-title">Special Forces Planner<span class="zh-only"> · 行程順序最佳化</span><span class="en-only"> · Route Order Optimiser</span></h3>
                 <p class="project-desc"><span class="zh-only"><strong>一句話</strong>：用 nearest neighbor 加 2-opt 算最短的景點順序，介面是刻意做成「特種兵旅遊」的軍事風格。<br><strong>問題</strong>：我排行程的方式是先列一堆想去的點，然後卡在「今天先去哪」。人腦排順序排到五、六個點就開始亂，排出來的路線常常在同一區來回繞，走的路比實際需要的多。<br><strong>取捨</strong>：把它當成旅行推銷員問題來解，直接算出最短路線並畫在地圖上。我沒有做行程建議或景點推薦，因為想去哪是使用者自己的事，這個工具只負責解決「順序」這一件他算不動的事。</span><span class="en-only"><strong>In one line</strong>: computes the shortest visiting order with nearest neighbour plus 2-opt. The military styling is a deliberate "special forces travel" theme.<br><strong>Problem</strong>: I plan trips by listing everywhere I want to go and then getting stuck on where to start. Ordering more than five or six stops in your head falls apart quickly, and the route you come up with usually doubles back through the same area and walks further than it needs to.<br><strong>Trade-off</strong>: I treated it as a travelling salesman problem, computed the shortest route and drew it on the map. I deliberately didn't add itinerary suggestions or attraction recommendations, because where you want to go is yours to decide. The tool solves only the ordering, which is the part a person can't do in their head.</span></p>
@@ -1050,23 +1054,8 @@
                     <a href="https://special-forces-planner.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
                 </div>
             </div>
-
-            <div class="project-card">
-                <div class="project-highlight">Live</div>
-                <img class="project-icon" src="icons/line-family-bot.svg" alt="Line Family Bot">
-                <h3 class="project-title">Line Family Bot</h3>
-                <p class="project-desc"><span class="zh-only"><strong>問題</strong>：家事的問題從來不是誰不做，是沒有人想當那個一直開口提醒的人。誰記得誰就得說，說久了在家人聽起來就變成抱怨，於是大家乾脆都不講。<br><strong>取捨</strong>：讓機器人來當那個開口的角色，家事變成點數、購物清單放在群組裡大家都看得到，提醒由它發不由人發。改成明確指令而不是自然語言對話，因為家人不會為了一個機器人學怎麼跟它聊天，指令醜一點但真的會被用。<br><strong>驗證</strong>：已部署，有真實家庭在用。</span><span class="en-only"><strong>Problem</strong>: Chores are never really about who won't do them, they're about nobody wanting to be the person who keeps bringing it up. Whoever remembers has to say it, and said often enough it sounds like nagging to your own family, so everyone stops mentioning it.<br><strong>Trade-off</strong>: The bot becomes the one that brings it up. Chores turn into points, the shopping list lives where everyone can see it, and reminders come from the bot rather than from a person. I went with explicit commands over natural-language chat, because family members won't learn how to converse with a bot; commands look uglier and actually get used.<br><strong>How I know it works</strong>: Deployed and in use by a real family.</span></p>
-                <div class="project-tags">
-                    <span class="project-tag">Python</span>
-                    <span class="project-tag">Flask</span>
-                    <span class="project-tag">LINE SDK</span>
-                    <span class="project-tag">Render</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/weiwei0607/line-family-bot" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
-                </div>
             </div>
-        </div>
+        </details>
     </section>
 
     <section id="contact">
@@ -1074,14 +1063,14 @@
             <span class="section-tag"><span class="zh-only">聯繫</span><span class="en-only">Contact</span></span>
             <h2 class="section-title"><span class="zh-only">討論 AI 產品機會</span><span class="en-only">Let's talk about AI products</span></h2>
             <p class="section-desc">
-                <span class="zh-only">正在尋找產品相關職缺，歡迎聯繫。</span>
-                <span class="en-only">I'm open to AI Product Manager roles — let's connect.</span>
+                <span class="zh-only">正在尋找遠距的 AI 產品／增長職缺，歡迎聯繫。</span>
+                <span class="en-only">I'm open to remote AI product and growth roles. Let's connect.</span>
             </p>
         </div>
         <div style="text-align: center;">
             <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 0.9rem;">
-                <span class="zh-only">台北 · 可遠距、開放搬遷</span>
-                <span class="en-only">Taipei · open to relocation and remote</span>
+                <span class="zh-only">台北 · 以遠距為主</span>
+                <span class="en-only">Based in Taipei · remote first</span>
             </p>
             <a href="mailto:vernessa0607@gmail.com" class="btn btn-primary" style="margin-bottom: 1rem;">
                 vernessa0607@gmail.com
@@ -1114,12 +1103,12 @@
                 html.setAttribute('lang', 'zh-TW');
                 btnZh.classList.add('active');
                 btnEn.classList.remove('active');
-                document.title = '馬韡寧 Vernessa Ma — 作品集';
+                document.title = '馬韡寧 Vernessa Ma｜作品集';
             } else {
                 html.setAttribute('lang', 'en');
                 btnEn.classList.add('active');
                 btnZh.classList.remove('active');
-                document.title = 'Wei-Ning (Vernessa) Ma — Portfolio';
+                document.title = 'Wei-Ning (Vernessa) Ma | AI Product & Growth';
             }
         }
 

@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wei-Ning (Vernessa) Ma. Remote AI product and overseas growth. 20+ AI products, most of them deployed, each with a note on what I chose not to build.">
+    <meta property="og:title" content="Wei-Ning (Vernessa) Ma | AI Product &amp; Growth">
+    <meta property="og:description" content="Remote AI product and overseas growth. 20+ AI products, most of them deployed and public.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://weining-ma.vercel.app/cn">
+    <meta property="og:image" content="https://weining-ma.vercel.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Wei-Ning (Vernessa) Ma, AI product and overseas growth. 20+ products, most of them deployed.">
+    <meta name="twitter:image" content="https://weining-ma.vercel.app/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wei-Ning (Vernessa) Ma | AI Product &amp; Growth">
+    <meta name="twitter:description" content="Remote AI product and overseas growth. 20+ AI products, most of them deployed.">
+    <link rel="canonical" href="https://weining-ma.vercel.app/cn">
+    <title>马韡宁 Vernessa Ma｜AI 产品与海外增长</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0d9488;
+            --primary-dark: #0f766e;
+            --primary-light: #ccfbf1;
+            --secondary: #1e293b;
+            --accent: #0ea5e9;
+            --bg: #ffffff;
+            --bg-subtle: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-hover: #f1f5f9;
+            --text: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --border-strong: #cbd5e1;
+            --success: #10b981;
+            --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+            --shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -2px rgba(15, 23, 42, 0.03);
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.65;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection { background: var(--primary-light); color: var(--primary-dark); }
+
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 800;
+            font-size: 1.15rem;
+            color: var(--secondary);
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .lang-toggle {
+            display: inline-flex;
+            border: 1px solid var(--border-strong);
+            border-radius: var(--radius-sm);
+            background: var(--bg-subtle);
+            overflow: hidden;
+        }
+
+        .lang-toggle button {
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: inherit;
+        }
+
+        .lang-toggle button.active {
+            background: var(--bg-card);
+            color: var(--primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .lang-toggle button:hover:not(.active) { color: var(--text); }
+
+        .hero {
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .hero-main {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 1rem;
+            background: var(--primary-light);
+            border: 1px solid rgba(13, 148, 136, 0.15);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        .hero-badge .dot {
+            width: 7px; height: 7px;
+            background: var(--success);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            color: var(--secondary);
+        }
+
+        .hero h1 .tagline { display: block; font-size: 0.6em; line-height: 1.3; margin-top: 0.5rem; }
+
+        .hero h1 .accent {
+            color: var(--primary);
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 560px;
+            line-height: 1.7;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(13, 148, 136, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(13, 148, 136, 0.25);
+        }
+
+        .btn-secondary {
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border-color: var(--border-strong);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--bg-subtle);
+        }
+
+        .hero-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .hero-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: all 0.2s;
+        }
+
+        .hero-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--border-strong);
+        }
+
+        .hero-card-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.4rem;
+        }
+
+        .hero-card-label {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 0.3rem;
+        }
+
+        .hero-card-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.3rem 0.9rem;
+            background: var(--primary-light);
+            border-radius: 50px;
+            font-size: 0.75rem;
+            color: var(--primary-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.25rem);
+            font-weight: 800;
+            margin-bottom: 0.75rem;
+            color: var(--secondary);
+            letter-spacing: -0.02em;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            max-width: 620px;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+
+        .skill-tag {
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--bg-subtle);
+        }
+
+        .skill-tag.ai { background: var(--primary-light); color: var(--primary-dark); border-color: rgba(13, 148, 136, 0.15); }
+        .skill-tag.product { background: #eff6ff; color: #1e40af; border-color: rgba(59, 130, 246, 0.15); }
+        .skill-tag.tech { background: #f0fdf4; color: #166534; border-color: rgba(34, 197, 94, 0.15); }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.6rem;
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--border-strong);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
+            object-fit: cover;
+            display: block;
+            flex-shrink: 0;
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary);
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .project-tag {
+            padding: 0.2rem 0.6rem;
+            background: var(--bg-subtle);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            transition: color 0.2s;
+        }
+
+        .project-link:hover { color: var(--primary-dark); }
+
+        .project-highlight {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            padding: 0.2rem 0.6rem;
+            background: var(--primary);
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: white;
+        }
+
+
+        .more-projects { margin-top: 2.5rem; }
+        .more-projects > summary {
+            cursor: pointer; list-style: none; text-align: center;
+            font-weight: 600; color: var(--primary); padding: 0.9rem 1rem;
+            border: 1px solid var(--border-strong); border-radius: var(--radius);
+            background: var(--bg-card); max-width: 360px; margin: 0 auto 1.5rem;
+        }
+        .more-projects > summary::-webkit-details-marker { display: none; }
+        .more-projects > summary::after { content: " ▾"; }
+        .more-projects[open] > summary::after { content: " ▴"; }
+        .more-projects > summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.25rem;
+            padding-left: 0.75rem;
+            border-left: 3px solid var(--primary);
+            color: var(--secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .about-highlights {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .about-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.1rem;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .about-item-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-sm);
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            flex-shrink: 0;
+            font-size: 0.85rem;
+        }
+
+        .about-item-title {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            color: var(--secondary);
+        }
+
+        .about-item-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        #contact {
+            background: var(--bg-subtle);
+            border-radius: var(--radius);
+            margin: 3rem auto;
+            padding: 4rem 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-links a:hover { color: var(--primary); }
+
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            border-top: 1px solid var(--border);
+            background: var(--bg);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--primary); }
+
+        .footer-copy {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-cards { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+            .about-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links li:not(:last-child) { display: none; }
+            .hero { padding-top: 6rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            section { padding: 3.5rem 1.5rem; }
+        }
+
+        html[lang="zh-CN"] .en-only { display: none !important; }
+        html[lang="en"] .zh-only { display: none !important; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">Vernessa Ma</div>
+        <ul class="nav-links">
+            <li><a href="#about"><span class="zh-only">关于我</span><span class="en-only">About</span></a></li>
+            <li><a href="#skills"><span class="zh-only">技能</span><span class="en-only">Skills</span></a></li>
+            <li><a href="#projects"><span class="zh-only">作品</span><span class="en-only">Projects</span></a></li>
+            <li><a href="#contact"><span class="zh-only">联系</span><span class="en-only">Contact</span></a></li>
+            <li>
+                <div class="lang-toggle">
+                    <button id="lang-en">EN</button>
+                    <button id="lang-zh" class="active">中</button>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-grid">
+            <div class="hero-main">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    <span class="zh-only">开放远距职缺 · AI 产品／海外增长</span><span class="en-only">Open to remote roles · AI product &amp; overseas growth</span>
+                </div>
+                <h1>
+                    <span class="zh-only">马韡宁 <span class="accent">Vernessa Ma</span><span class="tagline">做小而能用的 AI 产品，砍掉的比做出来的多</span></span>
+                    <span class="en-only">Wei-Ning (Vernessa) Ma<span class="accent tagline">I build small AI products, and cut more than I build.</span></span>
+                </h1>
+                <p class="hero-desc">
+                    <span class="zh-only">现在远距在一家 AI 陪伴新创做海外增长：每天经营 X 和 Threads、跟英语圈用户交互。之前在 PicWiz 从零做短影音增长。我做产品的方式是先确认那个问题是真的，再决定哪些东西不要做。20 几个产品里，有的有真实用户，有的我自己每天在用，也有几个我后来把功能砍掉。下面每一个都写了当时的判断过程。</span>
+                    <span class="en-only">Right now I work remotely on overseas growth for an AI companion startup: daily posts on X and Threads and community engagement with English-speaking users. Before that I grew PicWiz, an AI photo app, from zero with short-form video. The way I build is to first check the problem is real, then decide what not to build. Of the 20+ products below, some have real users, some I use myself every day, and a few I later cut features from. Each one records the judgement I made at the time.</span>
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary"><span class="zh-only">查看作品集</span><span class="en-only">View Projects</span></a>
+                    <a href="Wei-Ning-Ma-Resume-AI-Product-Manager.pdf" download class="btn btn-secondary"><span class="zh-only">履历 · 产品</span><span class="en-only">Resume · Product</span></a>
+                    <a href="Wei-Ning-Ma-Resume-Growth-Operations.pdf" download class="btn btn-secondary"><span class="zh-only">履历 · 运营</span><span class="en-only">Resume · Growth</span></a>
+                    <a href="/growth/cn/" class="btn btn-secondary"><span class="zh-only">增长案例</span><span class="en-only">Growth case (中文)</span></a>
+                    <a href="mailto:vernessa0607@gmail.com" class="btn btn-secondary"><span class="zh-only">联系我</span><span class="en-only">Contact Me</span></a>
+                </div>
+            </div>
+            <div class="hero-cards">
+                <div class="hero-card">
+                    <div class="hero-card-value">20+</div>
+                    <div class="hero-card-label"><span class="zh-only">独立完成的 AI 产品</span><span class="en-only">AI Products Built</span></div>
+                    <div class="hero-card-desc"><span class="zh-only">大多已部署上线，可直接试用</span><span class="en-only">Most deployed and publicly usable</span></div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-card-value">5</div>
+                    <div class="hero-card-label"><span class="zh-only">接入过的大模型</span><span class="en-only">LLMs Shipped With</span></div>
+                    <div class="hero-card-desc"><span class="zh-only">OpenAI、Gemini、Claude、Groq、Moonshot</span><span class="en-only">OpenAI, Gemini, Claude, Groq, Moonshot</span></div>
+                </div>
+                <div class="hero-card">
+                    <div class="hero-card-value"><span class="zh-only">远距</span><span class="en-only">Remote</span></div>
+                    <div class="hero-card-label"><span class="zh-only">海外增长，2026/9 至今</span><span class="en-only">Overseas growth since Sep 2026</span></div>
+                    <div class="hero-card-desc"><span class="zh-only">AI 陪伴新创：X、Threads、社群经营</span><span class="en-only">AI companion startup: X, Threads, community</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-header">
+            <span class="section-tag"><span class="zh-only">关于我</span><span class="en-only">About</span></span>
+            <h2 class="section-title"><span class="zh-only">从生医背景到动手做出产品</span><span class="en-only">From a biomedical background to shipped product</span></h2>
+            <p class="section-desc">
+                <span class="zh-only">生医工程背景，具备 AI 产品运营与数据驱动决策思维。从教育科技到心理健康，从 B2B SaaS 到 AI 原生应用，用产品解决真实问题。</span>
+                <span class="en-only">Biomedical engineering background, now working on AI products and overseas growth. I start from a real problem, decide what is worth building, and ship working AI tools.</span>
+            </p>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>
+                    <span class="zh-only">我认为好的 AI PM 不只是「提需求的人」，而是要能深入理解技术边界、设计可行的 AI 交互流程、并用数据验证假设。</span><span class="en-only">A great AI PM isn't just someone who files requirements. They understand technical constraints, design usable AI interactions, and validate assumptions with data.</span>
+                </p>
+                <p>
+                    <span class="zh-only">现在远距在一家 AI 陪伴新创做海外增长：每天用英文经营 X 和 Threads、在社群里回复 AI 陪伴用户，也自己提案新功能并做出可点的 demo。</span><span class="en-only">I currently work remotely on overseas growth for an AI companion startup: daily English posts on X and Threads, community replies to AI companion users, and feature ideas I pitch with a clickable demo.</span>
+                </p>
+                <p>
+                    <span class="zh-only">在炫图 AI 实习期间，我定义北美市场短视频内容策略，分析 TikTok/Instagram/YouTube 用户行为模式，创建可量化的每日内容决策框架。</span><span class="en-only">During my internship at Xuantu AI, I drove international user acquisition through short-form video, producing ~20 TikToks and Instagram Reels monthly and building tracking systems that grew overseas reach to 5,000+ per week.</span>
+                </p>
+                <p>
+                    <span class="zh-only">自己开发了 20 几个产品，从 Flutter 到 FastAPI 到 Next.js，技术栈横跨 Mobile、Web、Backend，多数已部署上线。这让我能和工程师用同一种语言沟通。</span><span class="en-only">I've built 20+ products on my own across Flutter, FastAPI, Next.js, and React, most of them deployed and publicly accessible. That hands-on fluency lets me speak the same language as engineers.</span>
+                </p>
+            </div>
+            <div class="about-highlights">
+                <div class="about-item">
+                    <div class="about-item-icon">PM</div>
+                    <div>
+                        <div class="about-item-title"><span class="zh-only">产品思维</span><span class="en-only">Product Thinking</span></div>
+                        <div class="about-item-desc"><span class="zh-only">从用户研究、竞品分析到产品定位，完整产品生命周期经验</span><span class="en-only">End-to-end product lifecycle experience: user research, competitive analysis, and positioning</span></div>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-item-icon">AI</div>
+                    <div>
+                        <div class="about-item-title"><span class="zh-only">AI 落地能力</span><span class="en-only">AI Execution</span></div>
+                        <div class="about-item-desc"><span class="zh-only">集成 OpenAI、Gemini、Moonshot 等多 LLM，设计 Prompt 与 AI 交互流程</span><span class="en-only">Integrated OpenAI, Gemini, Moonshot, and other LLMs; designed prompts and AI interaction flows</span></div>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-item-icon">FS</div>
+                    <div>
+                        <div class="about-item-title"><span class="zh-only">全端开发</span><span class="en-only">Full-Stack Building</span></div>
+                        <div class="about-item-desc"><span class="zh-only">Flutter、React、React Native、FastAPI、Next.js 都能动手做</span><span class="en-only">Hands-on with Flutter, React, React Native, FastAPI, and Next.js</span></div>
+                    </div>
+                </div>
+                <div class="about-item">
+                    <div class="about-item-icon">DT</div>
+                    <div>
+                        <div class="about-item-title"><span class="zh-only">数据驱动</span><span class="en-only">Data-Driven</span></div>
+                        <div class="about-item-desc"><span class="zh-only">设计数据仪表板、追踪指标、分析用户行为</span><span class="en-only">Built dashboards, tracked metrics, and analyzed user behavior</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header">
+            <span class="section-tag"><span class="zh-only">技能</span><span class="en-only">Skills</span></span>
+            <h2 class="section-title"><span class="zh-only">技术与产品工具箱</span><span class="en-only">Product & Engineering Toolkit</span></h2>
+        </div>
+        <div class="skills-grid">
+            <span class="skill-tag ai">OpenAI API</span>
+            <span class="skill-tag ai">Gemini</span>
+            <span class="skill-tag ai">Claude</span>
+            <span class="skill-tag ai">Prompt Engineering</span>
+            <span class="skill-tag ai"><span class="zh-only">LLM 集成</span><span class="en-only">LLM Integration</span></span>
+            <span class="skill-tag product"><span class="zh-only">用户研究</span><span class="en-only">User Research</span></span>
+            <span class="skill-tag product"><span class="zh-only">竞品分析</span><span class="en-only">Competitive Analysis</span></span>
+            <span class="skill-tag product"><span class="zh-only">产品路线图</span><span class="en-only">Product Roadmapping</span></span>
+            <span class="skill-tag product"><span class="zh-only">数据分析</span><span class="en-only">Data Analytics</span></span>
+            <span class="skill-tag product"><span class="zh-only">用户行为分析</span><span class="en-only">User Analytics</span></span>
+            <span class="skill-tag product">GCP ICH E6(R2)</span>
+            <span class="skill-tag tech">Flutter</span>
+            <span class="skill-tag tech">React</span>
+            <span class="skill-tag tech">React Native</span>
+            <span class="skill-tag tech">Next.js</span>
+            <span class="skill-tag tech">FastAPI</span>
+            <span class="skill-tag tech">Firebase</span>
+            <span class="skill-tag tech">Tailwind CSS</span>
+            <span class="skill-tag tech">Notion</span>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header">
+            <span class="section-tag"><span class="zh-only">作品集</span><span class="en-only">Projects</span></span>
+            <h2 class="section-title"><span class="zh-only">20+ 个从 0 到 1 的产品</span><span class="en-only">20+ Products, 0 to 1</span></h2>
+            <p class="section-desc">
+                <span class="zh-only">每一个都是从我自己遇到的问题开始。下面写的是那个问题是什么、我做了什么取舍，以及我怎么知道有没有用。</span>
+                <span class="en-only">Every one of these started from a problem I ran into myself. What follows is the problem, the trade-off I made, and how I know whether it worked.</span>
+            </p>
+        </div>
+
+        <h3 class="category-title"><span class="zh-only">精选：有真实用户或最能说明判断的作品</span><span class="en-only">Featured: real users or the clearest product decisions</span></h3>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-highlight">Live</div>
+                <img class="project-icon" src="icons/family-destiny.svg" alt="Family Destiny">
+                <h3 class="project-title">Family Destiny</h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：同一张命盘在不同系统下讲的东西不一样，八字一套、占星一套、人类图又是另一套。网络上的工具一次只给一种说法，每换一个系统就要重填一次生日时辰，没有人有耐心做完，也就没办法对照着看。<br><strong>取舍</strong>：把五个系统放在同一个输入之下，填一次，五种一起出。星历走真实天文计算而不是查表，因为只要时辰算错，五个系统会一起错。<br><strong>验证</strong>：已上线，有真实用户在用，反馈是「准」。这是我唯一一个不用我推、别人自己会回来用的作品。<br><em>注：后端跑在免费方案，闲置后首次打开需等服务器唤醒约 30 秒。</em></span><span class="en-only"><strong>Problem</strong>: The same birth chart says different things in different systems. Online tools give you one system at a time and make you re-enter your birth date and hour for each, so nobody finishes, and nobody ever reads them side by side.<br><strong>Trade-off</strong>: I put all five systems behind a single input: fill it once, get five readings. The ephemeris is computed from real astronomy rather than lookup tables, because if the birth hour is off, all five are wrong together.<br><strong>How I know it works</strong>: It's live with real users and the feedback is that the readings land. It's the one project people come back to without me promoting it.<br><em>Note: the backend runs on a free tier, so the first load after idle takes about 30 seconds to wake.</em></span></p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Flask</span>
+                    <span class="project-tag">Skyfield</span>
+                    <span class="project-tag">Render</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/family-destiny-app" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://family-destiny.onrender.com" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-highlight">Live</div>
+                <img class="project-icon" src="icons/line-family-bot.svg" alt="Line Family Bot">
+                <h3 class="project-title">Line Family Bot</h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：家事的问题从来不是谁不做，是没有人想当那个一直开口提醒的人。谁记得谁就得说，说久了在家人听起来就变成抱怨，于是大家干脆都不讲。<br><strong>取舍</strong>：让机器人来当那个开口的角色，家事变成点数、购物清单放在群组里大家都看得到，提醒由它发不由人发。改成明确指令而不是自然语言对话，因为家人不会为了一个机器人学怎么跟它聊天，指令丑一点但真的会被用。<br><strong>验证</strong>：已部署，有真实家庭在用。</span><span class="en-only"><strong>Problem</strong>: Chores are never really about who won't do them, they're about nobody wanting to be the person who keeps bringing it up. Whoever remembers has to say it, and said often enough it sounds like nagging to your own family, so everyone stops mentioning it.<br><strong>Trade-off</strong>: The bot becomes the one that brings it up. Chores turn into points, the shopping list lives where everyone can see it, and reminders come from the bot rather than from a person. I went with explicit commands over natural-language chat, because family members won't learn how to converse with a bot; commands look uglier and actually get used.<br><strong>How I know it works</strong>: Deployed and in use by a real family.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Flask</span>
+                    <span class="project-tag">LINE SDK</span>
+                    <span class="project-tag">Render</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/line-family-bot" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
+                <img class="project-icon" src="icons/interactive-novel.svg" alt="Interactive Mystery Novel">
+                <h3 class="project-title"><span class="zh-only">交互推理小说《雾中真相》</span><span class="en-only">Interactive Mystery Novel</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：剧本杀很好玩，但每次都要凑人、乔时间、找场地。想玩的当下通常玩不到，等到大家有空，那个兴致已经过了。看小说也一样，结局烂了你只能吐槽。<br><strong>取舍</strong>：让大模型即时扮演所有嫌疑人，一个人随时可以开一局，选择不同结局就不同。但模型会凭空编造证据，把游戏玩坏。我没有靠事后过滤，而是给每个角色一份自己的设置：他是谁、知道什么、要隐瞒什么。约束写在前面，比事后补救可靠。<br><strong>验证</strong>：回复一直被截断，最省事的解法是加钱提高输出上限。我改去翻日志，找到是模型内部的推理预算在吃掉输出配额，关掉之后回复完整、更快，零额外成本。</span><span class="en-only"><strong>Problem</strong>: Murder mystery games need a group, a shared calendar slot, and a place to sit, so you can never play when you actually want to. Reading a mystery has the same catch: if the ending is bad, all you can do is complain about it.<br><strong>Trade-off</strong>: An LLM plays every suspect, so one person can start any time and different choices lead to different endings. But the model invented evidence, which breaks the game. Instead of filtering afterwards I gave each character its own brief: who they are, what they know, what they're hiding. Constraints up front beat cleanup after.<br><strong>How I know it works</strong>: Replies kept getting truncated. The easy fix was paying for a bigger output limit. I read the logs instead, found a hidden reasoning budget eating the output, and switched it off. Complete replies, faster, at zero extra cost.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">TypeScript</span>
+                    <span class="project-tag">Gemini</span>
+                    <span class="project-tag">PWA</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/interactive-novel-game" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://interactive-novel.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
+                <img class="project-icon" src="icons/fairmeet.svg" alt="FairMeet">
+                <h3 class="project-title"><span class="zh-only">FairMeet 最公平的相聚地</span><span class="en-only">FairMeet</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：一群人要约见面，最后都是约车站。不是因为那里最公平，是因为没有人想花力气算，于是默认值就赢了。实际上总有人默默多花四十分钟，而且不会抱怨。<br><strong>取舍</strong>：用每个人的实际通勤时间去算最公平的地点，而不是地图上的几何中点，因为不公平的是时间不是距离。结果只给到行政区层级，不让任何人的出发地被反推出来。<br><strong>验证</strong>：做到一半发现付费地图 API 一超额整个功能就会挂，所以加了自动切换免费 OpenStreetMap 的备援。额度用完之后它仍然正常运作，长期零成本在线。这个备援不是加分功能，是它还活着的原因。</span><span class="en-only"><strong>Problem</strong>: When a group meets halfway, everyone ends up at the central station. Not because it's fairest, but because nobody wants to do the maths, so the default wins. Someone always quietly spends forty minutes more and never complains.<br><strong>Trade-off</strong>: I compute the fairest point from each person's actual travel time rather than the geometric midpoint, because the unfairness is in time, not distance. Results stop at district level so nobody's starting address can be inferred.<br><strong>How I know it works</strong>: Midway through I realised that when the paid maps API hits its quota the whole feature dies, so I added automatic fallback to free OpenStreetMap. It kept running after the quota ran out and has been online at zero cost since. The fallback isn't a nice-to-have, it's why the thing is still alive.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Serverless</span>
+                    <span class="project-tag">Google Maps</span>
+                    <span class="project-tag"><span class="zh-only">隐私设计</span><span class="en-only">Privacy by Design</span></span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/fairmeet" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://fairmeet-plum.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <img class="project-icon" src="icons/task-shredder.svg" alt="Task Shredder">
+                <h3 class="project-title"><span class="zh-only">Task Shredder</span><span class="en-only">Task Shredder</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：我们常常知道自己想做一件事，但就是不知道从哪里开始，于是那件事一直放着。卡住的不是动力，是第一步太模糊。<br><strong>取舍</strong>：市面上的工具是你丢一段模糊的话，它回一份很有自信的清单。但输入本来就模糊，直接生成只会得到一份自信的错答案，而且你不会照做。所以我让它先反问，问够了才拆，直到第一步变成今天就能动手的东西。<br><strong>验证</strong>：我自己拿它管开发调度，用到现在。会继续用是因为它产出的东西我真的会照做。</span><span class="en-only"><strong>Problem</strong>: You often know what you want to do but not where to start, so it sits there. The blocker isn't motivation, it's that the first step is too vague to begin.<br><strong>Trade-off</strong>: Most AI task tools take a vague brain-dump and hand back a confident list. The input was vague, so the output is a confident wrong answer you won't follow. Mine asks clarifying questions first and only generates once the first step is something you could start today.<br><strong>How I know it works</strong>: I use it to plan my own build schedule and still do, because I actually follow what it produces.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React Native</span>
+                    <span class="project-tag">Expo</span>
+                    <span class="project-tag"><span class="zh-only">AI 任务分解</span><span class="en-only">AI Task Decomposition</span></span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/task-shredder" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://task-shredder-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
+                <img class="project-icon" src="icons/food-map.svg" alt="My Food Map">
+                <h3 class="project-title"><span class="zh-only">我的美食地图</span><span class="en-only">My Food Map</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：两件事。一是去过的店隔一阵子就忘了哪道菜好吃、哪道不要再点；二是选择困难，光是想吃什么就可以想很久，最后往往是饿到随便吃。<br><strong>取舍</strong>：记录做到「单道菜」而不是「单间店」，因为同一家店有雷有宝，给整间店打一个分数等于没记。另外放了一个直接帮你抽一家的按钮，因为选择困难的人要的不是更多选项，是有人帮他结束这个选择。<br><strong>验证</strong>：我自己在用，而且用最多的功能是随机那颗按钮，不是评分。</span><span class="en-only"><strong>Problem</strong>: Two things. You forget which dish at a place was good and which one never to order again. And you can spend a long time just deciding where to eat, usually ending up somewhere random once you're too hungry to care.<br><strong>Trade-off</strong>: Ratings attach to individual dishes rather than restaurants, because one place has both hits and misses and a single score for the whole venue records nothing useful. I also added a button that simply picks for you, because someone with decision paralysis doesn't need more options, they need someone to end the decision.<br><strong>How I know it works</strong>: I use it myself, and the feature I use most is the random button, not the ratings.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">Vanilla JS</span>
+                    <span class="project-tag">Firebase Auth</span>
+                    <span class="project-tag">Firestore</span>
+                    <span class="project-tag">Google Maps</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/food-map-app" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://food-map-app-nine.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
+                <img class="project-icon" src="icons/b-battle.svg" alt="B-Battle">
+                <h3 class="project-title"><span class="zh-only">B-Battle 意志力记账游戏</span><span class="en-only">B-Battle</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：记账软件不缺功能，缺的是让人愿意每天打开的理由。多数人不是不会记账，是记了三天就停了，因为过程一点都不有趣，也看不到即时反馈。<br><strong>取舍</strong>：把每月预算做成血条，每一笔消费是一次受击，再加一个 AI 同伴当场给反应。真正让人持续的是这套比喻，不是那串数字。我也刻意控制反馈强度，因为提醒一旦变成罪恶感，人只会不想打开，那就彻底失去意义。<br><strong>验证</strong>：已上线可直接试用。我用它看自己的花费，血条掉太快的那几天，我确实会停下来想一下。</span><span class="en-only"><strong>Problem</strong>: Budgeting apps don't lack features, they lack a reason to open them tomorrow. Most people can track spending fine, they just stop after three days because the process is joyless and the feedback is invisible.<br><strong>Trade-off</strong>: I turned the monthly budget into an HP bar, made every purchase a hit, and added an AI companion that reacts on the spot. What keeps people coming back is the metaphor, not the figure. I kept the feedback gentle on purpose, because once a reminder feels like guilt people stop opening the app, and then it does nothing at all.<br><strong>How I know it works</strong>: It's live and public. I use it on my own spending, and on the days the bar drops fast I do stop and think.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Firebase</span>
+                    <span class="project-tag">Zustand</span>
+                    <span class="project-tag">Gemini</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/b-battle" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://b-battle.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <details class="more-projects">
+            <summary><span class="zh-only">更多实验（14 个）</span><span class="en-only">More experiments (14)</span></summary>
+            <div class="projects-grid">
+                <div class="project-card">
+                <img class="project-icon" src="icons/memoir-novelist.svg" alt="Memoir Novelist">
+                <h3 class="project-title"><span class="zh-only">回忆小说家 Memoir Novelist</span><span class="en-only">Memoir Novelist</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：每个人都幻想过自己是自己故事里的主角，但真的要写，常常想一想小说就胎死腹中了。难的不是想象，是把它变成一段读得下去的文本。<br><strong>取舍</strong>：不要求用户会写小说，只要求写日记。日记本来就是很多人已经在做的事，门槛低到不需要创建新习惯，AI 再把累积的日记串成有情节的故事。用户选风格和角色，但故事骨架来自他自己真实写下的东西，这样读起来才是自己的人生。</span><span class="en-only"><strong>Problem</strong>: Everyone has imagined themselves as the protagonist of their own story, but the moment you try to write it the novel dies in your head. The hard part isn't the imagining, it's turning it into prose someone would read.<br><strong>Trade-off</strong>: It doesn't ask you to write fiction, only to keep a diary. Journaling is something many people already do, so there's no new habit to build, and the AI weaves the accumulated entries into a plot. You pick the genre and the characters, but the skeleton comes from what you actually wrote, which is what makes it read like your life rather than a generated story.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">Flutter</span>
+                    <span class="project-tag">FastAPI</span>
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Gemini</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/memoir-novelist" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://memoir-novelist.web.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/daily-dose.svg" alt="Daily Dose">
+                <h3 class="project-title"><span class="zh-only">Daily Dose 每日一剂</span><span class="en-only">Daily Dose</span></h3>
+                <p class="project-desc"><span class="zh-only">有些人想每天进步一点，但不想要压力。市面上的自我成长工具都创建在连续纪录和进度条上，一旦断了那天你就不想再打开了。所以这个刻意不做账号、不做连续天数、不做任何进度追踪，每天就是一则短内容，看了就走。没有东西可以断，就不会有放弃这件事。<br><em>注：原本的内容来源后端已下线，Demo 目前使用内置示范数据组，功能流程完整可操作。</em></span><span class="en-only">Some people want to get a little better each day without the pressure that usually comes with it. Self-improvement tools are built on streaks and progress bars, and the day you break one is the day you stop opening the app. So this one deliberately has no account, no streak, and no progress tracking: one short piece of content a day, read it and leave. Nothing can break, so there is nothing to give up on.<br><em>Note: the original content backend is offline, so the demo now runs on a built-in sample data set. The full flow is still operable.</em></span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag"><span class="zh-only">API 集成</span><span class="en-only">API Integration</span></span>
+                </div>
+                <div class="project-links">
+                    <a href="https://daily-dose-virid.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/tutoring-bot.svg" alt="Tutoring Bot">
+                <h3 class="project-title"><span class="zh-only">Tutoring Bot</span><span class="en-only">Tutoring Bot</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：我同时带 20 几个学生，每个人卡的地方都不一样。有人是计算粗心，有人是根本没读懂题目，但我能给的练习题是同一份。真正该做的是针对每个人的弱项出题，一个人手动做不到 20 份。<br><strong>取舍</strong>：让学生把答错的题目丢进来，AI 判断弱点在哪，再生成针对性的练习；老师端看得到每个人的进度和退步的科目。做成 LINE Bot 而不是 App，因为学生本来就在 LINE 上，多下载一个 App 就没人用了。</span><span class="en-only"><strong>Problem</strong>: I tutor 20-odd students at once and every one of them is stuck somewhere different. One makes careless arithmetic errors, another never understood the question. But the practice set I can hand out is the same for all of them, and building 20 targeted sets by hand isn't possible.<br><strong>Trade-off</strong>: Students submit the questions they got wrong, the AI works out where the weakness is, and generates practice aimed at it. Teachers see each student's progress and which subjects are slipping. I built it as a LINE bot rather than an app, because the students are already on LINE and one more download means nobody uses it.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">FastAPI</span>
+                    <span class="project-tag">LINE Bot</span>
+                    <span class="project-tag">Chart.js</span>
+                    <span class="project-tag">SaaS</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+                
+                <div class="project-card">
+                <img class="project-icon" src="icons/budget-battle.svg" alt="Budget Battle">
+                <h3 class="project-title"><span class="zh-only">Budget Battle</span><span class="en-only">Budget Battle</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：B-Battle 是网页版，我想知道同一个产品用 Flutter 重做一次会遇到什么。这个纯粹是我想练跨平台开发。<br><strong>取舍</strong>：功能刻意做得跟网页版一样，不加新东西，这样比较的才是框架本身而不是产品。<br><strong>结论</strong>：原生手机体验确实好很多，但开发速度慢下来的幅度超过我预期。</span><span class="en-only"><strong>Problem</strong>: B-Battle is a web app and I wanted to know what rebuilding the same product in Flutter would actually cost. This one is purely me practising cross-platform development.<br><strong>Trade-off</strong>: I kept the feature set identical to the web version and added nothing new, so what I was comparing was the framework rather than the product.<br><strong>What I concluded</strong>: The native mobile experience is meaningfully better, but the slowdown in development speed was larger than I expected.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">Flutter</span>
+                    <span class="project-tag">Gemini</span>
+                    <span class="project-tag"><span class="zh-only">跨平台</span><span class="en-only">Cross-Platform</span></span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <div class="project-highlight"><span class="zh-only">Live</span><span class="en-only">Live</span></div>
+                <img class="project-icon" src="icons/break-the-loop.svg" alt="Break the Loop">
+                <h3 class="project-title"><span class="zh-only">Break the Loop 生活破圈器</span><span class="en-only">Break the Loop</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：每天做一样的事，脑袋会越来越僵。而且身体的紧绷自己通常不会发现，肩膀已经硬了一整天都没感觉。<br><strong>取舍</strong>：每天抽一个身体觉察的小挑战，不重复、不累积、不用连续。设计成抽的而不是排的，因为固定顺序做两天就变成例行公事，那就失去让脑袋转个方向的意义了。</span><span class="en-only"><strong>Problem</strong>: Doing the same things every day makes your thinking rigid. Physical tension is even easier to miss: your shoulders can be locked up all day without you noticing.<br><strong>Trade-off</strong>: One body-awareness challenge a day, drawn at random, never repeated, with no streak to maintain. Drawing rather than scheduling was the decision: a fixed order becomes routine within two days, and routine is exactly what this was meant to interrupt.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Vite</span>
+                    <span class="project-tag">PWA</span>
+                    <span class="project-tag"><span class="zh-only">正念设计</span><span class="en-only">Mindful Design</span></span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/break-the-loop-web" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://break-the-loop-web.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/era-survival.svg" alt="Era Survival">
+                <h3 class="project-title"><span class="zh-only">时代大逃杀</span><span class="en-only">Era Survival</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：读红楼梦的时候会想，如果我活在那个时代、那个身份，我撑得下去吗。这个好奇心很难靠读书满足，因为书里的人生不是你的选择。<br><strong>取舍</strong>：选一个时代和身份，用文本 RPG 活一遍，每个选择都影响数值，活不下去就结束。用大模型生成事件而不是写死剧本，因为固定剧本玩第二次就知道答案了。</span><span class="en-only"><strong>Problem</strong>: Reading a classical novel, you start wondering whether you would have survived that era in that social position. Reading can't answer it, because the life on the page isn't yours to choose.<br><strong>Trade-off</strong>: Pick an era and a role and live through it as a text RPG, where every choice moves your stats and running out ends the run. Events are generated by an LLM rather than scripted, because a fixed script means you already know the answers on your second playthrough.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag"><span class="zh-only">交互叙事</span><span class="en-only">Interactive Fiction</span></span>
+                    <span class="project-tag"><span class="zh-only">历史考据</span><span class="en-only">Historical Research</span></span>
+                    <span class="project-tag">PWA</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/era-survival" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://era-survival.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/office-survival.svg" alt="Office Survival Toolkit">
+                <h3 class="project-title"><span class="zh-only">职场生存工具</span><span class="en-only">Office Survival Toolkit</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：上班想喘口气，但屏幕随时可能被看到。用手机太明显，开网页又怕被瞄到。<br><strong>取舍</strong>：做成 PWA，可以伪装成一般工作页面，聊天内容加密，一键切换回「正在工作」的画面。这个东西的价值全在被看到的那一秒，所以伪装速度比功能丰富重要。</span><span class="en-only"><strong>Problem</strong>: You want a moment off at work, but your screen could be seen at any time. Reaching for your phone is obvious, and opening a browser tab risks someone glancing over.<br><strong>Trade-off</strong>: A PWA that disguises itself as an ordinary work page, with encrypted chat and one-key switching back to a "currently working" screen. The entire value of this thing lives in the second you get looked at, so how fast the disguise lands matters more than how many features it has.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">PWA</span>
+                    <span class="project-tag">Firebase</span>
+                    <span class="project-tag">LLM</span>
+                    <span class="project-tag"><span class="zh-only">扫码加好友</span><span class="en-only">QR Friend Connect</span></span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/office-survival" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://office-survival-weiwei.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/declutter.svg" alt="SpaceClear">
+                <h3 class="project-title"><span class="zh-only">SpaceClear 空间归零</span><span class="en-only">SpaceClear</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>问题</strong>：东西越积越多，但「整理房间」这个目标大到永远不会开始。而且真正让人停下来的不是丢不掉，是丢完之后那股说不上来的后悔，久了就不想再开始。<br><strong>取舍</strong>：任务切到两分钟一个、依居家／办公／外出分场景，让人随时都能做一件。丢完之后不是给你打勾，而是问你现在什么感觉，再记下释放了多少压力。累积下来你会知道自己丢哪一类东西会后悔、哪一类丢完是松一口气，下次就有依据。<br><strong>取舍之二</strong>：进度做成一片慢慢长出来的森林，不是待办清单的完成率。清单会让人觉得自己还差多少，森林让人看到自己已经清掉多少。</span><span class="en-only"><strong>Problem</strong>: Clutter accumulates, but "tidy the whole room" is too big a goal to ever start. And what actually stops people isn't the letting go, it's the vague regret afterwards, which over time makes you avoid starting at all.<br><strong>Trade-off</strong>: Tasks are cut down to two minutes each and split by setting (home / office / out), so there is always one you can do right now. Finishing one doesn't give you a checkmark, it asks how you feel and how much pressure that released. Over time you learn which categories you regret letting go of and which ones leave you lighter, so the next decision has something to stand on.<br><strong>Second trade-off</strong>: Progress is a forest that slowly grows in, not a completion percentage. A checklist shows you how far you still are; the forest shows you how much you already cleared.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">Flutter</span>
+                    <span class="project-tag"><span class="zh-only">API 设计</span><span class="en-only">API Design</span></span>
+                    <span class="project-tag">Zod</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://space-clear.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/weiwei-reminders.svg" alt="WeiWei Reminders">
+                <h3 class="project-title"><span class="zh-only">WeiWei Reminders</span><span class="en-only">WeiWei Reminders</span></h3>
+                <p class="project-desc"><span class="zh-only">我每天要做的事其实固定：喝水、读书、今天该完成什么。但靠自己记，忙起来就全部漏掉；靠手机内置提醒又只会响一声然后被滑掉。所以我把这些做成调度，准时推到我每天本来就在看的 Telegram，不用另外开任何 app。提醒我控制在一天几则，因为推太多的下场一定是静音，静音之后这个系统就等于不存在。</span><span class="en-only">The things I need to do each day are fairly fixed: drink water, study, whatever today's task is. Remembering them myself means dropping all of them on a busy day, and a phone reminder pings once and gets swiped away. So I put them on a schedule that pushes to Telegram, which I'm already reading all day, so there's no extra app to open. I keep it to a few messages a day, because the outcome of pushing more is that it gets muted, and a muted reminder system may as well not exist.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">GitHub Actions</span>
+                    <span class="project-tag">Telegram Bot API</span>
+                    <span class="project-tag"><span class="zh-only">调度</span><span class="en-only">Cron</span></span>
+                </div>
+                <div class="project-links">
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/album-organizer.svg" alt="Album Organizer">
+                <h3 class="project-title">Album Organizer</h3>
+                <p class="project-desc"><span class="zh-only">图库里一半是信息截图：菜单、地址、屏幕画面。它们把真正的回忆淹掉了，想删又怕里面有还没抄下来的东西。所以我先用 OCR 把截图里的文本抽出来变成可搜索的笔记，抽完才敢删。数据全部存在浏览器本机，因为图库是最私密的东西，上传到别人的服务器这件事本身就会让人不想用。</span><span class="en-only">Half my camera roll is screenshots: menus, addresses, things off a screen. They bury the actual memories, and I can't delete them because some hold information I never wrote down. So I run OCR first, turn the text into searchable notes, and only then is deleting safe. Everything stays local in the browser, because a photo library is about as private as data gets, and uploading it to someone else's server is itself a reason people won't use the thing.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Dexie</span>
+                    <span class="project-tag">Tesseract OCR</span>
+                    <span class="project-tag">Gemini</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/album-organizer" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://album-organizer-mu.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/partner-brain.svg" alt="Partner Brain">
+                <h3 class="project-title">Partner Brain</h3>
+                <p class="project-desc"><span class="zh-only">朋友讲过想要什么、喜欢什么、家人生日是哪天，当下都记得，真的要送礼的时候完全想不起来。所以我做了一个只给自己看的人际笔记：每个人一份，可以丢截图进去自动抽出兴趣，要送礼的时候直接问它。我没有做社群功能，因为这种东西一旦牵涉到别人看得到，就没有人敢诚实记录了。</span><span class="en-only">Someone mentions what they want, what they like, when their birthday is. You remember it in the moment and have nothing left when it's time to buy a gift. So I built a private notebook for people: one profile each, drop in a screenshot and it pulls out the interests, ask it when you need a gift. I deliberately built no social layer, because the moment other people can see these notes, nobody records anything honest.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Dexie</span>
+                    <span class="project-tag">AI CRM</span>
+                    <span class="project-tag">Gemini</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/partner-brain" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://weiwei0607.github.io/partner-brain/" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/travel-journal.svg" alt="Travel Journal">
+                <h3 class="project-title">Travel Journal</h3>
+                <p class="project-desc"><span class="zh-only">旅行完照片一堆，但游记永远没写，过两年细节就全忘了。卡住的不是懒，是打开空白页不知道从哪里开始写。所以我让行程、照片、地图轨迹先自动排成一份有版型的东西，你只要补文本，最后一键导出 PDF。做成可以印出来是刻意的，因为存在云端的游记跟没写过差不多。</span><span class="en-only">After a trip you have hundreds of photos and never write the journal, and two years later the details are gone. The blocker isn't laziness, it's a blank page with no obvious starting point. So the itinerary, photos and map track lay themselves out first and you only fill in the words, then export to PDF in one click. Making it printable was deliberate: a travel journal that lives in the cloud is barely different from one you never wrote.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Dexie</span>
+                    <span class="project-tag">html2canvas</span>
+                    <span class="project-tag">jsPDF</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/travel-journal" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://travel-journal-mocha-delta.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+                <div class="project-card">
+                <img class="project-icon" src="icons/special-forces-planner.svg" alt="Special Forces Planner">
+                <h3 class="project-title">Special Forces Planner<span class="zh-only"> · 行程顺序优化</span><span class="en-only"> · Route Order Optimiser</span></h3>
+                <p class="project-desc"><span class="zh-only"><strong>一句话</strong>：用 nearest neighbor 加 2-opt 算最短的景点顺序，界面是刻意做成「特种兵旅游」的军事风格。<br><strong>问题</strong>：我排行程的方式是先列一堆想去的点，然后卡在「今天先去哪」。人脑排顺序排到五、六个点就开始乱，排出来的路线常常在同一区来回绕，走的路比实际需要的多。<br><strong>取舍</strong>：把它当成旅行推销员问题来解，直接算出最短路线并画在地图上。我没有做行程建议或景点推荐，因为想去哪是用户自己的事，这个工具只负责解决「顺序」这一件他算不动的事。</span><span class="en-only"><strong>In one line</strong>: computes the shortest visiting order with nearest neighbour plus 2-opt. The military styling is a deliberate "special forces travel" theme.<br><strong>Problem</strong>: I plan trips by listing everywhere I want to go and then getting stuck on where to start. Ordering more than five or six stops in your head falls apart quickly, and the route you come up with usually doubles back through the same area and walks further than it needs to.<br><strong>Trade-off</strong>: I treated it as a travelling salesman problem, computed the shortest route and drew it on the map. I deliberately didn't add itinerary suggestions or attraction recommendations, because where you want to go is yours to decide. The tool solves only the ordering, which is the part a person can't do in their head.</span></p>
+                <div class="project-tags">
+                    <span class="project-tag">React</span>
+                    <span class="project-tag">Dexie</span>
+                    <span class="project-tag">TSP · 2-opt</span>
+                    <span class="project-tag">Leaflet</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/weiwei0607/special-forces-planner" class="project-link" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://special-forces-planner.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">Demo</a>
+                </div>
+            </div>
+            </div>
+        </details>
+    </section>
+
+    <section id="contact">
+        <div class="section-header">
+            <span class="section-tag"><span class="zh-only">联系</span><span class="en-only">Contact</span></span>
+            <h2 class="section-title"><span class="zh-only">讨论 AI 产品机会</span><span class="en-only">Let's talk about AI products</span></h2>
+            <p class="section-desc">
+                <span class="zh-only">正在寻找远距的 AI 产品／增长职缺，欢迎联系。</span>
+                <span class="en-only">I'm open to remote AI product and growth roles. Let's connect.</span>
+            </p>
+        </div>
+        <div style="text-align: center;">
+            <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 0.9rem;">
+                <span class="zh-only">台北 · 以远距为主</span>
+                <span class="en-only">Based in Taipei · remote first</span>
+            </p>
+            <a href="mailto:vernessa0607@gmail.com" class="btn btn-primary" style="margin-bottom: 1rem;">
+                vernessa0607@gmail.com
+            </a>
+            <div class="contact-links">
+                <a href="https://github.com/weiwei0607" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.linkedin.com/in/wei-ning-ma" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://wellfound.com/u/vernessa0607" target="_blank" rel="noopener noreferrer">Wellfound</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="#about"><span class="zh-only">关于我</span><span class="en-only">About</span></a>
+            <a href="#skills"><span class="zh-only">技能</span><span class="en-only">Skills</span></a>
+            <a href="#projects"><span class="zh-only">作品</span><span class="en-only">Projects</span></a>
+            <a href="#contact"><span class="zh-only">联系</span><span class="en-only">Contact</span></a>
+        </div>
+        <p class="footer-copy"><span class="zh-only">© 2026 马韡宁 Vernessa Ma. Built with curiosity and code.</span><span class="en-only">© 2026 Wei-Ning (Vernessa) Ma. Built with curiosity and code.</span></p>
+    </footer>
+
+    <script>
+        const html = document.documentElement;
+        const btnEn = document.getElementById('lang-en');
+        const btnZh = document.getElementById('lang-zh');
+
+        function setLang(lang) {
+            if (lang === "zh-CN") {
+                html.setAttribute('lang', "zh-CN");
+                btnZh.classList.add('active');
+                btnEn.classList.remove('active');
+                document.title = '马韡宁 Vernessa Ma｜作品集';
+            } else {
+                html.setAttribute('lang', 'en');
+                btnEn.classList.add('active');
+                btnZh.classList.remove('active');
+                document.title = 'Wei-Ning (Vernessa) Ma | AI Product & Growth';
+            }
+        }
+
+        btnEn.addEventListener('click', () => setLang('en'));
+        btnZh.addEventListener('click', () => setLang("zh-CN"));
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wei-Ning (Vernessa) Ma",
+      "url": "https://weining-ma.vercel.app/",
+      "jobTitle": "Product",
+      "description": "Biomedical engineer moving into product, building AI-integrated apps and productivity tools.",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Taipei Medical University"
+      },
+      "knowsAbout": ["Artificial Intelligence", "Product Management", "Biomedical Engineering", "Healthcare Technology", "React", "Python", "Next.js"],
+      "sameAs": [
+        "https://github.com/weiwei0607",
+        "https://www.linkedin.com/in/wei-ning-ma"
+      ]
+    }
+    </script>
+<script>
+  // Vercel Web Analytics，可用 ?notrack=1 把自己排除（每台设备/浏览器设置一次即可）
+  (function () {
+    try {
+      var p = new URLSearchParams(location.search);
+      if (p.get('notrack') === '1') localStorage.setItem('pf_notrack', '1');
+      if (p.get('notrack') === '0') localStorage.removeItem('pf_notrack');
+      if (localStorage.getItem('pf_notrack') === '1') return;
+    } catch (e) {
+      // 无痕/私密浏览下 localStorage 不可用，略过排除设置继续加载
+    }
+    var s = document.createElement('script');
+    s.defer = true;
+    s.src = '/_vercel/insights/script.js';
+    document.head.appendChild(s);
+  })();
+</script>
+</body>
+</html>
