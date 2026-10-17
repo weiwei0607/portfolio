@@ -119,7 +119,7 @@ html = html.replace(
     '<link rel="canonical" href="https://weining-ma.vercel.app/cn">')
 
 # 简体页的增长案例按钮指向简体版增长页（绝对路径，/cn 和 /cn/ 都不会断）
-html = html.replace('<a href="/growth/" class="btn btn-secondary">', '<a href="/growth/cn/" class="btn btn-secondary">')
+html = html.replace('<a href="/growth/" class="btn btn-secondary zh-only">', '<a href="/growth/cn/" class="btn btn-secondary zh-only">')
 
 os.makedirs(os.path.dirname(DST), exist_ok=True)
 with open(DST, 'w', encoding='utf-8') as f:
