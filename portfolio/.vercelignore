@@ -1,0 +1,12 @@
+# 不要部署到公開網站的檔案
+n8n/
+*.bak
+*.backup
+generate_icons.py
+translate.py
+cover-previews.html
+masters-*.jpg
+digest-*.jpg
+i18n_en.md
+icons_old_lineart/
+linkedin-post.md

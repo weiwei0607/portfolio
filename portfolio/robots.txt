@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://weiwei0607.github.io/portfolio/sitemap.xml
+Sitemap: https://weining-ma.vercel.app/sitemap.xml

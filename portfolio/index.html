@@ -7,12 +7,16 @@
     <meta property="og:title" content="Wei-Ning (Vernessa) Ma — Portfolio">
     <meta property="og:description" content="Biomedical engineer moving into product. 20+ products, most of them deployed and public.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://weiwei0607.github.io/portfolio/">
-    <meta property="og:image" content="https://weiwei0607.github.io/portfolio/hero-illustration.svg">
+    <meta property="og:url" content="https://weining-ma.vercel.app/">
+    <meta property="og:image" content="https://weining-ma.vercel.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Wei-Ning (Vernessa) Ma — biomedical engineering to product. 20+ products, most of them deployed.">
+    <meta name="twitter:image" content="https://weining-ma.vercel.app/og-image.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Wei-Ning (Vernessa) Ma — Portfolio">
     <meta name="twitter:description" content="Biomedical engineer moving into product. 20+ products, most of them deployed.">
-    <link rel="canonical" href="https://weiwei0607.github.io/portfolio/">
+    <link rel="canonical" href="https://weining-ma.vercel.app/">
     <title>Wei-Ning (Vernessa) Ma — Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -599,7 +603,8 @@
                 </p>
                 <div class="hero-cta">
                     <a href="#projects" class="btn btn-primary"><span class="zh-only">查看作品集</span><span class="en-only">View Projects</span></a>
-                    <a href="Wei-Ning-Ma-Resume-AI-Product-Manager.pdf" download class="btn btn-secondary"><span class="zh-only">下載履歷</span><span class="en-only">Download Resume</span></a>
+                    <a href="Wei-Ning-Ma-Resume-AI-Product-Manager.pdf" download class="btn btn-secondary"><span class="zh-only">履歷 · 產品</span><span class="en-only">Resume · Product</span></a>
+                    <a href="Wei-Ning-Ma-Resume-Growth-Operations.pdf" download class="btn btn-secondary"><span class="zh-only">履歷 · 運營</span><span class="en-only">Resume · Growth</span></a>
                     <a href="mailto:vernessa0607@gmail.com" class="btn btn-secondary"><span class="zh-only">聯繫我</span><span class="en-only">Contact Me</span></a>
                 </div>
             </div>
@@ -1126,7 +1131,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Wei-Ning (Vernessa) Ma",
-      "url": "https://weiwei0607.github.io/portfolio/",
+      "url": "https://weining-ma.vercel.app/",
       "jobTitle": "Product",
       "description": "Biomedical engineer moving into product, building AI-integrated apps and productivity tools.",
       "alumniOf": {
@@ -1143,10 +1148,14 @@
 <script>
   // Vercel Web Analytics，可用 ?notrack=1 把自己排除（每台裝置/瀏覽器設定一次即可）
   (function () {
-    var p = new URLSearchParams(location.search);
-    if (p.get('notrack') === '1') localStorage.setItem('pf_notrack', '1');
-    if (p.get('notrack') === '0') localStorage.removeItem('pf_notrack');
-    if (localStorage.getItem('pf_notrack') === '1') return;
+    try {
+      var p = new URLSearchParams(location.search);
+      if (p.get('notrack') === '1') localStorage.setItem('pf_notrack', '1');
+      if (p.get('notrack') === '0') localStorage.removeItem('pf_notrack');
+      if (localStorage.getItem('pf_notrack') === '1') return;
+    } catch (e) {
+      // 無痕/私密瀏覽下 localStorage 不可用，略過排除設定繼續載入
+    }
     var s = document.createElement('script');
     s.defer = true;
     s.src = '/_vercel/insights/script.js';
